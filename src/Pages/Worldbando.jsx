@@ -4,11 +4,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
+// ghjgj
 
 const Worldbando = () => {
   return (
     <Inner>
-      <div className="w-full h-screen "></div>
+      <div className="w-full h-screen bg-red-200"></div>
       <WorldofBandO/>
       <Footer/>
     </Inner>
