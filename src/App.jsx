@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import Speakers from "./Pages/Speakers";
 import Support from "./Pages/Support"
 import Television from "./Pages/Television"
-import Soundbars from "./Pages/Soundbars";
+import Soundbars from "./Pages/Soundbars";``
 import Headphones from "./Pages/Headphones"
 import Worldbando from "./Pages/Worldbando"
 import LocomotiveScroll from 'locomotive-scroll';
