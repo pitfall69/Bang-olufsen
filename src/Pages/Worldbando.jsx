@@ -146,7 +146,7 @@ const WorldofBandO = () => {
       para: "We visited the Danish-Italian design duo GamFratesi in their studio in Copenhagen to discuss the process, inspiration and work methods that has been used to create our new portable speaker Beosound A5.",
     },
   ];
-
+  
   const textRevealRef = useRef(null);
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);

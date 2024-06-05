@@ -18,7 +18,7 @@ const scroll = new LocomotiveScroll({
   smoothDuration: 800, 
   smoothDistance: 100,
 });
-//k.,fkldfnjkls
+
 const App = () => {
   const location = useLocation();
   return (
