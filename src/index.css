@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("/src\assets\Fonts\ProximaNova-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Meseosans";
+  src: url("/src\assets\Fonts\museosanscyrl-500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GTWALSHEIM";
+  src: url("/src\assets\Fonts\GTWALSHEIM.ttf") format("truetype");
+}
