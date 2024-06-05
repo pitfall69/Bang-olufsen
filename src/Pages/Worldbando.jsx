@@ -191,7 +191,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
-// ghjgj
+
 
 const Worldbando = () => {
   return (
