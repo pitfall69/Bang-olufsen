@@ -4,11 +4,12 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
+// ghjgj
 
 const Worldbando = () => {
   return (
     <Inner>
-      <div className="w-full h-screen "></div>
+      <div className="w-full h-screen bg-red-200"></div>
       <WorldofBandO/>
       <Footer/>
     </Inner>
@@ -23,6 +24,7 @@ const WorldofBandO = () => {
         "https://images.ctfassets.net/8cd2csgvqd3m/6x0VvmMsGGHcrGm6IE4ww6/d664ff7752d1b9508d58f44a86358ab4/Lifestyle-Beosystem-9000c-0027-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=808&fit=fill",
       Title: "RECREATED CLASSICS",
       Description: "Bringing the past into the future",
+      para: 'We have always created products that can stand the test of time. Our Recreated Classics Programme takes our commitment to longevity even further. Join us in celebrating the revival of physical media, where cherished classics meet modern innovation'
     },
     {
       Image:
@@ -155,9 +157,13 @@ const WorldofBandO = () => {
         <div className="col1 w-[50%] max-sm:w-[80%] h-fit">
           <img className=" w-[80%] max-sm:h-[45vh] max-h-[65vh] max-sm:w-full object-cover" src={item.Image} alt="" />
           <h1 className="font-primary pt-2 opacity-75 max-sm:text-sm">{item.Title}</h1>
-          <p className="font-Secondary py-1 max-sm:text-sm">{item.Description}</p>
         </div>
-        <div className="col2 w-[50%] max-sm:w-[0%] h-fit"></div>
+        <div className="col2 w-[50%] max-sm:w-[0%] h-fit">
+          <div className="w-[80%]  h-[40vh] flex flex-col justify-center items-center max-sm:hidden gap-10">
+            <p className="font-Primary py-1 max-sm:text-sm text-">{item.Description}</p>
+            <p className="text-lg  font-Secondary  max-lg:text-sm">{item.para}</p>
+          </div>
+        </div>
       </div>
     ))}
     </div>
