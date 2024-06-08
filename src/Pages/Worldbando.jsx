@@ -146,11 +146,41 @@ const WorldofBandO = () => {
       para: "We visited the Danish-Italian design duo GamFratesi in their studio in Copenhagen to discuss the process, inspiration and work methods that has been used to create our new portable speaker Beosound A5.",
     },
   ];
-
-  const textRevealRef = useRef(null);
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     const img = gsap.utils.toArray(".col1");
+    const TextContent = gsap.utils.toArray(".col2");
+
+    TextContent.forEach((item) => {
+      const Paragraph = item.querySelector(".paragraph span");
+      const Title = item.querySelector(".title span");
+      const tl2 = gsap.timeline();
+      tl2.from(Title, {
+        y: 100,
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: Title,
+          start: "top 80%",
+          end: "top 60%",
+          // markers: true,
+          scrub: 2,
+        },
+      });
+      tl2.from(Paragraph, {
+        y: 100,
+        opacity: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: Paragraph,
+          start: "top 70%",
+          end: "top 70%",
+          // markers: true,
+          scrub: 2,
+        },
+      });
+    });
+
     img.forEach((item) => {
       gsap.set(item, {
         clipPath: "polygon(0 0, .1% 0, .1% .1%, 0 .1%)",
@@ -159,10 +189,10 @@ const WorldofBandO = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "20% 80%",
-          end: "0 0%",
+          start: "0% 80%",
+          end: "0 40%",
           //  markers:true,
-          scrub: 2,
+          scrub: 5,
         },
       });
       tl.to(item, {
@@ -173,7 +203,7 @@ const WorldofBandO = () => {
     });
   }, []);
   return (
-    <div className="wofbando-container w-full bg-[#FFFFFF] pb-[20vh] text-black p-[5%] flex flex-col max-sm:gap-20 gap-5 ">
+    <div className="wofbando-container w-full bg-[#FFFFFF] pb-[20vh] text-black p-[5%] flex flex-col max-sm:gap-20 gap-20 ">
       {WorldofBandOdata.map((item, index) => (
         <div
           className={`row flex w-full h-full ${
@@ -191,12 +221,14 @@ const WorldofBandO = () => {
             </h1>
           </div>
           <div className="col2 w-[50%] max-sm:w-[0%] ">
-            <div className="w-full h-full flex flex-col justify-center items-center max-sm:hidden gap-10">
-              <p className="font-primary py-1  max-sm:text-sm text-3xl">
-                {item.Description}
+            <div className="w-full h-full flex flex-col justify-center items-center max-sm:hidden gap-10 max-lg:gap-5">
+              <p className="title font-primary py-1 h-fit overflow-hidden max-lg:text-lg text-3xl">
+                <span className="inline-block w-full h-full">
+                  {item.Description}
+                </span>
               </p>
-              <p className="text-lg font-Secondary w-[80%] max-lg:text-sm">
-                {item.para}
+              <p className=" paragraph text-lg font-Secondary h-fit overflow-hidden w-[80%] max-lg:text-sm leading-tight">
+                <span className="inline-block w-full h-full"> {item.para}</span>
               </p>
             </div>
           </div>

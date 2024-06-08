@@ -54,14 +54,14 @@ const Inner = ({ children }) => {
       opacity:1
     },
     exit: {
-      y: -300,
+      y: 200,
       x: 100,
-      scale:.9,
+      scale:.8,
       transition: {
         duration: 1.9,
         ease: [0.64, 0, 0.78, 0],
       },
-      opacity:.05
+      opacity:0.01
     },
   };
   return (

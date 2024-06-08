@@ -8,7 +8,7 @@ const Navbar = () => {
   const [navLinkData, setNavLinkData] = useState(null);
   const Navbardata = useMemo(
     () => [
-     {
+      {
         title: "SPEAKERS",
         path: "/speakers",
         data: [
@@ -17,7 +17,7 @@ const Navbar = () => {
             categoryDescription: "BEOSOUND A9",
             categoryImage:
               "https://static.dezeen.com/uploads/2020/03/layer-bang-olufsen-balance-speaker-design_dezeen_2364_col_12.jpg",
-          }, 
+          },
           {
             categoryTitle: "Portable",
             categoryDescription: "BEOSOUND A1 2ND GEN",
@@ -152,24 +152,27 @@ const Navbar = () => {
         data: [
           {
             categoryTitle: "Register your Product",
-            categoryDescription:"REGISTER PRODUCT",
+            categoryDescription: "REGISTER PRODUCT",
             categoryImage:
               "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_register_product.jpg",
           },
           {
             categoryTitle: "Replace & Repair",
-            categoryDescription:"WARRANTY SERVICE",
-            categoryImage: "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_warranty_service.jpg",
+            categoryDescription: "WARRANTY SERVICE",
+            categoryImage:
+              "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_warranty_service.jpg",
           },
           {
             categoryTitle: "Track Warranty Request",
-            categoryDescription:"TRACK STATUS",
-            categoryImage: "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_track_repair.jpg",
+            categoryDescription: "TRACK STATUS",
+            categoryImage:
+              "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_track_repair.jpg",
           },
           {
             categoryTitle: "Return online order",
-            categoryDescription:"RETURN ORDER",
-            categoryImage: "https://images.unsplash.com/photo-1543499459-d1460946bdc6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            categoryDescription: "RETURN ORDER",
+            categoryImage:
+              "https://images.unsplash.com/photo-1543499459-d1460946bdc6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
         ],
       },
@@ -205,7 +208,7 @@ const Navbar = () => {
             </div>
           ));
 
-          return (<NavItemWithUnderline key={index} />);
+          return <NavItemWithUnderline key={index} />;
         })}
       </div>
       <div className="menu-button-container lg:hidden">
@@ -231,18 +234,8 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-
-
-
 const FullScreenNavbar = React.memo(
-  ({
-    setOpenNav,
-    openNav,
-    navLinkData,
-    Navbardata,
-    handleButtonClick,
-  }) => {
+  ({ setOpenNav, openNav, navLinkData, Navbardata, handleButtonClick }) => {
     const data = navLinkData ? navLinkData.data : [];
     const [imageSrc, setImageSrc] = useState(null);
     const [imageDescription, setImageDescription] = useState(null);
@@ -270,16 +263,16 @@ const FullScreenNavbar = React.memo(
           <div className=" h-[8vh] max-sm:hidden flex gap-[.8vw] text-[.8rem] font-primary items-center w-full ">
             {Navbardata.map((item, index) => {
               const NavItemWithUnderline = HoverAnim(() => (
-              <div
-                className="p-1 w-fit cursor-pointer"
-                key={index}
-                id={item.title}
-                onClick={() => handleButtonClick(item)}
-              >
-                {item.title}
-              </div>
+                <div
+                  className="p-1 w-fit cursor-pointer"
+                  key={index}
+                  id={item.title}
+                  onClick={() => handleButtonClick(item)}
+                >
+                  {item.title}
+                </div>
               ));
-              return(<NavItemWithUnderline key={index}/>)
+              return(<NavItemWithUnderline key={index}/>);
             })};
           </div>
           <div className="logo-container sm:hidden">
@@ -365,5 +358,3 @@ const NavClosingButton = React.memo(({ setOpenNav, openNav }) => {
     </div>
   );
 });
-
-
