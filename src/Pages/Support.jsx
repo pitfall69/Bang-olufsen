@@ -1,15 +1,5 @@
 import Inner from "../Components/latouts/Inner";
-<<<<<<< HEAD
 
-const Support = () => {
-  return (
-    <Inner>
-      <div className="w-full h-screen bg-blue-300"></div>
-    </Inner>
-  );
-};
-
-=======
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { RiChatSmile2Line } from "react-icons/ri";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -130,10 +120,6 @@ const Support = () => {
         ))}
       </div>
     </Inner>
-
-
   );
 };
-
->>>>>>> origin/hover
 export default Support;
