@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { GrClose } from "react-icons/gr";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { NavLink, Link } from "react-router-dom";
+import HoverAnim from "./latouts/HoverAnim";
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navLinkData, setNavLinkData] = useState(null);
@@ -193,16 +194,19 @@ const Navbar = () => {
           openNav ? "opacity-5" : "opacity-100"
         } text-sm items-center max-lg:hidden gap-[3vw]`}
       >
-        {Navbardata.map((item, index) => (
-          <div
-            className="p-1 w-fit font-primary cursor-pointer"
-            key={index}
-            id={item.title}
-            onClick={() => handleButtonClick(item)}
-          >
-            {item.title}
-          </div>
-        ))}
+        {Navbardata.map((item, index) => {
+          const NavItemWithUnderline = HoverAnim(() => (
+            <div
+              className="p-1 w-fit font-primary cursor-pointer"
+              id={item.title}
+              onClick={() => handleButtonClick(item)}
+            >
+              {item.title}
+            </div>
+          ));
+
+          return (<NavItemWithUnderline key={index} />);
+        })}
       </div>
       <div className="menu-button-container lg:hidden">
         <HiMenuAlt4
@@ -264,7 +268,8 @@ const FullScreenNavbar = React.memo(
           }  h-[10vh] flex justify-between items-center`}
         >
           <div className=" h-[8vh] max-sm:hidden flex gap-[.8vw] text-[.8rem] font-primary items-center w-full ">
-            {Navbardata.map((item, index) => (
+            {Navbardata.map((item, index) => {
+              const NavItemWithUnderline = HoverAnim(() => (
               <div
                 className="p-1 w-fit cursor-pointer"
                 key={index}
@@ -273,7 +278,9 @@ const FullScreenNavbar = React.memo(
               >
                 {item.title}
               </div>
-            ))}
+              ));
+              return(<NavItemWithUnderline key={index}/>);
+            })};
           </div>
           <div className="logo-container sm:hidden">
             <img
