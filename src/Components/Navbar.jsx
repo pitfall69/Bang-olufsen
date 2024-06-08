@@ -279,7 +279,7 @@ const FullScreenNavbar = React.memo(
                 {item.title}
               </div>
               ));
-              return(<NavItemWithUnderline key={index}/>);
+              return(<NavItemWithUnderline key={index}/>)
             })};
           </div>
           <div className="logo-container sm:hidden">
