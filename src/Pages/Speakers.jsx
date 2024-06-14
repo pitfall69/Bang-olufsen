@@ -1,6 +1,5 @@
 import React from "react";
 import Inner from "../Components/latouts/Inner";
-import Products from "../Components/Products";
 const Speakers = () => {
   const Productsdata = [
     {
@@ -52,7 +51,7 @@ const Speakers = () => {
     <Inner>
       <div className="w-full">
         <div className="h-screen w-full bg-zinc-800"></div>
-        <Products Productsdata={Productsdata} />
+        <Products />
         <div className="h-screen w-full bg-zinc-800"></div>
       </div>
     </Inner>

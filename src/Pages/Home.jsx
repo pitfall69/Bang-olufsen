@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import Inner from "../Components/latouts/Inner";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import gsap from "gsap";
+import Footer from "../Components/Footer";
+import HomeWorldBandO from "../Components/HomeWorldBandO";
+import HomePageVideo from "../Components/HomePageVideo";
+import LandingPage from "../Components/LandingPage";
+import HomePagePoduct from "../Components/HomePagePoduct";
+import SincePage from "../Components/SincePage";
+import LocomotiveScroll from "locomotive-scroll";
 
 const Home = () => {
+<<<<<<< HEAD
   return (
     <Inner>
       {/* <Landingpage /> */}
@@ -15,9 +21,23 @@ const Home = () => {
     </Inner>
   );
 };
+=======
+  const scrollRef = useRef(null);
+>>>>>>> homeworld
 
-export default Home;
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      getDirection: true,
+    });
 
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
+
+<<<<<<< HEAD
 // const FirstAnim = () => {
 
 //   const images = [
@@ -79,19 +99,27 @@ export default Home;
 
 
 const Landingpage = () => {
+=======
+>>>>>>> homeworld
   return (
-    <div className="h-screen pointer-events-none relative w-full overflow-hidden">
-      <video
-        className="w-full max-sm:object-fit h-full object-cover"
-        autoPlay
-        loop
-        muted
-        src="src/assets/videos/videoplayback.mp4"
-      ></video>
+    <div ref={scrollRef} data-scroll-container>
+      <Inner>
+        <LandingPage />
+        <div className="w-full h-screen"></div>
+        <HomePagePoduct />
+        {/* <SincePage /> */}
+        <div className="w-full h-screen"></div>
+        <HomeWorldBandO />
+        <HomePageVideo />
+        {/* <MarqueeText/> */}
+        <div className="w-full h-screen bg-[#F5ECE7]"></div>
+        <Footer />
+      </Inner>
     </div>
   );
 };
 
+<<<<<<< HEAD
 const OurStories = () => {
   const imageRefs = useRef([]);
 
@@ -196,3 +224,6 @@ const OurStories = () => {
   );
 };
 
+=======
+export default Home;
+>>>>>>> homeworld

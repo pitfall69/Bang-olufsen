@@ -1,5 +1,4 @@
 import Inner from "../Components/latouts/Inner";
-
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { RiChatSmile2Line } from "react-icons/ri";
 import { HiOutlineLocationMarker } from "react-icons/hi";

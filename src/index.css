@@ -16,3 +16,55 @@
   font-family: "GTWALSHEIM";
   src: url("/src\assets\Fonts\GTWALSHEIM.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Sans";
+  src: url("/src/assets/Fonts/ProductSans-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Circular";
+  src: url("/src/assets/Fonts/lineto-circular-pro-book.ttf") format("truetype");
+}
+
+
+.service-info{
+  flex:2 ;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 1em; */
+}
+.service-img{
+  flex:5;
+  width: 100%;
+  height: 100%;
+}
+.img{
+  width: 30%;
+  height: 100%;
+}
+
+#imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  display: block;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+#imageContainer > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100% ;
+  object-fit: cover;
+}
+
