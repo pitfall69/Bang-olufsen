@@ -5,6 +5,7 @@ import { RiChatSmile2Line } from "react-icons/ri";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { GoHome } from "react-icons/go";
+import Faqs from "../Components/Faqs";
 
 
 const supportData = [
@@ -119,6 +120,7 @@ const Support = () => {
           </div>
         ))}
       </div>
+      <Faqs/>
     </Inner>
   );
 };

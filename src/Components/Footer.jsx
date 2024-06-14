@@ -7,10 +7,10 @@ import { SiYoutube } from "react-icons/si";
 export default function Footer() {
   return (
     <div
-      className="relative h-[75vh]"
+      className="relative h-[80vh]"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="fixed bottom-0 h-[75vh] w-full">
+      <div className="fixed bottom-0 h-[80vh] w-full">
         <FooterContent />
       </div>
     </div>
@@ -19,9 +19,9 @@ export default function Footer() {
 
 const FooterContent = () => {
   return (
-    <div className="w-full text-white h-full px-[2%]">
-      <div className="top-part h-[60%] py-14 flex max-sm:h-[90%] w-full">
-        <div className="one w-[33.5%] h-full flex flex-col gap-20 border-r-[1px] border-zinc-700">
+    <div className="w-full bg-[##141414] text-[#E5E5E5] h-full px-[2%]">
+      <div className="top-part h-[60%] font-Secondary py-14 flex max-sm:h-[90%] w-full">
+        <div className="one w-[33.5%]  h-full flex flex-col gap-20 border-r-[1px] border-zinc-700">
           <div className="brand flex flex-col gap-5">
             <h2 className="text-3xl">BANG & OLUFSEN</h2>
             <p className="text-sm w-[60%] opacity-60">
@@ -42,7 +42,7 @@ const FooterContent = () => {
           <h3> 7600 Struer, Denmark</h3>
           <h3 className="opacity-60 text-sm">Mon-Fri: 09:00 AM to 06:00 PM</h3>
         </div>
-        <div className="third w-[33%] h-full px-5 ">
+        <div className="third w-[33%]  h-full px-5 ">
           <h3>Contact</h3>
           <h3>8(800) 600-69-07</h3>
           <h3>Email</h3>
@@ -54,8 +54,9 @@ const FooterContent = () => {
             <AiFillInstagram className="h-12 p-2 w-12 border-[2px] border-zinc-800" />
             <SiYoutube className="h-12 p-2 w-12 border-[2px] border-zinc-800"/>
           </div>
-          <div className="flex items-center opacity-50 mt-[8rem] justify-between">
-            <h3>hjbkjdkjdhkjdhjkds,.jhfsdfdsjfhdkj,fsdjfdjfd</h3>
+          <div className="flex opacity-50 mt-[6rem] justify-between">
+            <h3>©Copyright 2024 Bang & Olufsen Ltd.
+           <br /> All Rights reserved.</h3>
             <h3>Designed by The SPIRIT'S</h3>
           </div>
         </div>

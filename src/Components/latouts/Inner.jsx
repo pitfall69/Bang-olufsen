@@ -15,12 +15,16 @@ const Inner = ({ children }) => {
     enter: {
       opacity: 1,
       transition: {
-        duration: .2,
+        duration: .3,
         ease:[0.32, 0, 0.67, 0]
       },
     },
     exit: {
       opacity: 1,
+      transition: {
+        duration: .2,
+        ease:[0.32, 0, 0.67, 0]
+      },
     },
   };
   const slide = {
@@ -54,14 +58,14 @@ const Inner = ({ children }) => {
       opacity:1
     },
     exit: {
-      y: 200,
+      y: 20,
       x: 100,
-      scale:.8,
+      scale:0.90,
       transition: {
-        duration: 1.9,
+        duration: 1.8,
         ease: [0.64, 0, 0.78, 0],
       },
-      opacity:0.01
+      opacity:0.001
     },
   };
   return (

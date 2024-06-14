@@ -14,10 +14,9 @@ import LocomotiveScroll from 'locomotive-scroll';
 const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true,
-  lerp: 0.5, 
-  smoothDuration: 800, 
-  smoothDistance: 100,
+  lerp: 0.001, 
 });
+
 
 
 const App = () => {
@@ -42,4 +41,3 @@ const App = () => {
 };
 
 export default App;
-
