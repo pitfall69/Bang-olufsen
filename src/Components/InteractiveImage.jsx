@@ -8,7 +8,7 @@ const InteractiveImage = () => {
   const mousePosition = useRef({ x: 0.5, y: 0.5 });
   const targetMousePosition = useRef({ x: 0.5, y: 0.5 });
   const prevPosition = useRef({ x: 0.5, y: 0.5 });
-  const aberrationIntensity = useRef(0.0);
+  const aberrationIntensity = useRef(0.0)
 
   useEffect(() => {
     let scene, camera, renderer, planeMesh;
@@ -53,10 +53,10 @@ const InteractiveImage = () => {
       console.log("Initializing scene...");
       // Create scene
       scene = new THREE.Scene();
-
+      
       // Create camera
       camera = new THREE.PerspectiveCamera(
-        50,
+        getFOV(window.innerWidth),
         window.innerWidth / window.innerHeight,
         0.1,
         1000
@@ -91,9 +91,21 @@ const InteractiveImage = () => {
       console.log("Scene initialized.");
     };
 
+    const getFOV = (width) => {
+      // Adjust FOV based on window width
+      if (width < 768) {
+        return 90; // For small screens
+      } else if (width < 1024) {
+        return 60; // For medium screens
+      } else {
+        return 50; // For large screens
+      }
+    };
+
     const onWindowResize = () => {
       if (camera && renderer) {
         camera.aspect = window.innerWidth / window.innerHeight;
+        camera.fov = getFOV(window.innerWidth);
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
         console.log("Window resized.");
@@ -172,11 +184,14 @@ const InteractiveImage = () => {
       window.removeEventListener("resize", onWindowResize);
     };
   }, [imageSrc]);
+
   return (
     <div id="imageContainer" ref={imageContainerRef} style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
-        <div className="absolute w-full flex items-center justify-center mix-blend-difference h-full top-0 left-0 z-[99]">
-          <h1 className="text-[8rem] max-sm:text-[3rem] w-[80%] text-center text-white font-Decorative uppercase leading-none">Experience the Art of Sound <span className="font-And">&</span>Vision</h1>
-        </div>
+      <div className="absolute w-full flex items-center justify-center mix-blend-difference h-full top-0 left-0 z-[99]">
+        <h1 className="text-[8rem] max-sm:text-[3rem] w-[80%] text-center text-white font-Decorative uppercase leading-none">
+          Experience the Art of Sound <span className="font-And">&</span> Vision
+        </h1>
+      </div>
     </div>
   );
 };

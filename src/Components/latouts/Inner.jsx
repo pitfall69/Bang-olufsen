@@ -69,7 +69,7 @@ const Inner = ({ children }) => {
     },
   };
   return (
-    <div className="inner bg-black">
+    <div className="inner bg-[#000]">
       <motion.div
         {...anim(slide)}
         className="slide fixed top-0 z-[9999] bg-white left-0 h-screen w-screen"

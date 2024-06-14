@@ -26,7 +26,7 @@ const HoverAnim = (WrappedComponent, options = {}, text) => {
 
     return (
       <div
-        className="hover-underline-container inline-block relative"
+        className="hover-underline-container inline-block overflow-hidden relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

@@ -19,7 +19,7 @@ export default function Footer() {
 
 const FooterContent = () => {
   return (
-    <div className="w-full bg-[##141414] text-[#E5E5E5] h-full px-[2%]">
+    <div className="w-full bg-[##141414] text-[#E5E5E5] bg-black h-full px-[2%]">
       <div className="top-part h-[60%] font-Secondary py-14 flex max-sm:h-[90%] w-full">
         <div className="one w-[33.5%]  h-full flex flex-col gap-20 border-r-[1px] border-zinc-700">
           <div className="brand flex flex-col gap-5">

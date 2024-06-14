@@ -162,9 +162,10 @@ const WorldofBandO = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "top 80%",
-          end: "top 60%",
+          start: "top 60%",
+          end: "top 40%",
           scrub: 1,
+          // markers:true
         },
       });
       tl.from(title, { y: 50, opacity: 0, duration: 1.5 })
@@ -196,7 +197,7 @@ const WorldofBandO = () => {
   }, []);
 
   return (
-    <div className="wofbando-container w-full bg-white p-[5%] flex flex-col max-sm:gap-14 gap-20">
+    <div className="wofbando-container w-full bg-[#F5ECE7] p-[5%] flex flex-col max-sm:gap-14 gap-20">
       {WorldofBandOdata.map((item, index) => (
         <div
           key={index}
