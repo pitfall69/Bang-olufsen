@@ -67,11 +67,11 @@ const HomePageVideo = () => {
   }, []);
 
   return (
-    <div className="pt-[20vh] bg-[#F5ECE7]">
+    <div className="pt-[20vh] max-sm:pt-[5vh] bg-[#F5ECE7] overflow-hidden">
       <div className="text-container-video h-[15vh] w-full pb-10 max-md:pb-5 flex  items-center justify-center flex-col gap-3">
         <h1
           ref={h1Ref}
-          className="text-5xl h-fit w-fit overflow-hidden max-md:text-xl leading-tight font-Decorative uppercase"
+          className="text-5xl h-fit w-fit overflow-hidden max-md:text-2xl leading-tight font-Decorative uppercase"
         >
           Experience Joy in Motion
         </h1>

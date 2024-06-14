@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useCallback, useRef } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import SplitTextJS from "split-text-js";
-
+import LocomotiveScroll from 'locomotive-scroll';
 const HomeWorldBandO = React.memo(() => {
   const observerOptions = useMemo(
     () => ({
@@ -76,14 +76,12 @@ const HomeWorldBandO = React.memo(() => {
     gsap.registerPlugin(ScrollTrigger);
     const splitedwbandoref = new SplitTextJS(wbandoref.current)
     gsap.from(splitedwbandoref.chars,{
-      opacity : 0,
-      stagger:.05,
-      duration:1,
+      y:200,
+      stagger:0.02,
       scrollTrigger:{
         trigger:wbandoref.current,
-        start:"top 40%",
-        end:"top -20%",
-        markers:true
+        start:"top 50%",
+        end:"top 20%",
       }
     })
     const services = document.querySelectorAll(".service");
@@ -144,18 +142,17 @@ const HomeWorldBandO = React.memo(() => {
     ],
     []
   );
-
   return (
     <div className="bg-[#F5ECE7] py-[5vh]">
       <div className="w-full ">
         <h1
           ref={wbandoref}
-          className="text-[10rem] w-full h-fit text-center overflow-hidden uppercase bg-[#F5ECE7] font-Secondary"
+          className="text-[10rem] max-sm:text-3xl w-full h-fit text-center leading-none overflow-hidden uppercase font-primary"
         >
           World of B&O
         </h1>
       </div>
-      <div className="w-full h-full p-5 flex pt-[20vh] flex-col max-sm:gap-[15vw] max-md:gap-[25vw] max-lg:gap-[30vw] gap-10 bg-[#F5ECE7]">
+      <div className="w-full h-full p-5 flex pt-[20vh] max-sm:pt-[5vh] flex-col max-sm:gap-[15vw] max-md:gap-[25vw] max-lg:gap-[30vw] gap-10 bg-[#F5ECE7]">
         {homebandodata.map((item, index) => (
           <div
             key={index}
@@ -192,3 +189,4 @@ const HomeWorldBandO = React.memo(() => {
 });
 
 export default HomeWorldBandO;
+
