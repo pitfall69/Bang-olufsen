@@ -55,20 +55,19 @@ const HomePageVideo = () => {
     });
     gsap.from(splitedh3.chars, {
       y: 100,
-      stagger:0.01,
-      ease:"power1.in",
+      stagger: 0.01,
+      ease: "power1.in",
       scrollTrigger: {
         trigger: ".text-container-video",
         start: "top 50%",
         end: "top 20%",
-        
       },
     });
   }, []);
 
   return (
     <div className="pt-[20vh] max-sm:pt-[5vh] bg-[#F5ECE7] overflow-hidden">
-      <div className="text-container-video h-[15vh] w-full pb-10 max-md:pb-5 flex  items-center justify-center flex-col gap-3">
+      <div className="text-container-video h-[15vh] w-full pb-10 max-md:pb-5 flex items-center justify-center flex-col gap-3">
         <h1
           ref={h1Ref}
           className="text-5xl h-fit w-fit overflow-hidden max-md:text-2xl leading-tight font-Decorative uppercase"
@@ -79,12 +78,12 @@ const HomePageVideo = () => {
           ref={h3Ref}
           className="uppercase h-fit w-fit text-center overflow-hidden leading-tight font-semibold font-Secondary text-xl opacity-60 max-md:text-sm"
         >
-        Beopoly Ex
+          Beopoly Ex
         </h3>
       </div>
       <div
         ref={container}
-        className="relative  flex items-center justify-center h-screen overflow-hidden"
+        className="relative flex items-center justify-center h-screen overflow-hidden"
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
@@ -99,7 +98,7 @@ const HomePageVideo = () => {
             ></video>
           </motion.div>
         </div>
-        <div className="w-[10%] flex text-white gap-6 max-xl:gap-4 max-sm:gap-0 max-sm:right-[12%] absolute bottom-[2%] max-xl:right-[5%] right-0 h-[6vh] ">
+        <div className="w-[10%] flex text-white gap-6 max-xl:gap-4 max-sm:gap-0 max-sm:right-[12%] absolute bottom-[2%] max-xl:right-[5%] right-0 h-[6vh]">
           <button onClick={toggleMuteUnmute}>
             {isMuted ? (
               <RiVolumeMuteFill className="p-3 h-[5vh] w-[5vh]" />

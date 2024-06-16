@@ -1,5 +1,7 @@
 import React from "react";
 import Inner from "../Components/latouts/Inner";
+import ShopLanding from "../Components/ShopLanding";
+import Products from "../Components/Products"
 const Speakers = () => {
   const Productsdata = [
     {
@@ -49,9 +51,11 @@ const Speakers = () => {
   ];
   return (
     <Inner>
+      <div>
+        <ShopLanding/>
+      </div>
       <div className="w-full">
-        <div className="h-screen w-full bg-zinc-800"></div>
-        <Products />
+        <Products Productsdata={Productsdata} />
         <div className="h-screen w-full bg-zinc-800"></div>
       </div>
     </Inner>

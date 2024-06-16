@@ -2,7 +2,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Products = ({ Productsdata }) => {
   return (
-    <div className="flex flex-col justify-between items-center gap-1">
+    <div className="flex flex-col justify-between p-2 bg-[#f5ece7] items-center gap-2">
       <Content1
         i1={Productsdata[0]}
         i2={Productsdata[1]}
@@ -15,10 +15,12 @@ const Products = ({ Productsdata }) => {
   );
 };
 
-const Content = ({ i , height}) => {
+const Content = ({ i, height }) => {
   return (
-    <div className={`md:flex gap-1 w-full max-md:h-full
-        relative ${height ? height : "h-screen"}`}>
+    <div
+      className={`md:flex gap-2 w-full max-md:h-full
+        relative ${height ? height : "h-screen"}`}
+    >
       {i.map((item, index) => (
         <div
           key={index}
@@ -44,14 +46,14 @@ const Content = ({ i , height}) => {
 
 const Content1 = ({ i1, i2, i3 }) => {
   return (
-    <div className="md:h-[150vh] h-screen w-full flex max-md:flex-col gap-1">
+    <div className=" h-screen w-full flex max-md:flex-col gap-2">
       <div className="left h-full w-full md:w-[70%] relative">
         <img
           className="w-full h-full object-cover"
           src={i1.productImage}
           alt=""
         />
-        <div className="about absolute bottom-4 w-[95%] text-white left-4 font-Secondary flex justify-between items-center">
+        <div className="about absolute bottom-4 w-[95%] -translate-x-[2%] text-white left-4 font-Secondary flex justify-between  items-center">
           <div className="cont">
             <h1 className="text-3xl">{i1.title}</h1>
             <h2 className="text-xl">{i1.des}</h2>
@@ -59,7 +61,7 @@ const Content1 = ({ i1, i2, i3 }) => {
           <ShopNowBtn />
         </div>
       </div>
-      <div className="right md:h-full h-[60vh] w-full md:w-[30%] gap-1 flex md:flex-col">
+      <div className="right md:h-full h-[60vh] w-full md:w-[30%] gap-2 flex md:flex-col">
         <div className="rtop md:h-1/2 h-full max-md:w-1/2">
           <img
             className="w-full h-full object-cover"
@@ -82,7 +84,7 @@ const Content1 = ({ i1, i2, i3 }) => {
 const ShopNowBtn = () => {
   return (
     <div className="button">
-      <button className="font-Secondary text-xl flex items-center gap-2">
+      <button className="font-Secondary text-xl max-md:text-sm flex items-center gap-2">
         Shop Now <MdArrowOutward />
       </button>
     </div>
