@@ -16,7 +16,7 @@ const BorderAnim = ({ customindex }) => {
   });
   return (
     <div>
-      <div className="h-[1px] w-[96%] flex my-10 mx-auto relative">
+      <div className={`h-[1px] w-[96%] ${customindex === 2 && "mt-[10vh]"} flex my-10 mx-auto relative`}>
         <div
           className={`${`border-line${customindex}`} absolute left-1/2 top-0 w-[0] h-full bg-zinc-500`}
         ></div>

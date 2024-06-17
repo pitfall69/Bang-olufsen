@@ -1,7 +1,7 @@
 import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-const Button = ({ text, customclassName }) => {
+const Button = ({ text, customclassName , borderColor }) => {
   const { contextSafe } = useGSAP();
   const handleMouseEnter = contextSafe(() => {
     gsap.to(`.${customclassName}`, {
@@ -23,7 +23,7 @@ const Button = ({ text, customclassName }) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="h-[2rem] text-[1rem] leading-[2rem] px-5 button overflow-hidden w-fit border-[1px] border-black "
+      className={`h-[2.1rem] text-[1rem] leading-[2rem] px-5 button overflow-hidden w-fit border-[1px] ${borderColor ? borderColor : "border-black"} `}
     >
       <h1 className={`${customclassName}`}>{text}</h1>
       <h1 className={`${customclassName}`}>{text}</h1>

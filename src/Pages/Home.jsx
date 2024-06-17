@@ -8,6 +8,8 @@ import HomePagePoduct from "../Components/HomePagePoduct";
 import SincePage from "../Components/SincePage";
 import LocomotiveScroll from "locomotive-scroll";
 
+import MarqueeText from "../Components/MarqueeText"
+
 const Home = () => {
   const scrollRef = useRef(null);
 
@@ -27,17 +29,21 @@ const Home = () => {
     <div ref={scrollRef} data-scroll-container>
       <Inner>
         <LandingPage />
-        <div className="w-full h-screen"></div>
+        <div className="w-full h-screen bg-[#fff]"></div>
         <HomePagePoduct />
         {/* <SincePage /> */}
-        <div className="w-full h-screen"></div>
+        <div className="w-full h-screen bg-[#fff]"></div>
         <HomeWorldBandO />
         <HomePageVideo />
-        {/* <MarqueeText/> */}
-        <div className="w-full h-screen bg-[#F5ECE7]"></div>
+        <div className="w-full h-[80vh] bg-[#000]">
+        <MarqueeText/>
+        <MarqueeText/>
+        </div>
+        <div className="w-full h-[50vh] bg-[#fff]">
+          </div>
         <Footer />
       </Inner>
     </div>
   );
-}
-export default Home
+};
+export default Home;

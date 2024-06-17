@@ -1,7 +1,8 @@
 import React from "react";
 import Inner from "../Components/latouts/Inner";
 import ShopLanding from "../Components/ShopLanding";
-import Products from "../Components/Products"
+import Products from "../Components/Products";
+import Footer from "../Components/Footer";
 const Speakers = () => {
   const Productsdata = [
     {
@@ -21,43 +22,55 @@ const Speakers = () => {
     {
       title: "BEOSOUND LEVEL",
       des: "Portable WiFi Speaker",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/UW4JhU9Eebcs4l6Lj5qqD/e543eb5e1838148556b75cf33cfb8ce0/Beosound_Level_0257_Sound_And_Vision_For_Your_Home.png?q=90&w=1920&fit=fill&fm=webp",
+      productImage:
+        "https://images.ctfassets.net/8cd2csgvqd3m/UW4JhU9Eebcs4l6Lj5qqD/e543eb5e1838148556b75cf33cfb8ce0/Beosound_Level_0257_Sound_And_Vision_For_Your_Home.png?q=90&w=1920&fit=fill&fm=webp",
     },
     {
       title: "BEOSOUND A9",
       des: "Powerful, minimalist speaker",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/3ibJiZ2Y3fNxZoQDKkXNUr/d4e565e084a73310350162a47afefd8c/A9_square.jpg?q=90&w=1920&fit=fill&fm=webp",
+      productImage:
+        "https://images.ctfassets.net/8cd2csgvqd3m/3ibJiZ2Y3fNxZoQDKkXNUr/d4e565e084a73310350162a47afefd8c/A9_square.jpg?q=90&w=1920&fit=fill&fm=webp",
     },
     {
       title: "BEOSOUND 2 FERRARI EDITION",
       des: "Powerful home speaker",
-      productImage:"src/assets/images/beoplay ferrari.jpg"
+      productImage: "src/assets/images/beoplay ferrari.jpg",
     },
     {
       title: "BEOLAB 50",
       des: "Classic floor standing speakers",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/3f7A1UsdHkxMJZbA4MbwSR/1cb1c8c433a125e46c49957e66045cfb/Beolab_50_design.png?q=85&fm=webp&w=828&h=828&fit=fill"
+      productImage:
+        "https://images.ctfassets.net/8cd2csgvqd3m/3f7A1UsdHkxMJZbA4MbwSR/1cb1c8c433a125e46c49957e66045cfb/Beolab_50_design.png?q=85&fm=webp&w=828&h=828&fit=fill",
     },
     {
       title: "BEOLAB 8",
       des: "Powerful compact speaker",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/2wONtteJLOcycGbvqXgfR0/a61146d95b8c237ce6432bced54ef465/Lifestyle-Beolab-8---0006---2000x2000.png.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
+      productImage:
+        "https://images.ctfassets.net/8cd2csgvqd3m/2wONtteJLOcycGbvqXgfR0/a61146d95b8c237ce6432bced54ef465/Lifestyle-Beolab-8---0006---2000x2000.png.jpg?q=90&fm=webp&w=828&h=828&fit=fill",
     },
     {
       title: "BEOLAB 18",
       des: "Acoustic work of art",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/6KImtrsmB3GfoLvLRnfgZj/985e57e13f6e4719fd2d5ca72a686759/Beauty-shot-Beoconnect-Core-0012-S2000x2000px.jpg?q=85&fm=webp&w=828&h=828&fit=fill"
+      productImage:
+        "https://images.ctfassets.net/8cd2csgvqd3m/6KImtrsmB3GfoLvLRnfgZj/985e57e13f6e4719fd2d5ca72a686759/Beauty-shot-Beoconnect-Core-0012-S2000x2000px.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
     },
   ];
+
+  const ShopLandingdata = {
+    Img: "http://localhost:5173/src/assets/images/HomepageImage/hp21.webp",
+    Title: "Premium Audio Experience",
+    Para: "Experience rich, authentic sound with Bang & Olufsen's premium speakers, crafted to perfection for stunning clarity and superior acoustics.",
+    shopQue: "WHICH SPEAKER IS RIGHT FOR YOU?",
+    shopCompare: "Compare our speakers and get help finding your perfect match.",
+  };
+
+
   return (
     <Inner>
-      <div>
-        <ShopLanding/>
-      </div>
-      <div className="w-full">
-        <Products Productsdata={Productsdata} />
-        <div className="h-screen w-full bg-zinc-800"></div>
-      </div>
+    <ShopLanding ShopLandingdata={ShopLandingdata}/>
+      <Products Productsdata={Productsdata} />
+      <div className="h-screen w-full bg-[#fff]"></div>
+      <Footer />
     </Inner>
   );
 };

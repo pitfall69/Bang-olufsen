@@ -1,7 +1,7 @@
 import React from 'react'
 import Inner from '../Components/latouts/Inner'
 import Products from '../Components/Products';
-import ProductLandingPage from '../Components/ProductLandingPage';
+import ShopLanding from '../Components/ShopLanding';
 
 const Soundbars = () => {
   const Productsdata = [
@@ -50,17 +50,21 @@ const Soundbars = () => {
       productImage:"https://images.ctfassets.net/8cd2csgvqd3m/29mUtF3dItfkSGBYvj6XjW/28560904f19dcf1cffe06a1698d2be07/STAGE_square.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
     },
   ];
-   const LandingPageDate = 
-    {
-      
-    }
+  const ShopLandingdata = {
+    Img: "https://manofmany.com/wp-content/uploads/2022/09/Beosound-Theatre-5.jpg",
+    Title: "Powerful Audio Enhancement",
+    Para: "Enhance your home entertainment with Bang & Olufsen soundbars, offering powerful, crystal-clear sound and elegant design to elevate your audio experience to new heights",
+    shopQue: "WHICH SOUNDBAR IS RIGHT FOR YOU?",
+    shopCompare: "Compare our soundbar and get help finding your perfect match.",
+  };
+
   return (
     <Inner>
-      <div className="w-full">
-        <ProductLandingPage/>
+   
+       <ShopLanding ShopLandingdata={ShopLandingdata}/>
         <Products Productsdata={Productsdata} />
         <div className="h-screen w-full bg-zinc-800"></div>
-      </div>
+    
     </Inner>
   );
 }

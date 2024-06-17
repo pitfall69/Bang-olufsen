@@ -8,7 +8,9 @@ import Footer from "../Components/Footer";
 const Worldbando = () => {
   return (
     <Inner>
-      <div className="w-full h-screen bg-red-200"></div>
+      <div className="w-full h-screen   ">
+        <img className="w-full h-full object-cover " src="https://images.ctfassets.net/8cd2csgvqd3m/hiqrVzIG3yrNETv6VusUc/07ac1ccbb2356d450128fe405e7479cc/Lifestyle-Beosound-A5-Spaced-Aluminium-PR-2023-Covers-BO4A5332-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=810&fit=fill" alt="" />
+      </div>
       <WorldofBandO />
       <Footer />
     </Inner>
@@ -164,12 +166,13 @@ const WorldofBandO = () => {
           trigger: item,
           start: "top 60%",
           end: "top 40%",
-          scrub: 1,
+          scrub: 1.5,
           // markers:true
         },
       });
-      tl.from(title, { y: 50, opacity: 0, duration: 1.5 })
-      .from(paragraph,{ y: 50, opacity: 0, duration: 1.5 },
+      tl.from(title, { y: 50, opacity: 0, duration: 1.5 }).from(
+        paragraph,
+        { y: 50, opacity: 0, duration: 1.5 },
         "-=1"
       );
     });
@@ -197,7 +200,7 @@ const WorldofBandO = () => {
   }, []);
 
   return (
-    <div className="wofbando-container w-full bg-[#F5ECE7] p-[5%] flex flex-col max-sm:gap-14 gap-20">
+    <div className="wofbando-container w-full bg-[#ffffff] p-[5%] flex flex-col max-sm:gap-14 gap-20">
       {WorldofBandOdata.map((item, index) => (
         <div
           key={index}

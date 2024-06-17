@@ -28,7 +28,7 @@ const HomePagePoduct = () => {
       {HomePageProductData.map((item, index) => (
         <div
           key={index}
-          className="relative h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
+          className="relative bg-[#fff] h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
         >
           <div className="w-1/2 h-full max-md:w-full max-md:h-[50%] ">
             <img

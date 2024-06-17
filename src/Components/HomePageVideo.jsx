@@ -7,6 +7,7 @@ import { GoUnmute } from "react-icons/go";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitTextJS from "split-text-js";
+import TextAnimation from "./TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,53 +42,25 @@ const HomePageVideo = () => {
     }
   };
 
-  useEffect(() => {
-    const splitedh1 = new SplitTextJS(h1Ref.current);
-    const splitedh3 = new SplitTextJS(h3Ref.current);
-    gsap.from(splitedh1.chars, {
-      y: 100,
-      stagger: 0.01,
-      scrollTrigger: {
-        trigger: ".text-container-video",
-        start: "top 60%",
-        end: "top 30%",
-      },
-    });
-    gsap.from(splitedh3.chars, {
-      y: 100,
-      stagger: 0.01,
-      ease: "power1.in",
-      scrollTrigger: {
-        trigger: ".text-container-video",
-        start: "top 50%",
-        end: "top 20%",
-      },
-    });
-  }, []);
-
   return (
-    <div className="pt-[20vh] max-sm:pt-[5vh] bg-[#F5ECE7] overflow-hidden">
+    <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#Fff] overflow-hidden">
       <div className="text-container-video h-[15vh] w-full pb-10 max-md:pb-5 flex items-center justify-center flex-col gap-3">
-        <h1
-          ref={h1Ref}
-          className="text-5xl h-fit w-fit overflow-hidden max-md:text-2xl leading-tight font-Decorative uppercase"
-        >
-          Experience Joy in Motion
-        </h1>
-        <h3
-          ref={h3Ref}
-          className="uppercase h-fit w-fit text-center overflow-hidden leading-tight font-semibold font-Secondary text-xl opacity-60 max-md:text-sm"
-        >
-          Beopoly Ex
-        </h3>
+        <TextAnimation
+          text={"Experience the joy in Motion"}
+          textSize={"text-[3rem] max-sm:text-2xl"}
+        />
+        <TextAnimation className={'my-2'} text={"Beopoly Ex"} textSize={"text-[1.5rem] max-sm:text-xl"} />
       </div>
       <div
         ref={container}
-        className="relative flex items-center justify-center h-screen overflow-hidden"
+        className="relative flex items-center mt-5 justify-center h-screen overflow-hidden"
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
-          <motion.div style={{ y }} className="relative overflow-hidden w-full h-full">
+          <motion.div
+            style={{ y }}
+            className="relative overflow-hidden w-full h-full"
+          >
             <video
               ref={videoRef}
               autoPlay
