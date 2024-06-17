@@ -1,6 +1,7 @@
 import React from 'react'
 import Inner from '../Components/latouts/Inner'
 import Products from '../Components/Products';
+import ShopLanding from '../Components/ShopLanding';
 
 const Headphones = () => {
   const Productsdata = [
@@ -49,13 +50,22 @@ const Headphones = () => {
       productImage:"https://images.ctfassets.net/8cd2csgvqd3m/29mUtF3dItfkSGBYvj6XjW/28560904f19dcf1cffe06a1698d2be07/STAGE_square.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
     },
   ];
+  const ShopLandingdata = {
+    Img: "/src/assets/images/HomepageImage/hp12.webp",
+    Title: "Superior Sound On-the-Go",
+    Para: "Experience unparalleled audio quality with Bang & Olufsen headphones, designed for comfort and precision to elevate your listening pleasure wherever you are.",
+    shopQue: "WHICH HEADPHONE IS RIGHT FOR YOU?",
+    shopCompare: "Compare our headphone and get help finding your perfect match.",
+  };
+
   return (
     <Inner>
-      <div className="w-full">
-        <div className="h-screen w-full bg-zinc-800"></div>
+  
+      <ShopLanding ShopLandingdata={ShopLandingdata}/>
+    
         <Products Productsdata={Productsdata} />
         <div className="h-screen w-full bg-zinc-800"></div>
-      </div>
+     
     </Inner>
   );
 }

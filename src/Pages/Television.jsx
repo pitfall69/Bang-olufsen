@@ -1,6 +1,7 @@
 import React from 'react'
 import Inner from '../Components/latouts/Inner'
 import Products from "../Components/Products";
+import ShopLanding from '../Components/ShopLanding';
 
 const Television = () => {
   const Productsdata = [
@@ -8,15 +9,15 @@ const Television = () => {
       title: "BEOSOUND A5",
       des: "Powerful portable speaker",
       productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/5Cc3rxxAtXW2cB0UjuJib1/ada4137ba7dd9efe15f75279391dffe6/Beosound_A5_-Mosaic_-3.png?q=90&fm=webp&w=1440&h=810&fit=fill",
+        "https://images.ctfassets.net/8cd2csgvqd3m/2qDtQrfqzt8iOPLjy735jh/09b0d74387fccd92cf05c9b04a1b97ee/Harmony_BL28_16-9.png?q=90&fm=webp&w=1440&h=810&fit=pad",
     },
     {
       productImage:
-        "https://i.pinimg.com/564x/bd/d6/92/bdd692eccd9419d4bf8586a1a50e8ba8.jpg",
+        "https://images.ctfassets.net/8cd2csgvqd3m/0nHZnsYKbu3uXHrhkrQGD/029907d95c97ca0d8fc41d9146ab08dc/Harmony_carousel_movement_-_16.png?q=90&fm=webp&w=828&h=828&fit=fill",
     },
     {
       productImage:
-        "https://i.pinimg.com/474x/9a/82/6d/9a826deed825dace1000554974b5c29d.jpg",
+        "https://images.ctfassets.net/8cd2csgvqd3m/3IV4ffFlHeopnXmsPbFGPk/4dcd79ef00ec5b82de41bcd3f7ce0598/Sound_And_Vision_For_Your_Home_Beovision_Harmony___Beolab_28_0017_Interior_Shot__1_.png?q=90&fm=webp&w=828&h=828&fit=fill",
     },
     {
       title: "BEOPLAY H95 FERRARI EDITION",
@@ -49,13 +50,22 @@ const Television = () => {
       productImage:"https://images.ctfassets.net/8cd2csgvqd3m/29mUtF3dItfkSGBYvj6XjW/28560904f19dcf1cffe06a1698d2be07/STAGE_square.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
     },
   ];
+  const ShopLandingdata = {
+    Img: "https://media.gqmagazine.fr/photos/6273d80700babce15a415355/16:9/w_2560%2Cc_limit/tv%2520cover.png",
+    Title: "Ultimate Viewing Experience",
+    Para: "Discover the perfect fusion of cutting-edge technology and sleek design with Bang & Olufsen televisions, delivering stunning visuals and exceptional sound for an immersive entertainment experience.",
+    shopQue: "WHICH TELEVISION IS RIGHT FOR YOU?",
+    shopCompare: "Compare our television and get help finding your perfect match.",
+  };
+
   return (
     <Inner>
-      <div className="w-full">
-        <div className="h-screen w-full bg-zinc-800"></div>
+     
+      <ShopLanding ShopLandingdata={ShopLandingdata}/>
+    
         <Products Productsdata={Productsdata} />
         <div className="h-screen w-full bg-zinc-800"></div>
-      </div>
+     
     </Inner>
   );
 }

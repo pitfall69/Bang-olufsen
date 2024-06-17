@@ -8,14 +8,14 @@ const LandingPage = () => {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "300vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "200vh"]);
 
   return (
     <div className="h-screen overflow-hidden">
       <motion.div style={{ y }} className="relative h-full w-full">
       {/* <img
-          className="w-full h-screen object-cover"
-          src="https://www.lbtechreviews.com/wp-content/uploads/2022/06/BO-Beoplay-EX-lifestyle3-scaled-1.jpg"
+          className="w-full absolute z-[99] h-screen object-cover"
+          src="Naim Audio "
           fill
           alt="image"
         /> */}

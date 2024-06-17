@@ -28,7 +28,7 @@ const HomePagePoduct = () => {
       {HomePageProductData.map((item, index) => (
         <div
           key={index}
-          className="relative h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
+          className="relative bg-[#fff] h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
         >
           <div className="w-1/2 h-full max-md:w-full max-md:h-[50%] ">
             <img
@@ -37,9 +37,9 @@ const HomePagePoduct = () => {
               alt=""
             />
           </div>
-          <div className="w-1/2 h-full max-md:w-full p-1 max-md:h-[50%] ">
+          <div  className="w-1/2 h-full max-md:w-full p-1 max-md:h-[50%]">
             <img
-              className={`h-full w-full object-cover ${
+              className={`h-full w-full object-cover  ${
                 index === 2 && "object-top"
               } `}
               src={item.img2}
