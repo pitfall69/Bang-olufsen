@@ -3,8 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./Components/Navbar";
 import Loader from "./Components/Loader";
-import Home from "./Pages/Home";
-import Speakers from "./Pages/Speakers";
+// import Home from "./Pages/Home";
+// import Speakers from "./Pages/Speakers";
 import Support from "./Pages/Support"
 import Television from "./Pages/Television"
 import Soundbars from "./Pages/Soundbars";``
@@ -18,7 +18,6 @@ const scroll = new LocomotiveScroll({
 });
 
 
-
 const App = () => {
   const location = useLocation();
   return (
@@ -27,8 +26,8 @@ const App = () => {
       <Navbar location={location} key={location.pathname} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/speakers" element={<Speakers />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/speakers" element={<Speakers />} /> */}
           <Route path="/support" element={<Support/>} />
           <Route path="/headphones" element={<Headphones />} />
           <Route path="/soundbars" element={<Soundbars />} />
