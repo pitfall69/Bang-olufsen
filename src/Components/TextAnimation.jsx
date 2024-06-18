@@ -23,7 +23,7 @@ const TextAnimation = ({ text , textSize , className}) => {
   return (
     <h1
       ref={textRef}
-      className={`${textSize} ${className} max-sm:text-2xl w-full h-fit text-center leading-none overflow-hidden uppercase font-primary`}
+      className={`${textSize} w-full h-fit  text-center leading-none overflow-hidden uppercase font-primary`}
     >
       {text}
     </h1>

@@ -1,15 +1,19 @@
-import React, { memo, useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import Inner from "../Components/latouts/Inner";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Footer from "../Components/Footer";
 
 const Worldbando = () => {
   return (
     <Inner>
-      <div className="w-full h-screen   ">
-        <img className="w-full h-full object-cover " src="https://images.ctfassets.net/8cd2csgvqd3m/hiqrVzIG3yrNETv6VusUc/07ac1ccbb2356d450128fe405e7479cc/Lifestyle-Beosound-A5-Spaced-Aluminium-PR-2023-Covers-BO4A5332-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=810&fit=fill" alt="" />
+      <div className="w-full h-screen">
+        <img
+          className="w-full h-full object-cover"
+          src="https://images.ctfassets.net/8cd2csgvqd3m/hiqrVzIG3yrNETv6VusUc/07ac1ccbb2356d450128fe405e7479cc/Lifestyle-Beosound-A5-Spaced-Aluminium-PR-2023-Covers-BO4A5332-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=810&fit=fill"
+          alt=""
+          onLoad={() => console.log("Image loaded")}
+        />
       </div>
       <WorldofBandO />
       <Footer />
@@ -152,48 +156,63 @@ const WorldofBandO = () => {
     []
   );
 
-  useGSAP(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const img = gsap.utils.toArray(".col1 img");
-    const textContents = gsap.utils.toArray(".col2");
+    const handleImagesLoaded = () => {
+      const img = gsap.utils.toArray(".col1 img");
+      const textContents = gsap.utils.toArray(".col2");
 
-    textContents.forEach((item) => {
-      const paragraph = item.querySelector(".paragraph span");
-      const title = item.querySelector(".title span");
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "top 60%",
-          end: "top 40%",
-          scrub: 1.5,
-          // markers:true
-        },
+      textContents.forEach((item) => {
+        const paragraph = item.querySelector(".paragraph span");
+        const title = item.querySelector(".title span");
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "top 60%",
+            end: "top 40%",
+            scrub: 1.5,
+            // markers:true
+          },
+        });
+        tl.from(title, { y: 50, opacity: 0, duration: 1.5 }).from(
+          paragraph,
+          { y: 50, opacity: 0, duration: 1.5 },
+          "-=1"
+        );
       });
-      tl.from(title, { y: 50, opacity: 0, duration: 1.5 }).from(
-        paragraph,
-        { y: 50, opacity: 0, duration: 1.5 },
-        "-=1"
-      );
+
+      img.forEach((item) => {
+        gsap.set(item, {
+          clipPath: "polygon(0 0, .1% 0, .1% .1%, 0 .1%)",
+          opacity: 1,
+        });
+        gsap.to(item, {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "0% 80%",
+            end: "0 40%",
+            scrub: 3,
+          },
+        });
+      });
+    };
+
+    // Wait for all images to be fully loaded before initializing GSAP animations
+    const images = document.querySelectorAll(".col1 img");
+    let loadedCount = 0;
+    images.forEach((img) => {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          handleImagesLoaded();
+        }
+      });
     });
 
-    img.forEach((item) => {
-      gsap.set(item, {
-        clipPath: "polygon(0 0, .1% 0, .1% .1%, 0 .1%)",
-        opacity: 1,
-      });
-      gsap.to(item, {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "0% 80%",
-          end: "0 40%",
-          scrub: 3,
-        },
-      });
-    });
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

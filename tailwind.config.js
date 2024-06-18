@@ -7,12 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      screens: {
-        sm: '480px',
-        md: '768px',
-        lg: '976px',
-        xl: '1440px',
-      },
       fontFamily: {
         primary: ["ProximaNova"],
         Secondary:["GTWALSHEIM"],

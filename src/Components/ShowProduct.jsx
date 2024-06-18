@@ -28,7 +28,7 @@ const ShowProduct = React.memo(({ setopenProduct, openProduct, showproductdata }
         </div>
         <h2 className="font-primary pt-2 uppercase">{showproductdata.title}</h2>
         <h4 className="text-2xl pt-1 font-Secondary">{showproductdata.des}</h4>
-        <h5 className="text-sm font-primary">From $1000</h5>
+        <h5 className="text-sm font-primary">{showproductdata.price}</h5>
       </div>
     </div>
   );

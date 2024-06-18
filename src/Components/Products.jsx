@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from "react";
-import { MdArrowOutward } from "react-icons/md";
+import ShopNowBtn from "../Components/ShopNowBtn"
 import ShowProduct from "./ShowProduct";
-
 const Products = ({ Productsdata }) => {
   const [openProduct, setopenProduct] = useState(false);
   const [showproductdata, setshowproductdata] = useState("");
@@ -12,7 +11,7 @@ const Products = ({ Productsdata }) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between px-2 relative bg-[#FFF9F1] items-center gap-2">
+    <div className="flex flex-col justify-between px-2 relative bg-[#FFF9F1] items-center ">
       <ShowProduct
         setopenProduct={setopenProduct}
         showproductdata={showproductdata}
@@ -43,17 +42,27 @@ const Products = ({ Productsdata }) => {
 
 const Content = React.memo(({ items, height, setshowproductdata }) => {
   return (
-    <div className={`md:flex gap-2 w-full max-md:h-full relative ${height || "h-screen"}`}>
+    <div
+      className={`md:flex gap-2 w-full max-md:h-full relative ${
+        height || "h-screen"
+      }`}
+    >
       {items.map((item, index) => (
         <div
           key={index}
           onClick={() => setshowproductdata(item)}
-          className="pb-2 md:mb-0 cursor-pointer w-full relative md:h-full"
+          className="pb-2 md:mb-0 cursor-pointer overflow-hidden w-full relative md:h-full"
         >
-          <img className="h-full w-full object-cover" src={item.productImage} alt={item.title} />
-          <div className="about text-white absolute bottom-4 w-[90%] left-4 font-Secondary flex justify-between items-end">
+          <img
+            className="h-full w-full object-cover"
+            src={item.productImage}
+            alt={item.title}
+          />
+          <div className="about text-white absolute bottom-4 w-[97%] max-sm:w-[95%] left-[1%] max-sm:left-[3%] font-Secondary flex justify-between items-end">
             <div>
-              <h1 className="md:text-3xl text-xl max-sm:text-sm">{item.title}</h1>
+              <h1 className="md:text-3xl text-xl max-sm:text-sm">
+                {item.title}
+              </h1>
               <h2 className="md:text-xl text-sm max-sm:text-xs">{item.des}</h2>
             </div>
             <ShopNowBtn />
@@ -65,13 +74,16 @@ const Content = React.memo(({ items, height, setshowproductdata }) => {
 });
 
 const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
-  const handleClick = useCallback((item) => {
-    setshowproductdata(item);
-  }, [setshowproductdata]);
+  const handleClick = useCallback(
+    (item) => {
+      setshowproductdata(item);
+    },
+    [setshowproductdata]
+  );
 
   return (
-    <div className="h-screen w-full flex max-md:flex-col gap-2">
-      <div className="left h-full cursor-pointer w-full md:w-[70%] relative">
+    <div className="h-screen w-full flex max-md:flex-col gap-2 overflow-hidden">
+      <div className="left h-full cursor-pointer pb-2 w-full md:w-[70%] relative">
         <img
           onClick={() => handleClick(i1)}
           className="w-full h-full object-cover"
@@ -86,14 +98,18 @@ const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
           <ShopNowBtn />
         </div>
       </div>
-      <div className="right md:h-full h-[50vh] w-full md:w-[30%] gap-2 pb-2 flex md:flex-col">
+      <div className="right md:h-full h-[50vh]  w-full md:w-[30%] flex md:flex-col">
         {[i2, i3].map((item, index) => (
           <div
             key={index}
             onClick={() => handleClick(item)}
-            className="cursor-pointer h-full md:h-1/2 max-md:w-1/2"
+            className="cursor-pointer  overflow-hidden h-full pb-2 md:h-1/2 max-md:w-1/2"
           >
-            <img className="w-full h-full object-cover" src={item.productImage} alt={item.title} />
+            <img
+              className="w-full h-full object-cover"
+              src={item.productImage}
+              alt={item.title}
+            />
           </div>
         ))}
       </div>
@@ -101,14 +117,5 @@ const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
   );
 });
 
-const ShopNowBtn = React.memo(() => {
-  return (
-    <div className="button">
-      <button className="font-Secondary text-xl max-md:text-sm max-sm:text-xs flex items-center gap-2">
-        Shop Now <MdArrowOutward />
-      </button>
-    </div>
-  );
-});
 
 export default Products;

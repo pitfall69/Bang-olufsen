@@ -69,10 +69,10 @@ const Inner = ({ children }) => {
     },
   };
   return (
-    <div className="inner bg-[#000]">
+    <div className="inner bg-[#fff]">
       <motion.div
         {...anim(slide)}
-        className="slide fixed top-0 z-[9999] bg-white left-0 h-screen w-screen"
+        className="slide fixed top-0 z-[9999] bg-black left-0 h-screen w-screen"
       ></motion.div>
       <motion.div className="page" {...anim(perspective)}>
         <motion.div {...anim(opacity)}>{children}</motion.div>

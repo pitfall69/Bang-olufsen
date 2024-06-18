@@ -44,12 +44,12 @@ const HomePageVideo = () => {
 
   return (
     <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#Fff] overflow-hidden">
-      <div className="text-container-video h-[15vh] w-full pb-10 max-md:pb-5 flex items-center justify-center flex-col gap-3">
+      <div className="text-container-video h-[15vh] w-full  max-md:pb-5 flex items-center justify-center flex-col gap-3">
         <TextAnimation
           text={"Experience the joy in Motion"}
-          textSize={"text-[3rem] max-sm:text-2xl"}
+          textSize={"text-[3rem] max-sm:text-2xl max-lg:text-[2rem] max-xl:text-[2.5rem] "}
         />
-        <TextAnimation className={'my-2'} text={"Beopoly Ex"} textSize={"text-[1.5rem] max-sm:text-xl"} />
+        <TextAnimation text={"Beopoly Ex"} textSize={"text-[1.5rem] max-sm:text-xl max-lg:text-[1rem]"} />
       </div>
       <div
         ref={container}

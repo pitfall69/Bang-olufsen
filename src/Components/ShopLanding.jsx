@@ -26,14 +26,14 @@ const ShopLanding = ({ShopLandingdata}) => {
             alt=""
           />
 
-          <div className="h-full w-full max-sm:mt-[15vh] backdrop-blur-sm top-0 flex px-20 max-lg:px-10 max-sm:px-5">
+          <div className="h-full w-full max-sm:mt-[15vh] backdrop-blur-[.5px] top-0 flex px-20 max-lg:px-10 max-sm:px-5">
             <div className="text-white flex flex-col justify-center gap-8">
               <h1 className="text-7xl font-primary font-[650] max-md:text-5xl">
                 {titleParts[0]}
                 <br />
                 {titleParts.slice(1).join(' ')}
               </h1>
-              <h2 className="text-zinc-300 font-Secondary w-[60%] tracking-tight leading-5 max-md:text-sm max-sm:w-full">
+              <h2 className="text-white font-Secondary w-[60%] tracking-tight leading-5 max-md:text-sm max-sm:w-full">
                 {ShopLandingdata.Para}
               </h2>
               <Button text={'Explore'} customclassName={"findoutmore"} borderColor={"#fff"} />
