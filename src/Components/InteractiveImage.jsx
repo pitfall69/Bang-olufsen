@@ -203,7 +203,7 @@ import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 const InteractiveImage = () => {
   const imageContainerRef = useRef(null);
-  const [imageSrc] = useState("/src/assets/1718641855131.jpg");
+  const [imageSrc] = useState("/src/assets/images/HomepageImage/landingPage.webp");
   const easeFactor = useRef(0.02);
   const mousePosition = useRef({ x: 0.5, y: 0.5 });
   const targetMousePosition = useRef({ x: 0.5, y: 0.5 });
@@ -308,7 +308,7 @@ const InteractiveImage = () => {
 
     const getFOV = (width) => {
       if (width < 768) {
-        return 120; 
+        return 90; 
       } else if (width < 1024) {
         return 60;
       } else {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GrClose } from "react-icons/gr";
 import { NavLink, Link } from "react-router-dom";
+import Logo from "../Components/Logo"
 
 const FullScreenNavbar = ({
   setOpenNav,
@@ -42,13 +43,9 @@ const FullScreenNavbar = ({
             </div>
           ))}
         </div>
-        <div className="logo-container sm:hidden">
-          <img
-            className="w-[10rem]"
-            src="src/assets/images/logo.webp"
-            alt="Logo"
-          />
-        </div>
+        <Link to="/" className="logo-container sm:hidden">
+         <Logo/>
+        </Link>
         <NavClosingButton setOpenNav={setOpenNav} openNav={openNav} />
       </div>
       <div
@@ -99,7 +96,7 @@ const FullScreenNavbar = ({
           {Navbardata.map((item, index) => (
             <NavLink
               to={item.path}
-              className="p-1 w-fit cursor-pointer"
+              className={(e)=> e.isActive ? "text-yellow-400" : "p-1 w-fit  cursor-pointer"}
               key={index}
             >
               {item.title}

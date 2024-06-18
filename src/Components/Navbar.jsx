@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useCallback, useRef , useEffect} from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { NavLink ,Link } from "react-router-dom";
 import gsap from "gsap";
 import FullScreenNavbar from "../Components/FullScreenNavbar";
 import { useGSAP } from "@gsap/react";
+import Logo from "./Logo";
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navLinkData, setNavLinkData] = useState(null);
@@ -189,11 +190,7 @@ const Navbar = () => {
   return (
     <div className="navcontainer max-2xl:px-5 w-full px-20 h-[8vh] text-white fixed flex justify-between items-center z-[99] top-0">
       <Link to="/" className="logo-container w-[10rem] overflow-hidden">
-        <img
-          className="h-full object-fit"
-          src="src/assets/images/logo.webp"
-          alt="Logo"
-        />
+        <Logo/>
       </Link>
       <div
         className={`flex ${
@@ -231,41 +228,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// const NavLinkAnimation = ({ text }) => {
-//   const lineRef = useRef();
-//   const { contextSafe } = useGSAP();
-//   const handleMouseEnter = contextSafe(() => {
-//     gsap.fromTo(
-//       lineRef.current,
-//       { width: "0%", left: "0%" },
-//       { width: "100%", ease: "power2.out", duration: 0.5 }
-//     );
-//   });
-//   const handleMouseLeave = contextSafe(() => {
-//     gsap.fromTo(
-//       lineRef.current,
-//       { width: "100%", left: "0%" },
-//       { width: "0%", left: "100%", ease: "power2.out" }
-//     );
-//   })
-//   return (
-//     <div
-//       onMouseEnter={handleMouseEnter}
-//       onMouseLeave={handleMouseLeave}
-//       className="relative overflow-hidden"
-//     >
-//       <h1>{text}</h1>
-//       <div
-//         ref={lineRef}
-//         className="w-0 h-[1px] bg-white absolute bottom-0"
-//       ></div>
-//     </div>
-//   );
-// };
-
-
-
 
 const NavLinkAnimation = ({ text }) => {
   const lineRef = useRef(null);

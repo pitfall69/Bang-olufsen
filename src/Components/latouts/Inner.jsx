@@ -15,16 +15,12 @@ const Inner = ({ children }) => {
     enter: {
       opacity: 1,
       transition: {
-        duration: .3,
+        duration: .2,
         ease:[0.32, 0, 0.67, 0]
       },
     },
     exit: {
       opacity: 1,
-      transition: {
-        duration: .2,
-        ease:[0.32, 0, 0.67, 0]
-      },
     },
   };
   const slide = {
@@ -58,21 +54,21 @@ const Inner = ({ children }) => {
       opacity:1
     },
     exit: {
-      y: 20,
+      y: -300,
       x: 100,
-      scale:0.90,
+      scale:.9,
       transition: {
-        duration: 1.8,
+        duration: 1.9,
         ease: [0.64, 0, 0.78, 0],
       },
-      opacity:0.001
+      opacity:.05
     },
   };
   return (
-    <div className="inner bg-[#fff]">
+    <div className="inner bg-black">
       <motion.div
         {...anim(slide)}
-        className="slide fixed top-0 z-[9999] bg-black left-0 h-screen w-screen"
+        className="slide fixed top-0 z-[9999] bg-white left-0 h-screen w-screen"
       ></motion.div>
       <motion.div className="page" {...anim(perspective)}>
         <motion.div {...anim(opacity)}>{children}</motion.div>
