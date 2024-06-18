@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { GrClose } from 'react-icons/gr';
-
+import Button from "../Components/Button"
 const ShowProduct = React.memo(({ setopenProduct, openProduct, showproductdata }) => {
   const handleClose = useCallback(() => {
     setopenProduct(false);
@@ -29,6 +29,8 @@ const ShowProduct = React.memo(({ setopenProduct, openProduct, showproductdata }
         <h2 className="font-primary pt-2 uppercase">{showproductdata.title}</h2>
         <h4 className="text-2xl pt-1 font-Secondary">{showproductdata.des}</h4>
         <h5 className="text-sm font-primary">{showproductdata.price}</h5>
+
+        <Button text={"Experience in Store"}/>
       </div>
     </div>
   );

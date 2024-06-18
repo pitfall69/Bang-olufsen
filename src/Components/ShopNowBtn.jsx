@@ -43,17 +43,17 @@ const ShopNowBtn = React.memo(({ idx }) => {
 
   return (
     <div className="button relative overflow-hidden">
-      <button className="h-[1.5rem] text-[1rem] overflow-hidden">
-        <h1 ref={h1Ref1} className={`shopNow-h1${idx} flex items-center gap-2`}>
+      <button className="h-[1.5rem] text-[1rem] max-sm:text-[.9rem] overflow-hidden">
+        <h1 ref={h1Ref1} className={` flex items-center gap-2 max-sm:gap-1`}>
           Shop Now <MdArrowOutward />
         </h1>
-        <h1 ref={h1Ref2} className={`shopNow-h1${idx} flex items-center gap-2`}>
+        <h1 ref={h1Ref2} className={` flex items-center gap-2 max-sm:gap-1`}>
           Shop Now <MdArrowOutward />
         </h1>
       </button>
       <div
         ref={borderRef}
-        className={`shopNow-border${idx} absolute bottom-1 left-0 h-[1px] w-[0] bg-white`}
+        className={`absolute bottom-1 left-0 h-[1px] w-[0] bg-white`}
       ></div>
     </div>
   );

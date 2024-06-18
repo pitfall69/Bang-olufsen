@@ -30,38 +30,54 @@ const Speakers = () => {
       price: "$1,499",
     },
     {
+      title: "BEOSOUND A1 2ND GEN",
+      des: "Portable Bluetooth speaker",
+      productImage:
+        "/src/assets/images/Speakers/Beosound_A1.webp",
+      price: "$299",
+    },
+    {
       title: "BEOSOUND A9",
       des: "Powerful, minimalist speaker",
-      productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/3CWJSQIgCjweW5xDyQGO4M/fb720e5ebf4045fd09001671991d0901/Beolab_90_mosaic_landscape_1.png?q=90&fm=webp&w=720&h=405&fit=fill",
-      price: "$",
+      productImage: "/src/assets/images/Speakers/Beosound_A9.webp",
+      price: "$3,399",
     },
     {
-      title: "BEOSOUND 2 FERRARI EDITION",
-      des: "Powerful home speaker",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/5F0ZA0Jzhr5pECOXxt6pbR/175a6a5f3272fa2c0565adcffd1d8466/Tableau-Beosound-Balance-0312-front-s2000x2000px.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
-      price: "$",
-    },
-    {
-      title: "BEOLAB 50",
-      des: "Classic floor standing speakers",
+      title: "BEOSOUND EXPLORE",
+      des: "Waterproof outdoor speaker",
       productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/3f7A1UsdHkxMJZbA4MbwSR/1cb1c8c433a125e46c49957e66045cfb/Beolab_50_design.png?q=85&fm=webp&w=828&h=828&fit=fill",
-      price: "$",
+        "/src/assets/images/Speakers/BEOSOUND EXPLORE.webp",
+      price: "$249",
     },
     {
       title: "BEOLAB 8",
       des: "Powerful compact speaker",
       productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/2wONtteJLOcycGbvqXgfR0/a61146d95b8c237ce6432bced54ef465/Lifestyle-Beolab-8---0006---2000x2000.png.jpg?q=90&fm=webp&w=828&h=828&fit=fill",
-      price: "$",
+        "/src/assets/images/Speakers/BEOLAB 8.webp",
+      price: "$6,598",
+     
     },
     {
-      title: "BEOLAB 18",
-      des: "Acoustic work of art",
+     title: "BEOSOUND BALANCE",
+      des: "Outstanding living room speaker",
       productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/6KImtrsmB3GfoLvLRnfgZj/985e57e13f6e4719fd2d5ca72a686759/Beauty-shot-Beoconnect-Core-0012-S2000x2000px.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
-      price: "$",
+        "/src/assets/images/Speakers/BEOSOUND BALANCE.webp",
+      price: "$3,399",
+    },
+    {
+      title: "BEOLIT 20",
+      des: "Powerful Bluetooth speaker",
+      productImage:
+        "https://static1.pocketlintimages.com/wordpress/wp-content/uploads/wm/154852-speakers-review-bang-olufsen-beolit-20-review-image1-trfkvhzixt.jpg",
+      price: "$599",
+     
+    },
+    {
+     title: "BEOSOUND LEVEL",
+      des: "Portable WiFi Speaker",
+      productImage:
+        "https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2021/02/Bang-Olufsen-Beosound-Level-WiFi-Speaker-Featured-image.jpg",
+      price: "$1,999",
     },
   ];
 
@@ -78,7 +94,7 @@ const Speakers = () => {
     <Inner>
       <ShopLanding ShopLandingdata={ShopLandingdata} />
       <Products Productsdata={Productsdata} />
-      <div className="h-screen w-full bg-[#fff]"></div>
+      <div className="h-[40vh] w-full bg-[#fff]"></div>
       <Footer />
     </Inner>
   );

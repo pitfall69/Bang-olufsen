@@ -2,42 +2,50 @@ import React from 'react'
 import Inner from '../Components/latouts/Inner'
 import Products from '../Components/Products';
 import ShopLanding from '../Components/ShopLanding';
-
+import Footer from '../Components/Footer';
 const Headphones = () => {
   const Productsdata = [
     {
       title: "BEOSOUND A5",
       des: "Powerful portable speaker",
       productImage:
-        "https://images.ctfassets.net/8cd2csgvqd3m/5Cc3rxxAtXW2cB0UjuJib1/ada4137ba7dd9efe15f75279391dffe6/Beosound_A5_-Mosaic_-3.png?q=90&fm=webp&w=1440&h=810&fit=fill",
+        "https://www.thecoolector.com/wp-content/uploads/2022/04/Beoplay-EX-0009-1.png",
     },
     {
+      title: "BEOSOUND A5",
+      des: "Powerful portable speaker",
       productImage:
-        "https://i.pinimg.com/564x/bd/d6/92/bdd692eccd9419d4bf8586a1a50e8ba8.jpg",
+        "https://assets.hardwarezone.com/img/2022/01/beoplay-eq-intro1.jpg",
     },
     {
+      title: "BEOPLAY E8 2.0",
+      des: "Powerful portable speaker",
       productImage:
-        "https://i.pinimg.com/474x/9a/82/6d/9a826deed825dace1000554974b5c29d.jpg",
+        "https://i.pcmag.com/imagery/reviews/02xU1WDV1kBYulztvQ9GkY5-3.fit_lim.size_1050x591.v1645222869.png",
     },
+   
     {
       title: "BEOPLAY H95 FERRARI EDITION",
       des: "premium over-ear headphones",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/26UvbAcVWwHiPghvRKIkT2/9bbce0d3cce217a1c7c22af6643a00cb/FerrariFashionShow_BeoplayH95FerrariEdition_feed-0928-03_W1080x607px.jpg?q=90&fm=webp&w=720&h=405&fit=fill",
+      productImage: "https://techmgzn.com/wp-content/uploads/2023/08/bo-ferrari-collection-beoplay-headphones.jpg",
     },
     {
-      title: "BEOVISION HARMONY",
-      des: "Watch the magic unfold",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/3IV4ffFlHeopnXmsPbFGPk/4dcd79ef00ec5b82de41bcd3f7ce0598/Sound_And_Vision_For_Your_Home_Beovision_Harmony___Beolab_28_0017_Interior_Shot__1_.png?q=90&fm=webp&w=828&h=828&fit=fill",
+      title: "BEOPLAY H8I",
+      des: "Revitalizing a modern classic",
+      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/2mQqIOB0evLI52G8Vm2CPg/ea5b5e67cdf0e782f8217f56fd3f6ea4/H8i_Pink_front2.png?q=90&fm=webp&w=720&h=720&fit=fill",
+      price:"$400"
     },
     {
-      title: "BEOVISION THEATRE",
-      des: "Cinematic home theatre",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/4QBps5McpzQqOwA8n4lZ3s/82bdd9067ad484d4b650a35c0b56dc93/TV_Immersive_Mobile.jpg?q=90&w=828&fit=fill&fm=webp"
+      title: "BEOPLAY HX",
+      des: "Comfortable, do-it-all headphones",
+      productImage:"https://luxussound.com/cdn/shop/files/Beoplay_HX_0174.jpg?v=1648624272&width=1500",
+      price:"$599"
     },
     {
-      title: "BEOPLAY EX",
-      des: "Next-gen wireless earbuds",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/67L5yl96I5icdB2H33Rzyn/b056cfa0717154733c025b33c6e84086/Lifestyle---Beoplay-EX---0562---The-Gift-Of-Music-2023---2000x2800.jpg?q=90&w=1920&fit=fill&fm=webp"
+      title: "BEOPLAY PORTAL",
+      des: "Elite gaming headset",
+      productImage:"https://images.idgesg.net/images/article/2021/03/beoplayportal-closeup-100882730-large.jpg",
+      price: "$499​"
     },
     {
       title: "BEOLAB 8",
@@ -45,9 +53,10 @@ const Headphones = () => {
       productImage:"https://images.ctfassets.net/8cd2csgvqd3m/2wONtteJLOcycGbvqXgfR0/a61146d95b8c237ce6432bced54ef465/Lifestyle-Beolab-8---0006---2000x2000.png.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
     },
     {
-      title: "BEOSOUND STAGE",
-      des: "Powerful Dolby Atmos soundbar",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/29mUtF3dItfkSGBYvj6XjW/28560904f19dcf1cffe06a1698d2be07/STAGE_square.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
+      title: "BEOPLAY H9 3RD GEN",
+      des: "ANC headphones with long battery life",
+      productImage:"https://www.digitaltrends.com/wp-content/uploads/2021/03/bang-and-olufsen-beoplay-hx-003.jpeg?p=1",
+      price:"$500"
     },
   ];
   const ShopLandingdata = {
@@ -60,12 +69,10 @@ const Headphones = () => {
 
   return (
     <Inner>
-  
       <ShopLanding ShopLandingdata={ShopLandingdata}/>
-    
         <Products Productsdata={Productsdata} />
         <div className="h-screen w-full bg-zinc-800"></div>
-     
+         <Footer/> 
     </Inner>
   );
 }

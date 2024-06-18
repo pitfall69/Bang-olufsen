@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import ShopNowBtn from "../Components/ShopNowBtn"
+import ShopNowBtn from "../Components/ShopNowBtn";
 import ShowProduct from "./ShowProduct";
 const Products = ({ Productsdata }) => {
   const [openProduct, setopenProduct] = useState(false);
@@ -11,7 +11,9 @@ const Products = ({ Productsdata }) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between px-2 relative bg-[#FFF9F1] items-center ">
+    <div
+      className={`flex flex-col justify-between px-2 relative bg-[#FFF9F1] items-center `}
+    >
       <ShowProduct
         setopenProduct={setopenProduct}
         showproductdata={showproductdata}
@@ -32,10 +34,25 @@ const Products = ({ Productsdata }) => {
         setshowproductdata={handleProductClick}
         items={[Productsdata[4], Productsdata[5]]}
       />
-      <Content
-        setshowproductdata={handleProductClick}
-        items={[Productsdata[6], Productsdata[7], Productsdata[8]]}
-      />
+      {Productsdata.length < 8 ? (
+        <Content
+          setshowproductdata={handleProductClick}
+          items={[Productsdata[6], Productsdata[7]]}
+        />
+      ) : (
+        <Content
+          setshowproductdata={handleProductClick}
+          items={[Productsdata[6], Productsdata[7], Productsdata[8]]}
+        />
+      )}
+      {Productsdata.length > 9 ? (
+        <Content
+          setshowproductdata={handleProductClick}
+          items={[Productsdata[9], Productsdata[10]]}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
@@ -55,15 +72,19 @@ const Content = React.memo(({ items, height, setshowproductdata }) => {
         >
           <img
             className="h-full w-full object-cover"
-            src={item.productImage}
-            alt={item.title}
+            src={item?.productImage}
+            alt={item?.title}
           />
-          <div className="about text-white absolute bottom-4 w-[97%] max-sm:w-[95%] left-[1%] max-sm:left-[3%] font-Secondary flex justify-between items-end">
+          <div
+            className={`about text-white absolute bottom-4  max-sm:w-[95%] ${
+              items.length > 1 ? "left-[2%] w-[96%]" : "left-[1%] w-[98%]"
+            } max-sm:left-[3%] font-Secondary flex justify-between items-end`}
+          >
             <div>
               <h1 className="md:text-3xl text-xl max-sm:text-sm">
-                {item.title}
+                {item?.title}
               </h1>
-              <h2 className="md:text-xl text-sm max-sm:text-xs">{item.des}</h2>
+              <h2 className="md:text-xl text-sm max-sm:text-xs">{item?.des}</h2>
             </div>
             <ShopNowBtn />
           </div>
@@ -98,24 +119,29 @@ const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
           <ShopNowBtn />
         </div>
       </div>
-      <div className="right md:h-full h-[50vh]  w-full md:w-[30%] flex md:flex-col">
+      <div className="right md:h-full h-[50vh] max-md:gap-2 w-full md:w-[30%] flex md:flex-col">
         {[i2, i3].map((item, index) => (
           <div
             key={index}
             onClick={() => handleClick(item)}
-            className="cursor-pointer  overflow-hidden h-full pb-2 md:h-1/2 max-md:w-1/2"
+            className="cursor-pointer relative  overflow-hidden h-full pb-2 md:h-1/2 max-md:w-1/2"
           >
             <img
               className="w-full h-full object-cover"
               src={item.productImage}
               alt={item.title}
             />
+            <div className="about absolute bottom-4 w-[95%] text-white left-4 font-Secondary flex justify-between items-end">
+              <div>
+                <h1 className="text-3xl max-sm:text-sm">{item.title}</h1>
+                <h2 className="text-xl max-sm:text-xs">{item.des}</h2>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 });
-
 
 export default Products;

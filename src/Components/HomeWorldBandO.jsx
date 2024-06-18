@@ -1,4 +1,3 @@
-
 import React, { useEffect, useMemo, useCallback, useRef } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -57,9 +56,13 @@ const HomeWorldBandO = React.memo(() => {
             if (screenWidth < 640) {
               newFontSize = 1 + 1 * progress;
             } else if (screenWidth < 1024) {
-              newFontSize = 1.3 + 2 * progress;
+              newFontSize = 1 + 1 * progress;
+            } else if (screenWidth < 1280) {
+              newFontSize = 1 + 1.5 * progress;
+            } else if (screenWidth < 1536) {
+              newFontSize = 1 + 2 * progress;
             } else {
-              newFontSize = 1.5 + 2.5 * progress;
+              newFontSize = 1.5 + 2 * progress;
             }
             gsap.to(title, {
               fontSize: `${newFontSize}rem`,
@@ -74,7 +77,7 @@ const HomeWorldBandO = React.memo(() => {
   const wbandoref = useRef();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-   
+
     const services = document.querySelectorAll(".service");
     const observer = new IntersectionObserver(
       observerCallback,
@@ -135,8 +138,11 @@ const HomeWorldBandO = React.memo(() => {
   );
   return (
     <div className="bg-[#Fff] py-[5vh]">
-        <TextAnimation text={"World of b & o"} textSize={"text-[10rem] max-sm:text-[3rem] max-md:tracking-tighter "}/>
-        <BorderAnim customindex={1} />
+      <TextAnimation
+        text={"World of b & o"}
+        textSize={"text-[10rem] max-sm:text-[3rem] max-md:tracking-tighter "}
+      />
+      <BorderAnim customindex={1} />
       <div className="w-full h-full p-5 flex pt-[10vh] max-sm:pt-[5vh] flex-col max-sm:gap-[15vw] max-md:gap-[25vw] max-lg:gap-[30vw] gap-10 bg-[#fff]">
         {homebandodata.map((item, index) => (
           <div
@@ -169,7 +175,7 @@ const HomeWorldBandO = React.memo(() => {
           </div>
         ))}
       </div>
-      <BorderAnim customindex={2}/>
+      <BorderAnim customindex={2} />
     </div>
   );
 });

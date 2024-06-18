@@ -71,7 +71,7 @@ const FullScreenNavbar = ({
               <NavLink
                 to={navLinkData?.path}
                 key={index}
-                className={` text-[1.8rem] font-primary`}
+                className={` text-[1.8rem] max-md:text-[1.5rem] font-primary`}
                 onMouseEnter={() => {
                   setImageSrc(item.categoryImage);
                   setImageDescription(item.categoryDescription);
@@ -84,7 +84,7 @@ const FullScreenNavbar = ({
         </div>
         <div className={`image-div max-sm:hidden  w-[45%] max-lg:w-[50%]`}>
           <img
-            className="h-[60vh] w-full object-cover"
+            className="h-[60vh] max-md:h-[40vh] w-full object-cover"
             src={imageSrc}
             alt="Category"
           />

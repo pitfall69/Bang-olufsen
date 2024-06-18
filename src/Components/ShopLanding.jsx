@@ -26,7 +26,7 @@ const ShopLanding = ({ShopLandingdata}) => {
             alt=""
           />
 
-          <div className="h-full w-full max-sm:mt-[15vh] backdrop-blur-[.5px] top-0 flex px-20 max-lg:px-10 max-sm:px-5">
+          <div className="h-full w-full max-sm:mt-[15vh] backdrop-blur-sm top-0 flex px-20 max-lg:px-10 max-sm:px-5">
             <div className="text-white flex flex-col justify-center gap-8">
               <h1 className="text-7xl font-primary font-[650] max-md:text-5xl">
                 {titleParts[0]}
