@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from "react";
 import ShopNowBtn from "../Components/ShopNowBtn";
 import ShowProduct from "./ShowProduct";
-const Products = ({ Productsdata }) => {
+
+const Products = ({ Productsdata , isfirstactive }) => {
   const [openProduct, setopenProduct] = useState(false);
   const [showproductdata, setshowproductdata] = useState("");
 
@@ -9,7 +10,6 @@ const Products = ({ Productsdata }) => {
     setshowproductdata(product);
     setopenProduct(true);
   }, []);
-
   return (
     <div
       className={`flex flex-col justify-between px-2 relative bg-[#FFF9F1] items-center `}
@@ -19,64 +19,77 @@ const Products = ({ Productsdata }) => {
         showproductdata={showproductdata}
         openProduct={openProduct}
       />
-      <Content1
-        setshowproductdata={handleProductClick}
-        i1={Productsdata[0]}
-        i2={Productsdata[1]}
-        i3={Productsdata[2]}
-      />
-      <Content
-        setshowproductdata={handleProductClick}
-        height="h-[80vh]"
-        items={[Productsdata[3]]}
-      />
-      <Content
-        setshowproductdata={handleProductClick}
-        items={[Productsdata[4], Productsdata[5]]}
-      />
-      {Productsdata.length < 8 ? (
+      {Productsdata.length === 2 ? (
         <Content
-          setshowproductdata={handleProductClick}
-          items={[Productsdata[6], Productsdata[7]]}
-        />
+        setshowproductdata={handleProductClick}
+        items={[Productsdata[0], Productsdata[1]]}
+      />
       ) : (
-        <Content
+        <>
+         
+          { isfirstactive === "true" ? <Content
+            setshowproductdata={handleProductClick}
+            items={[Productsdata[1], Productsdata[2]]}
+          /> :   (<Content1
           setshowproductdata={handleProductClick}
-          items={[Productsdata[6], Productsdata[7], Productsdata[8]]}
-        />
-      )}
-      {Productsdata.length > 9 ? (
-        <Content
-          setshowproductdata={handleProductClick}
-          items={[Productsdata[9], Productsdata[10]]}
-        />
-      ) : (
-        ""
+          i1={Productsdata[0]}
+          i2={Productsdata[1]}
+          i3={Productsdata[2]}
+        />)}
+          <Content
+            setshowproductdata={handleProductClick}
+            height="h-[90vh]"
+            items={[Productsdata[3]]}
+          />
+          <Content
+            setshowproductdata={handleProductClick}
+            items={[Productsdata[4], Productsdata[5]]}
+          />
+          {Productsdata.length < 8 ? (
+            <Content
+              setshowproductdata={handleProductClick}
+              items={[Productsdata[6], Productsdata[7]]}
+            />
+          ) : (
+            <Content
+              height="h-[80vh]"
+              setshowproductdata={handleProductClick}
+              items={[Productsdata[6], Productsdata[7], Productsdata[8]]}
+            />
+          )}
+          {Productsdata.length > 9 && (
+            <Content
+              height="h-[80vh]"
+              setshowproductdata={handleProductClick}
+              items={[Productsdata[9], Productsdata[10]]}
+            />
+          )}
+        </>
       )}
     </div>
   );
 };
 
-const Content = React.memo(({ items, height, setshowproductdata }) => {
+export const Content = React.memo(({ items, height, setshowproductdata }) => {
   return (
     <div
       className={`md:flex gap-2 w-full max-md:h-full relative ${
         height || "h-screen"
       }`}
     >
-      {items.map((item, index) => (
+      {items.length > 0 && items.map((item, index) => (
         <div
           key={index}
           onClick={() => setshowproductdata(item)}
-          className="pb-2 md:mb-0 cursor-pointer overflow-hidden w-full relative md:h-full"
+          className={`pb-2 md:mb-0 cursor-pointer max-md:h-[40vh] overflow-hidden w-full relative md:h-full`}
         >
           <img
             className="h-full w-full object-cover"
-            src={item?.productImage}
+            src={item && item?.productImage}
             alt={item?.title}
           />
           <div
-            className={`about text-white absolute bottom-4  max-sm:w-[95%] ${
+            className={`about text-white absolute bottom-4 max-sm:w-[95%] ${
               items.length > 1 ? "left-[2%] w-[96%]" : "left-[1%] w-[98%]"
             } max-sm:left-[3%] font-Secondary flex justify-between items-end`}
           >
@@ -94,7 +107,7 @@ const Content = React.memo(({ items, height, setshowproductdata }) => {
   );
 });
 
-const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
+export const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
   const handleClick = useCallback(
     (item) => {
       setshowproductdata(item);
@@ -124,7 +137,7 @@ const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
           <div
             key={index}
             onClick={() => handleClick(item)}
-            className="cursor-pointer relative  overflow-hidden h-full pb-2 md:h-1/2 max-md:w-1/2"
+            className="cursor-pointer relative overflow-hidden h-full pb-2 md:h-1/2 max-md:w-1/2"
           >
             <img
               className="w-full h-full object-cover"

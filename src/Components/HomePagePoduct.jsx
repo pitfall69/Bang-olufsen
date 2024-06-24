@@ -1,56 +1,64 @@
-import React from "react";
-
+import React, { useMemo } from "react";
+import ShopNowBtn from "../Components/ShopNowBtn";
 const HomePagePoduct = () => {
-  const HomePageProductData = [
-    {
-      img1: "/src/assets/images/HomepageImage/hp11.webp",
-      img2: "/src/assets/images/HomepageImage/hp12.webp",
-      imgTitle: "BEOPLAY H95",
-      imgDes: "Premium over-ear headphones",
-    },
-
-    {
-      img1: "/src/assets/images/HomepageImage/hp21.webp",
-      img2: "/src/assets/images/HomepageImage/hp22.webp",
-      imgTitle: "BEOSOUND A1  EX",
-      imgDes: "Portable Bluetooth speaker",
-    },
-    {
-      img1: "/src/assets/images/HomepageImage/hp31.webp",
-      img2: "/src/assets/images/HomepageImage/hp32.webp",
-      imgTitle: "BALENCIAGA I BANG",
-      imgDes: "Haute Couture HI-FI",
-    },
-  ];
+  const HomePageProductData = useMemo(
+    () => [
+      {
+        img1: "/src/assets/images/HomepageImage/hp11.webp",
+        img2: "/src/assets/images/HomepageImage/hp12.webp",
+        imgTitle: "BEOPLAY H95",
+        imgDes: "Premium over-ear headphones",
+      },
+      {
+        img1: "/src/assets/images/HomepageImage/hp21.webp",
+        img2: "/src/assets/images/HomepageImage/hp22.webp",
+        imgTitle: "BEOSOUND A1  EX",
+        imgDes: "Portable Bluetooth speaker",
+      },
+      {
+        img1: "/src/assets/images/HomepageImage/hp31.webp",
+        img2: "/src/assets/images/HomepageImage/hp32.webp",
+        imgTitle: "BALENCIAGA I BANG",
+        imgDes: "Haute Couture HI-FI",
+      },
+    ],
+    [] // Dependency array is empty since data doesn't change
+  );
 
   return (
-    <div className=" w-full flex flex-col ">
+    <div className="w-full flex flex-col bg-[#ECDFD6]">
       {HomePageProductData.map((item, index) => (
         <div
           key={index}
-          className="relative bg-[#fff] h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
+          className="relative bg-[] h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
         >
-          <div className="w-1/2 h-full max-md:w-full max-md:h-[50%] ">
+          <div className="w-1/2 h-full relative max-md:w-full max-md:h-[50%]">
             <img
               className="h-full w-full object-cover p-1"
               src={item.img1}
               alt=""
             />
+            <div className="absolute bottom-3 max-sm:hidden font-primary text-white right-[3%]">
+              <ShopNowBtn />
+            </div>
           </div>
-          <div  className="w-1/2 h-full max-md:w-full p-1 max-md:h-[50%]">
+          <div className="w-1/2 h-full relative max-md:w-full p-1 max-md:h-[50%]">
             <img
-              className={`h-full w-full object-cover  ${
-                index === 2 && "object-top"
-              } `}
+              className={`h-full w-full object-cover ${
+                index === 2 ? "object-top" : ""
+              }`}
               src={item.img2}
               alt=""
             />
+            <div className="absolute bottom-3 max-sm:hidden font-primary text-white right-[3%]">
+              <ShopNowBtn />
+            </div>
           </div>
           <div className="absolute w-full -translate-x-1/2 translate-y-[-50%] top-[50%] left-[50%] text-white flex flex-col items-center justify-center gap-5">
             <h2 className="text-xl max-md:text-lg font-Secondary">
               {item.imgDes}
             </h2>
-            <h1 className="text-5xl max-md:text-3xl font-semibold font-primary ">
+            <h1 className="text-5xl max-md:text-3xl font-semibold font-primary">
               {item.imgTitle}
             </h1>
           </div>
@@ -61,3 +69,4 @@ const HomePagePoduct = () => {
 };
 
 export default HomePagePoduct;
+

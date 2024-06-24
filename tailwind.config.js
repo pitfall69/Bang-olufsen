@@ -10,7 +10,7 @@ export default {
       fontFamily: {
         primary: ["ProximaNova"],
         Secondary:["GTWALSHEIM"],
-        Decorative:["Circular"],
+        Decorative:["Melodrama"],
         And:["Sans"]
       },
       colors: {

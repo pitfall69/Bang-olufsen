@@ -1,14 +1,12 @@
 import React, { useState, useMemo, useCallback, useRef , useEffect} from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
-import { NavLink ,Link } from "react-router-dom";
-import gsap from "gsap";
+import { Link } from "react-router-dom";
 import FullScreenNavbar from "../Components/FullScreenNavbar";
 import NavLinkAnimation from "./NavLinkAnimation";
 import Logo from "./Logo";
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navLinkData, setNavLinkData] = useState(null);
-
   const Navbardata = useMemo(
     () => [
       {
@@ -149,36 +147,36 @@ const Navbar = () => {
           },
         ],
       },
-      {
-        title: "SUPPORT",
-        path: "/support",
-        data: [
-          {
-            categoryTitle: "Register your Product",
-            categoryDescription: "REGISTER PRODUCT",
-            categoryImage:
-              "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_register_product.jpg",
-          },
-          {
-            categoryTitle: "Replace & Repair",
-            categoryDescription: "WARRANTY SERVICE",
-            categoryImage:
-              "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_warranty_service.jpg",
-          },
-          {
-            categoryTitle: "Track Warranty Request",
-            categoryDescription: "TRACK STATUS",
-            categoryImage:
-              "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_track_repair.jpg",
-          },
-          {
-            categoryTitle: "Return online order",
-            categoryDescription: "RETURN ORDER",
-            categoryImage:
-              "https://images.unsplash.com/photo-1543499459-d1460946bdc6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          },
-        ],
-      },
+      // {
+      //   title: "SUPPORT",
+      //   path: "/support",
+      //   data: [
+      //     {
+      //       categoryTitle: "Register your Product",
+      //       categoryDescription: "REGISTER PRODUCT",
+      //       categoryImage:
+      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_register_product.jpg",
+      //     },
+      //     {
+      //       categoryTitle: "Replace & Repair",
+      //       categoryDescription: "WARRANTY SERVICE",
+      //       categoryImage:
+      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_warranty_service.jpg",
+      //     },
+      //     {
+      //       categoryTitle: "Track Warranty Request",
+      //       categoryDescription: "TRACK STATUS",
+      //       categoryImage:
+      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_track_repair.jpg",
+      //     },
+      //     {
+      //       categoryTitle: "Return online order",
+      //       categoryDescription: "RETURN ORDER",
+      //       categoryImage:
+      //         "https://images.unsplash.com/photo-1543499459-d1460946bdc6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      //     },
+      //   ],
+      // },
     ],
     []
   );

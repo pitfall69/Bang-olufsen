@@ -3,19 +3,22 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitTextJS from "split-text-js";
 
-const TextAnimation = ({ text , textSize , className}) => {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+
+const TextAnimation = ({ text, textSize, className }) => {
   const textRef = useRef();
 
   useEffect(() => {
-    const splitedwbandoref = new SplitTextJS(textRef.current);
-    gsap.from(splitedwbandoref.chars, {
-      y: 200,
+    const splitText = new SplitTextJS(textRef.current);
+    
+    gsap.from(splitText.chars, {
+      y: 100,
       stagger: 0.01,
       scrollTrigger: {
         trigger: textRef.current,
         start: "top 50%",
         end: "top 20%",
+        // scrub: true, 
       },
     });
   }, []);
@@ -23,7 +26,7 @@ const TextAnimation = ({ text , textSize , className}) => {
   return (
     <h1
       ref={textRef}
-      className={`${textSize} w-full h-fit  text-center leading-none overflow-hidden uppercase font-primary`}
+      className={`${textSize} w-full text-center leading-none overflow-hidden ${className}`}
     >
       {text}
     </h1>
@@ -31,3 +34,4 @@ const TextAnimation = ({ text , textSize , className}) => {
 };
 
 export default TextAnimation;
+

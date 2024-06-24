@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitTextJS from "split-text-js";
-const Button = ({ text, customclassName, borderColor }) => {
+const Button = ({ text, customclassName}) => {
   const { contextSafe } = useGSAP();
   const buttonh1Ref1 = useRef();
   const buttonh1Ref2 = useRef();
@@ -17,25 +17,24 @@ const Button = ({ text, customclassName, borderColor }) => {
     
   }, []);
 
-  const animateChars = (chars, yValue, duration, stagger) => {
+  const animateChars = (chars, yValue, duration) => {
     gsap.to(chars, {
       y: yValue,
       duration: duration,
-      stagger: stagger,
     });
   };
 
   const handleMouseEnter = contextSafe(() => {
     if (splitTextRef1.current && splitTextRef2.current) {
-      animateChars(splitTextRef1.current.chars, "-100%", 0.5, 0.01);
-      animateChars(splitTextRef2.current.chars, "-100%", 0.5, 0.01);
+      animateChars(splitTextRef1.current.chars, "-100%", 0.3);
+      animateChars(splitTextRef2.current.chars, "-100%", 0.3);
     }
   });
 
   const handleMouseLeave = contextSafe(() => {
     if (splitTextRef1.current && splitTextRef2.current) {
-      animateChars(splitTextRef1.current.chars, "0%", 0.5, 0.01);
-      animateChars(splitTextRef2.current.chars, "0%", 0.5, 0.01);
+      animateChars(splitTextRef1.current.chars, "0%", 0.3);
+      animateChars(splitTextRef2.current.chars, "0%", 0.3);
     }
   });
 
@@ -43,9 +42,7 @@ const Button = ({ text, customclassName, borderColor }) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`h-[2.1rem] text-[1rem] relative rounded-full leading-[2rem] px-8 button overflow-hidden w-fit border-[1px] ${
-        borderColor ? borderColor : "bg-[#FFC55C]"
-      }`}
+      className={`h-[2.1rem] text-[1rem] relative bg-[#3D2C25] text-white px-5 rounded-full font-primary leading-[2rem] overflow-hidden w-fit max-lg:text-[.7rem] uppercase `}
     >
       <h1 ref={buttonh1Ref1} className={`${customclassName}`}>
         {text}
@@ -58,3 +55,4 @@ const Button = ({ text, customclassName, borderColor }) => {
 };
 
 export default Button;
+

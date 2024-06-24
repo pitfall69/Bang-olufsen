@@ -1,21 +1,14 @@
-
-
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import Button from "./Button";
-
-const ShopLanding = ({ShopLandingdata}) => {
+const ShopLanding = ({ ShopLandingdata }) => {
   const container2 = useRef();
   const { scrollYProgress } = useScroll({
     target: container2,
     offset: ["start start", "end start"],
   });
-
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "60vh"]);
-
-
-  const titleParts = ShopLandingdata.Title.split(' ');
-
+  const titleParts = ShopLandingdata.Title.split(" ");
   return (
     <div ref={container2}>
       <div className="h-[80vh] overflow-hidden">
@@ -31,12 +24,16 @@ const ShopLanding = ({ShopLandingdata}) => {
               <h1 className="text-7xl font-primary font-[650] max-md:text-5xl">
                 {titleParts[0]}
                 <br />
-                {titleParts.slice(1).join(' ')}
+                {titleParts.slice(1).join(" ")}
               </h1>
               <h2 className="text-white font-Secondary w-[60%] tracking-tight leading-5 max-md:text-sm max-sm:w-full">
                 {ShopLandingdata.Para}
               </h2>
-              <Button text={'Explore'} customclassName={"findoutmore"} borderColor={"#fff"} />
+              <Button
+                text={"Explore"}
+                customclassName={"findoutmore"}
+                borderColor={"#fff"}
+              />
             </div>
           </div>
         </motion.div>
@@ -48,7 +45,7 @@ const ShopLanding = ({ShopLandingdata}) => {
         <h2 className="font-Secondary text-xl w-[50%] max-lg:text-sm max-xl:text-lg max-sm:w-[80%] text-center max-md:px-10">
           {ShopLandingdata.shopCompare}
         </h2>
-        <Button text={'Explore'} customclassName={"explore"} />
+        <Button text={"Explore"} customclassName={"explore"} />
       </div>
     </div>
   );

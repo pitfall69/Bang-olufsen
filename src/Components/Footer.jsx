@@ -1,71 +1,155 @@
-import React from "react";
-import { TiSocialTwitter } from "react-icons/ti";
-import { RiLinkedinFill } from "react-icons/ri";
-import { FaFacebookF } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { SiYoutube } from "react-icons/si";
+// import React from "react";
+// import Button from "../Components/Button";
+// import ShopNowBTn from "../Components/ShopNowBtn";
+// export default function Footer() {
+//   return (
+//     <div
+//       className="relative h-[80vh]"
+//       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+//     >
+//       <div className="fixed bottom-0 text-white h-[80vh] w-full">
+//         <div className="w-full h-full flex flex-col justify-between relative">
+//           <button className="absolute right-10 top-5 font-Secondary text-lg">
+//             <ShopNowBTn text={"Back to top"} />
+//           </button>
+//           <div className="w-full h-[40%] flex flex-col gap-3 items-center justify-center ">
+//             <h3 className="text-sm font-primary">
+//               EXPLORE THE HOUSE OF BANG & OLUFSEN
+//             </h3>
+//             <h2 className="font-Secondary text-5xl py-3 text-center ">
+//               Join our global community for exclusive <br /> benefits and news
+//               about
+//             </h2>
+//             <Button text={"Join us"} />
+//           </div>
+//           <div className="w-full h-[50%]">
+//             <div className="w-full h-[30%] flex items-center justify-between px-10">
+//               <div>
+//                 <h1 className="font-primary">
+//                   © Copyright 2024 Bang & Olufsen Ltd.
+//                   <br /> All Rights reserved.
+//                 </h1>
+//                 <h3 className="font-Secondary py-3">Created by THE SPIRIT'S</h3>
+//               </div>
+//               <div>
+//                 <h1 className="font-primary py-3">Socials</h1>
+//                 <div className="flex items-center font-Secondary gap-3">
+//                   <ShopNowBTn text={"Instagram"} />
+//                   <ShopNowBTn text={"Twitter"} />
+//                   <ShopNowBTn text={"LinkedIN"} />
+//                 </div>
+//               </div>
+//               <div>
+//                 <h1 className="font-primary py-3">SAY HELLO</h1>
+//                 <h3 className="font-Secondary ">hello@bang&olufsen.com</h3>
+//               </div>
+//             </div>
+//             <div className="w-full h-[70%] flex items-center justify-center">
+//               <h2 className="text-[13rem] font-[500] font-And   leading-none">BANG & OLUFSEN</h2>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+import React, { useRef } from "react";
+import Button from "../Components/Button";
+import ShopNowBTn from "../Components/ShopNowBtn";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitTextJS from "split-text-js";
 export default function Footer() {
+
+  const footerRef = useRef()
+  
+  useGSAP(() => {
+    const splittext = new SplitTextJS(footerRef.current)
+    gsap.from(splittext.chars, {
+      y: 200,
+      stagger: .035,
+      duration: .5,
+      scrollTrigger: {
+        trigger: '.footer-main',
+        start: '45% 30%',
+        end: 'bottom 50%',
+      }
+    })
+  })
   return (
-    <div
-      className="relative h-[80vh]"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
-      <div className="fixed bottom-0 h-[80vh] w-full">
-        {/* <FooterContent /> */}
+    <div>
+      <div
+        className="footer-main w-full h-[40vh] flex flex-col gap-3 items-center  justify-center bg-[#FCFAEE]"
+      >
+        <h3 className="text-sm font-primary ">
+          EXPLORE THE HOUSE OF BANG & OLUFSEN
+        </h3>
+        <h2 className="font-Secondary text-5xl py-3 text-center ">
+          Join our global community for exclusive <br /> benefits and news
+          about
+        </h2>
+        <Button text={"Join us"} />
+      </div>
+      <div
+        className="relative h-[65vh]  max-md:h-[38vh] bg-black "
+        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+      >
+        <div className="fixed bottom-0 text-white w-full max-md:pb-3  ">
+          <div className="w-full h-full flex flex-col justify-between relative  ">
+          <button onClick={()=>{
+                // scroll.scrollTo(0)
+                console.log("clicked");
+              }} className="font-Secondary text-lg  max-md:mb-5 absolute bottom-[50%] right-10  ">
+              <ShopNowBTn  text={"Back to top"} />
+            </button>
+            <div className=" w-full h-full  ">
+              <div className="options w-full h-[45vh] pt-5 flex justify-between items-baseline  px-10 max-md:text-[2vw]  md:pb-5 ">
+                <div className="copyright">
+                  <h1 className="font-primary">
+                    © Copyright 2024 Bang & Olufsen Ltd.
+                    <br /> All Rights reserved.
+                  </h1>
+                  <h3 className="font-Secondary py-3 max-md:py-2">Created by THE SPIRIT'S</h3>
+                </div>
+                <div className="socials flex items-start gap-10 ">
+                  <div>
+                    <h1 className="font-primary py-3 max-md:py-2 font-bold">Socials</h1>
+                    <div className="flex flex-col max-md:flex-row font-Secondary gap-3 max-md:gap-1">
+                      <ShopNowBTn text={"Instagram"} />
+                      <ShopNowBTn text={"Twitter"} />
+                      <ShopNowBTn text={"LinkedIN"} />
+                    </div>
+                  </div>
+                  
+                </div>
+                <div className="nav-items">
+                    <h1 className="font-primary py-3 max-md:py-2 font-bold">Products</h1>
+                    <div className="flex flex-col max-md:flex-row font-Secondary gap-3 max-md:gap-1 ">
+                    <ShopNowBTn text={"Speakers"} />
+                      <ShopNowBTn text={"Headphones"} />
+                      <ShopNowBTn text={"Televisions"} />
+                      <ShopNowBTn text={"Soundbars"} />
+                      
+                    </div>
+                  </div>
+                <div className="say">
+                  <h1 className="font-primary py-3 max-md:py-2">SAY HELLO</h1>
+                  <ShopNowBTn text={'hello@bang&olufsen.com'}/>
+                </div>
+              </div>
+              
+              
+              <div  className=" flex items-center justify-center pt-4">
+                <h2 ref={footerRef} className="brand text-[10rem] max-md:text-4xl font-[500] font-And leading-none">
+                  BANG & OLUFSEN
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
-// const FooterContent = () => {
-//   return (
-//     <div className="w-full bg-[##141414] text-[#E5E5E5] bg-black h-full px-[2%]">
-//       <div className="top-part h-[60%] font-Secondary py-14 flex max-sm:h-[90%] w-full">
-//         <div className="one w-[33.5%]  h-full flex flex-col gap-20 border-r-[1px] border-zinc-700">
-//           <div className="brand flex flex-col gap-5">
-//             <h2 className="text-3xl">BANG & OLUFSEN</h2>
-//             <p className="text-sm w-[60%] opacity-60">
-//               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-//               Obcaecati, sit odio? Sed, dolorum impedit?
-//             </p>
-//           </div>
-//           <div className="our-policy text-sm flex flex-col gap-2">
-//             <h4>Privacy Policy</h4>
-//             <h4>Customer Care</h4>
-//             <h4>Cookies Policy</h4>
-//             <h4 className="mt-12 opacity-60">jdfhdkfdjkfldjkfhdjklkdjfd</h4>
-//           </div>
-//         </div>
-//         <div className=" two w-[33%] px-5 h-full flex flex-col gap-2 border-r-[1px] border-zinc-700">
-//           <h3 className="opacity-60 text-sm">From</h3>
-//           <h3>Copenhagen, Denmark, Strandgade 100, 1401</h3>
-//           <h3> 7600 Struer, Denmark</h3>
-//           <h3 className="opacity-60 text-sm">Mon-Fri: 09:00 AM to 06:00 PM</h3>
-//         </div>
-//         <div className="third w-[33%]  h-full px-5 ">
-//           <h3>Contact</h3>
-//           <h3>8(800) 600-69-07</h3>
-//           <h3>Email</h3>
-//           <h3>abcd@gmail.com</h3>
-//           <div className="flex gap-3 mt-10 items-center ">
-//             <RiLinkedinFill className="h-12 p-2 w-12 border-[2px] border-zinc-800" />
-//             <TiSocialTwitter className="h-12 p-2 w-12 border-[2px] border-zinc-800"/>
-//             <FaFacebookF className="h-12 p-2 w-12 border-[2px] border-zinc-800"/>
-//             <AiFillInstagram className="h-12 p-2 w-12 border-[2px] border-zinc-800" />
-//             <SiYoutube className="h-12 p-2 w-12 border-[2px] border-zinc-800"/>
-//           </div>
-//           <div className="flex opacity-50 mt-[6rem] justify-between">
-//             <h3>©Copyright 2024 Bang & Olufsen Ltd.
-//            <br /> All Rights reserved.</h3>
-//             <h3>Designed by The SPIRIT'S</h3>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="bottom-part h-[40%] flex items-center justify-center max-sm:h-[10%] text-center w-full border-t-[1px] border-zinc-700">
-//         <h1 className="text-[12rem] tracking-wider mt-2  font-[600] font-primary ">
-//           BANG & OLUFSEN
-//         </h1>
-//       </div>
-//     </div>
-//   );
-// };

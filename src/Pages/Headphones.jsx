@@ -6,56 +6,61 @@ import Footer from '../Components/Footer';
 const Headphones = () => {
   const Productsdata = [
     {
-      title: "BEOSOUND A5",
-      des: "Powerful portable speaker",
+      title: "BEOPLAY EX",
+      des: "Next-gen wireless earbuds",
       productImage:
-        "https://www.thecoolector.com/wp-content/uploads/2022/04/Beoplay-EX-0009-1.png",
+        "src/assets/images/Headphone/BEOPLAY EX.webp",
+      price:"$399"
     },
     {
-      title: "BEOSOUND A5",
-      des: "Powerful portable speaker",
+      title: "BEOPLAY EX FERRARI EDITION",
+      des: "Next-gen wireless earbuds",
       productImage:
-        "https://assets.hardwarezone.com/img/2022/01/beoplay-eq-intro1.jpg",
+        "src/assets/images/Headphone/BEOPLAY EX FERRARI EDITION.webp",
+      price:"$399"
     },
+    
     {
       title: "BEOPLAY E8 2.0",
-      des: "Powerful portable speaker",
+      des: "Cutting-edge true wireless earbuds",
       productImage:
-        "https://i.pcmag.com/imagery/reviews/02xU1WDV1kBYulztvQ9GkY5-3.fit_lim.size_1050x591.v1645222869.png",
+        "https://i.pinimg.com/564x/98/31/0a/98310a7120988ff284700d9ff6f9010e.jpg",
+        price:"$399"
     },
    
     {
-      title: "BEOPLAY H95 FERRARI EDITION",
-      des: "premium over-ear headphones",
-      productImage: "https://techmgzn.com/wp-content/uploads/2023/08/bo-ferrari-collection-beoplay-headphones.jpg",
-    },
-    {
-      title: "BEOPLAY H8I",
-      des: "Revitalizing a modern classic",
-      productImage: "https://images.ctfassets.net/8cd2csgvqd3m/2mQqIOB0evLI52G8Vm2CPg/ea5b5e67cdf0e782f8217f56fd3f6ea4/H8i_Pink_front2.png?q=90&fm=webp&w=720&h=720&fit=fill",
-      price:"$400"
-    },
-    {
-      title: "BEOPLAY HX",
+      title: "BEOPLAY H8i",
       des: "Comfortable, do-it-all headphones",
-      productImage:"https://luxussound.com/cdn/shop/files/Beoplay_HX_0174.jpg?v=1648624272&width=1500",
-      price:"$599"
+      productImage: "src/assets/images/Headphone/BEOPLAY H8i.webp",
+      price:"$399"
     },
     {
-      title: "BEOPLAY PORTAL",
+      title: "BEOPLAY H95",
+      des: "Revitalizing a modern classic",
+      productImage: "src/assets/images/Headphone/BEOPLAY H95.webp",
+      price:"$999"
+    },
+    {
+      title: "BEOPLAY H95 FERRARI EDITION",
+      des: "Comfortable, do-it-all headphones",
+      productImage:"/src/assets/images/HomepageImage/hp11.webp",
+      price:"$1,299"
+    },
+    {
+      title: "BEOPLAY H9i",
       des: "Elite gaming headset",
-      productImage:"https://images.idgesg.net/images/article/2021/03/beoplayportal-closeup-100882730-large.jpg",
+      productImage:"src/assets/images/Headphone/BEOPLAY H9i.webp",
       price: "$499​"
     },
     {
-      title: "BEOLAB 8",
+      title: "CASE FOR BEOPLAY H95",
       des: "Powerful compact speaker",
-      productImage:"https://images.ctfassets.net/8cd2csgvqd3m/2wONtteJLOcycGbvqXgfR0/a61146d95b8c237ce6432bced54ef465/Lifestyle-Beolab-8---0006---2000x2000.png.jpg?q=90&fm=webp&w=828&h=828&fit=fill"
+      productImage:"src/assets/images/Headphone/CASE FOR BEOPLAY H95.webp"
     },
     {
-      title: "BEOPLAY H9 3RD GEN",
+      title: "BEOPLAY H6",
       des: "ANC headphones with long battery life",
-      productImage:"https://www.digitaltrends.com/wp-content/uploads/2021/03/bang-and-olufsen-beoplay-hx-003.jpeg?p=1",
+      productImage:"src/assets/images/Headphone/BEOPLAY H6.webp",
       price:"$500"
     },
   ];

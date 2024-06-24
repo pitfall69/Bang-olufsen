@@ -1,12 +1,11 @@
+import React, { useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
 import { IoPauseOutline } from "react-icons/io5";
 import { IoIosPlay } from "react-icons/io";
 import { RiVolumeMuteFill } from "react-icons/ri";
 import { GoUnmute } from "react-icons/go";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitTextJS from "split-text-js";
 import TextAnimation from "./TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,16 +13,13 @@ gsap.registerPlugin(ScrollTrigger);
 const HomePageVideo = () => {
   const container = useRef(null);
   const videoRef = useRef(null);
-  const h1Ref = useRef(null);
-  const h3Ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "end start"],
-  });
+  const { scrollYProgress } = useScroll({ target: container });
+
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
+  // Toggle play/pause functionality
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -43,13 +39,13 @@ const HomePageVideo = () => {
   };
 
   return (
-    <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#Fff] overflow-hidden">
-      <div className="text-container-video h-[15vh] w-full  max-md:pb-5 flex items-center justify-center flex-col gap-3">
+    <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#ECDFD6] overflow-hidden">
+      <div className="text-container-video h-[15vh] w-full max-md:pb-5 flex items-center justify-center flex-col gap-3">
         <TextAnimation
           text={"Experience the joy in Motion"}
-          textSize={"text-[3rem] max-sm:text-2xl max-lg:text-[2rem] max-xl:text-[2.5rem] "}
+          textSize={"text-[3rem] max-sm:text-2xl font-Decorative uppercase max-lg:text-[2rem] max-xl:text-[2.5rem] "}
         />
-        <TextAnimation text={"Beopoly Ex"} textSize={"text-[1.5rem] max-sm:text-xl max-lg:text-[1rem]"} />
+        <TextAnimation text={"Beopoly Ex"} textSize={"text-[1.5rem] uppercase font-Decorative max-sm:text-xl max-lg:text-[1rem]"} />
       </div>
       <div
         ref={container}
@@ -57,34 +53,24 @@ const HomePageVideo = () => {
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
-          <motion.div
-            style={{ y }}
-            className="relative overflow-hidden w-full h-full"
-          >
+          <motion.div style={{ y }} className="relative overflow-hidden w-full h-full">
+            {/* Lazy-loaded video */}
             <video
               ref={videoRef}
-              autoPlay
               loop
-              muted
+              muted 
+              autoPlay
               className="object-cover w-full h-full"
               src="/src/assets/videos/hpvideo.mp4"
-            ></video>
+            />
           </motion.div>
         </div>
         <div className="w-[10%] flex text-white gap-6 max-xl:gap-4 max-sm:gap-0 max-sm:right-[12%] absolute bottom-[2%] max-xl:right-[5%] right-0 h-[6vh]">
           <button onClick={toggleMuteUnmute}>
-            {isMuted ? (
-              <RiVolumeMuteFill className="p-3 h-[5vh] w-[5vh]" />
-            ) : (
-              <GoUnmute className="p-3 h-[5vh] w-[5vh]" />
-            )}
+            {isMuted ? <RiVolumeMuteFill className="p-3 h-[5vh] w-[5vh]" /> : <GoUnmute className="p-3 h-[5vh] w-[5vh]" />}
           </button>
           <button onClick={togglePlayPause}>
-            {isPlaying ? (
-              <IoPauseOutline className="p-3 h-[5vh] w-[5vh]" />
-            ) : (
-              <IoIosPlay className="p-3 h-[5vh] w-[5vh]" />
-            )}
+            {isPlaying ? <IoPauseOutline className="p-3 h-[5vh] w-[5vh]" /> : <IoIosPlay className="p-3 h-[5vh] w-[5vh]" />}
           </button>
         </div>
       </div>

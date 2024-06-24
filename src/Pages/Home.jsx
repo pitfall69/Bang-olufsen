@@ -1,51 +1,45 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Inner from "../Components/latouts/Inner";
 import Footer from "../Components/Footer";
-import HomeWorldBandO from "../Components/HomeWorldBandO";
 import HomePageVideo from "../Components/HomePageVideo";
 import LandingPage from "../Components/LandingPage";
 import HomePagePoduct from "../Components/HomePagePoduct";
-import SincePage from "../Components/SincePage";
-import LocomotiveScroll from "locomotive-scroll";
-
-import MarqueeText from "../Components/MarqueeText"
-
+import AboutPage from "../Components/AboutPage";
+import OurStories from "../Components/OurStories";
+import TextAnimation from "../Components/TextAnimation";
+import Wbo from "../Components/Wbo";
+import Collaborators from "../Components/Collaborators";
 const Home = () => {
   const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      getDirection: true,
-    });
-
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, []);
-
   return (
     <div ref={scrollRef} data-scroll-container>
       <Inner>
         <LandingPage />
-        <div className="w-full h-screen flex overflow-hidden bg-[#fff]">
-          <div className="w-[35%] h-screen bg-red-300"></div>
-          <div className="w-[65%] h-screen relative bg-red-500">
-            <div className="w-[45%] h-[40%] absolute left-[10%] top-[5%] bg-green-400"></div>
-            <div className="w-[60%] h-[45%] absolute right-[10%] top-[50%] bg-green-400"></div>
-          </div>
-        </div>
+        <AboutPage />
         <HomePagePoduct />
-        <div className="w-full h-screen bg-red-500 "></div>
-        <HomeWorldBandO />
         <HomePageVideo />
-        <div className="w-full h-[80vh] bg-[#000]">
-        <MarqueeText/>
-        <MarqueeText/>
+        <TextAnimation
+          text={"EXPLORE THE WORLD OF B&O"}
+          textSize={"text-[5rem]"}
+          className={" pt-20 bg-[#000] text-white font-Decorative  "}
+        />
+        <Wbo />
+        <div className="h-[10vh] w-full bg-[#000]"></div>
+        <TextAnimation
+          text={"OUR STORIES"}
+          textSize={"text-[5rem]"}
+          className={" pt-20 text-white font-Decorative  "}
+        />
+        <div className="h-[10vh] w-full "></div>
+        <OurStories />
+        <div className="w-full h-[150vh] flex flex-col items-center gap-20 ">
+          <TextAnimation
+            text={"THE HISTORY OF BANG & OLUFSEN"}
+            textSize={"text-[3rem]"}
+            className={"pt-10 font-Decorative"}
+          />
         </div>
-        <div className="w-full h-[50vh] bg-[#fff]">
-          </div>
+        <Collaborators />
         <Footer />
       </Inner>
     </div>

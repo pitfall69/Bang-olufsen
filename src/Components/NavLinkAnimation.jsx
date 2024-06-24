@@ -22,7 +22,7 @@ const NavLinkAnimation = ({ text }) => {
         { width: "100%", left: "0%" },
         { width: "0%", left: "100%", ease: "power2.out" }
       );
-    });
+    })
 
     const container = line.parentElement;
     container.addEventListener("mouseenter", handleMouseEnter);
