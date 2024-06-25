@@ -9,6 +9,7 @@ import OurStories from "../Components/OurStories";
 import TextAnimation from "../Components/TextAnimation";
 import Wbo from "../Components/Wbo";
 import Collaborators from "../Components/Collaborators";
+import HomeWorldBandO from "../Components/HomeWorldBandO";
 const Home = () => {
   const scrollRef = useRef(null);
   return (
@@ -18,21 +19,17 @@ const Home = () => {
         <AboutPage />
         <HomePagePoduct />
         <HomePageVideo />
-        <TextAnimation
-          text={"EXPLORE THE WORLD OF B&O"}
-          textSize={"text-[5rem]"}
-          className={" pt-20 bg-[#000] text-white font-Decorative  "}
-        />
+        {/* <HomeWorldBandO/> */}
         <Wbo />
-        <div className="h-[10vh] w-full bg-[#000]"></div>
-        <TextAnimation
+        {/* <div className="h-[10vh] w-full bg-[#000]"></div> */}
+        {/* <TextAnimation
           text={"OUR STORIES"}
           textSize={"text-[5rem]"}
           className={" pt-20 text-white font-Decorative  "}
         />
-        <div className="h-[10vh] w-full "></div>
+        <div className="h-[10vh] w-full "></div> */}
         <OurStories />
-        <div className="w-full h-[150vh] flex flex-col items-center gap-20 ">
+        <div className="w-full h-[150vh] bg-white flex flex-col items-center gap-20 ">
           <TextAnimation
             text={"THE HISTORY OF BANG & OLUFSEN"}
             textSize={"text-[3rem]"}

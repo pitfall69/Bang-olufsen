@@ -62,19 +62,19 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="relative flex gap-5 xl:px-[20%] items-center h-screen w-full max-sm:h-[75vh] bg-[#ECDFD6]">
-      <h2 className="font-Decorative text-3xl absolute top-[25%] left-[10%]">About</h2>
+    <div className="relative flex items-start gap-5 py-[10%] px-20 h-screen w-full max-sm:h-[75vh] bg-[#fff]">
+      <h2 className="font-Decorative w-[20%] text-3xl h-fit top-[25%] left-[10%]">About</h2>
       <div
         ref={container}
-        className="flex flex-col overflow-hidden h-[70%] justify-center "
+        className="flex flex-col overflow-hidden px-20 w-[80%] justify-center "
       >
         <p
           ref={body}
-          className="w-full max-sm:w-[75%] gap-x-2 pb-10 font-[500] uppercase font-['Melodrama'] flex flex-wrap"
+          className="w-full max-sm:w-[75%] gap-x-2 pb-10 font-[500] uppercase font-Decorative flex flex-wrap"
         >
           {splitWords(AboutPara)}
         </p>
-        <Button text={'learn More'} />
+        {/* <Button text={'learn More'} /> */}
       </div>
      
     </div>

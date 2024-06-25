@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitTextJS from "split-text-js";
-const Button = ({ text, customclassName}) => {
+const Button = ({ text, customclassName }) => {
   const { contextSafe } = useGSAP();
   const buttonh1Ref1 = useRef();
   const buttonh1Ref2 = useRef();
@@ -14,7 +14,6 @@ const Button = ({ text, customclassName}) => {
       splitTextRef1.current = new SplitTextJS(buttonh1Ref1.current);
       splitTextRef2.current = new SplitTextJS(buttonh1Ref2.current);
     }
-    
   }, []);
 
   const animateChars = (chars, yValue, duration) => {
@@ -42,7 +41,7 @@ const Button = ({ text, customclassName}) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`h-[2.1rem] text-[1rem] relative bg-[#3D2C25] text-white px-5 rounded-full font-primary leading-[2rem] overflow-hidden w-fit max-lg:text-[.7rem] uppercase `}
+      className={`h-[2.1rem] text-[1rem] relative bg-white  px-5  mt-5 font-primary leading-[2rem] overflow-hidden w-fit max-lg:text-[.7rem] uppercase `}
     >
       <h1 ref={buttonh1Ref1} className={`${customclassName}`}>
         {text}
@@ -55,4 +54,3 @@ const Button = ({ text, customclassName}) => {
 };
 
 export default Button;
-

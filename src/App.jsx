@@ -116,7 +116,7 @@ const App = () => {
     };
   }, []);
   return (
-    <div className="relative" data-scroll-container>
+    <div className="relative bg-white" data-scroll-container>
       {/* <Preloader/> */}
       <Navbar location={location} key={location.pathname} />
       <AnimatePresence mode="wait">
