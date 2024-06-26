@@ -1,105 +1,51 @@
-import { useRef, useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-import Button from "../Components/Button";
-const AboutPara =
-  "We believe in the power of sound and vision to enrich lives and connect people. This conviction fuels our relentless pursuit of innovation, merging our rich heritage with contemporary sensibilities to craft products that endure through time. At Bang & Olufsen, luxury transcends opulence it embodies delivering an extraordinary experience that surpasses the ordinary.";
+import React from "react";
+import Paragraph from "./Paragraph";
+import Button from "./Button"
+import ShopNowBtn from "./ShopNowBtn"
+import BorderAnim from "./BorderAnim"
 const AboutPage = () => {
-  let refs = useRef([]);
-  const body = useRef(null);
-  const container = useRef(null);
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    createAnimation();
-  }, []);
+  const Abouttext = [
+    "The collaboration between Bang & Olufsen and leading designers integrates cutting-edge ",
+    "technology with timeless design, resulting in exceptional audio and visual experiences that",
+    "redefine the standards of luxury and innovation. ",
+  ];
 
-  const createAnimation = () => {
-    gsap.to(refs.current, {
-      scrollTrigger: {
-        trigger: container.current,
-        scrub: 2,
-        start: "10% 30%",
-        end: "10% 0%",
-      },
-      opacity: 1,
-      ease: "none",
-      stagger: 0.2,
-    });
-  };
-
-  const splitWords = (AboutPara) => {
-    let body = [];
-    AboutPara.split(" ").forEach((word, i) => {
-      const letters = splitLetters(word);
-      body.push(
-        <p
-          key={word + "_" + i}
-          className=" text-[3rem]  leading-tight max-sm:text-[1.4rem]"
-        >
-          {letters}
-        </p>
-      );
-    });
-    return body;
-  };
-
-  const splitLetters = (word) => {
-    let letters = [];
-    word.split("").forEach((letter, i) => {
-      letters.push(
-        <span
-          key={letter + "_ " + i}
-          ref={(el) => {
-            refs.current.push(el);
-          }}
-          className="opacity-10"
-        >
-          {letter}
-        </span>
-      );
-    });
-    return letters;
-  };
+  const Aboutpara = [
+    "Today, Bang & Olufsen continues to lead the way in high-fidelity audio and innovative design.",
+    "Our global network of stores and showrooms provides a space where you can immerse yourself",
+    "in the Bang & Olufsen experience, explore our latest innovations, and receive personalized service",
+    "from our expert team. Whether you are a longtime aficionado or new to our brand, we invite you to",
+    "from our expert team. Whether you are a longtime aficionado or new to our brand, we invite you to",
+    "Join us in celebrating a legacy of innovation and design excellence. Experience the unparalleled ",
+    "craftsmanship, sophisticated aesthetics, and outstanding performance that define Bang & Olufsen. ",
+    "We look forward to welcoming you into our world and helping you create moments of pure auditory ",
+    "and visual pleasure. Welcome to the future of sound and vision, welcome to Bang & Olufsen",
+  ];
 
   return (
-    <div className="relative flex items-start gap-5 py-[10%] px-20 h-screen w-full max-sm:h-[75vh] bg-[#fff]">
-      <h2 className="font-Decorative w-[20%] text-3xl h-fit top-[25%] left-[10%]">About</h2>
-      <div
-        ref={container}
-        className="flex flex-col overflow-hidden px-20 w-[80%] justify-center "
-      >
-        <p
-          ref={body}
-          className="w-full max-sm:w-[75%] gap-x-2 pb-10 font-[500] uppercase font-Decorative flex flex-wrap"
-        >
-          {splitWords(AboutPara)}
-        </p>
-        {/* <Button text={'learn More'} /> */}
+    <div className="w-full h-screen flex-col bg-white flex items-center justify-center font-primary">
+      {/* <BorderAnim customindex={8}/> */}
+      <div className="w-[90%] h-[30%] flex items-start justify-between">
+        <Paragraph phrases={["THE COMPANY"]} />
+        <Paragraph
+          phrases={Abouttext}
+          className={`text-[1.9rem] font-primary`}
+        />
       </div>
-     
+      <div className="w-[90%] h-[50%] flex items-start justify-between  ">
+       <div className="w-full h-full flex flex-col items-start justify-start">
+       <Paragraph
+          phrases={Aboutpara}
+          className={`text-[1.6rem] font-primary`}
+        />
+       {/* <ShopNowBtn text={'Learn More'} className={`mt-10`}/> */}
+       </div>
+        <div className="w-[25%] h-full bg-red-500">
+          <img className="w-full h-full object-cover" src="https://images.ctfassets.net/8cd2csgvqd3m/4w2WiH9iFxmKQtDaU60vZC/65a9307e6cc30cb3fd665bfd99d648f5/BS2_Footer_TIO_Immersive_copy.jpg?q=90&fm=webp&w=480&h=718&fit=fill" alt="" />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default AboutPage;
-
-// import React from 'react'
-
-// const AboutPage = () => {
-//   return (
-//     <div className='relative h-screen px-10 py-20 w-full bg-white'>
-//       <h1 className='text-[10rem] leading-none w-[25%]   '>ABOUT US</h1>
-//       <h2 className='absolute text-4xl  w-[46%] left-[20%] top-[38%] '>We believe in the power of sound and vision to enrich lives and connect people. This conviction fuels our relentless pursuit of innovation, merging our rich heritage with contemporary sensibilities to craft products that endure through time. At Bang & Olufsen, luxury transcends opulence it embodies delivering an extraordinary experience that surpasses the ordinary.</h2>
-//       <div className='h-[50vh] w-[20vw] bg-green-400 absolute top-[40%] left-[75%] '>
-//         <img className='object-cover h-full w-full' src="https://images.ctfassets.net/8cd2csgvqd3m/3xSG628osT5jItCw8npvGu/42e4616dc1086d5bcc88a8c4ec2603d4/Beogram_4000c_0035.png?q=85&fm=webp&w=828&h=828&fit=fill" alt="" />
-//       </div>
-//       <div className='h-[50vh] w-[30vw] bg-green-400 absolute top-[0%] left-[75%] -rotate-[20deg]' >
-//        <div className='bg-red-200 w-[80%]  h-[30%] rotate-[20deg] -10% overflow-hidden'>
-
-//        </div>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default AboutPage

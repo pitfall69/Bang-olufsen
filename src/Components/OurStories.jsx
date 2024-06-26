@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import TextAnimation from "./TextAnimation";
 
 const OurStories = () => {
   const containerRef = useRef(null);
@@ -35,27 +36,32 @@ const OurStories = () => {
   ];
 
   return (
-    <div ref={containerRef} className="h-[300vh] bg-white relative">
-      <div className="sticky top-0 overflow-hidden h-[100vh]">
-        {images.map((item, idx) => (
-          <motion.div
-            key={idx}
-            style={{ scale }}
-            className="w-full h-full absolute top-0 flex items-center justify-center"
-          >
-            <div className={`relative ${item.style}`}>
-              <img
-                className="object-cover w-full h-full"
-                src={`/src/assets/images/Stories/stories${idx+1}.webp`}
-                alt=""
-              />
-            </div>
-          </motion.div>
-        ))}
+    <div className="w-full bg-white">
+      <TextAnimation
+        text={"Our Stories"}
+        className={`text-[5rem] uppercase pt-20 font-primary`}
+      />
+      <div ref={containerRef} className="h-[300vh] mt-10 relative">
+        <div className="sticky top-0 overflow-hidden h-[100vh]">
+          {images.map((item, idx) => (
+            <motion.div
+              key={idx}
+              style={{ scale }}
+              className="w-full h-full absolute top-0 flex items-center justify-center"
+            >
+              <div className={`relative ${item.style}`}>
+                <img
+                  className="object-cover w-full h-full"
+                  src={`/src/assets/images/Stories/stories${idx + 1}.webp`}
+                  alt=""
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
 export default OurStories;
-

@@ -39,7 +39,7 @@ const HomePageVideo = () => {
   };
 
   return (
-    <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#ECDFD6] overflow-hidden">
+    <div className="pt-[10vh] max-sm:pt-[5vh] bg-[#fff] overflow-hidden">
       <div className="text-container-video h-[15vh] w-full max-md:pb-5 flex items-center justify-center flex-col gap-3">
         <TextAnimation
           text={"Experience the joy in Motion"}

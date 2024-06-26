@@ -76,3 +76,53 @@ canvas {
 .bottom-h {
   top: 0% !important;
 }
+
+
+
+/*  */
+
+.w-single:nth-child(2) .w-single-tab,
+.w-single:nth-child(3) .w-single-tab,
+.w-single:nth-child(4) .w-single-tab{
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.w-single-tab{
+  width: 12rem;
+  height: inherit;
+  background: #fff;
+  border-left: 1px solid black ;
+}
+.w-single-tab-container{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.w-single-tab-feild {
+  background: red;
+  color: black;
+  padding: 2rem;
+  border-radius: 200rem;
+  display: flex;
+  gap: 10px;
+}
+.w-single-gallery{
+  background-color: #000;
+  display: flex;
+  overflow: hidden;
+}
+.w-single-gallery img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

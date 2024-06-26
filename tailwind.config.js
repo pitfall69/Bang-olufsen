@@ -20,6 +20,9 @@ export default {
       transitionTimingFunction: {
         'custom-ease': 'cubic-bezier(0.68, -0.6, 0.32, 1.6)',
       },
+      height: {
+        'inherit': 'inherit',
+      }
     },
   },
   plugins: [],

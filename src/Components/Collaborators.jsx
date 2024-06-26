@@ -68,11 +68,11 @@ const Collaborators = () => {
   });
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full bg-white ">
       <TextAnimation
         text={"WE CALL THEM PARTNERS"}
         textSize={"text-[6rem]"}
-        className={"font-Decorative text-white"}
+        className={"font-Decorative "}
       />
       <div
         ref={imgRef}
