@@ -53,10 +53,6 @@ const WorldofBandO = () => {
         Description: "A Vision of Sound",
         para: "Listen to our head Tonmeister, Geoff Martin, and product designer, André Poulheim, talk about reimagining the way that speakers work. We’ve pushed the boundaries further than ever before, allowing us to create the ultimate speaker. Introducing the Beolab 90, a vision of sound.",
       },
-<<<<<<< HEAD
-=======
-      
->>>>>>> RaunitNew
       {
         Image: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719484205/WoB5_zmkmbz.webp",
         Title: "LIVE FROM THE 10TH ARRONDISSEMENT",
@@ -75,10 +71,6 @@ const WorldofBandO = () => {
         Description: "Celebrating the launch of the ferrari Collection",
         para: "Bang & Olufsen hosted a celebration event on Thursday, the 14th of December on the opening day for the new Flagship store on London’s prestigious New Bond Street. Offering an exclusive first look at the space which has been designed to cater to the needs of individual customers by offering an immersive and tailored shopping experience.  ",
       },
-<<<<<<< HEAD
-=======
-     
->>>>>>> RaunitNew
       {
         Image: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719484206/WoB8_mr3nps.webp",
         Title: "AT THE MAYFAIR FLAGSHIP STORE",
@@ -91,10 +83,6 @@ const WorldofBandO = () => {
         Description: "From her new home in Miami",
         para: "We caught up with our brand ambassador Caroline about upcoming projects, her brand new home in the exclusive Fisher Island neighbourhood in Miami, and how she balances family and professional life following her successful tennis career.",
       },
-<<<<<<< HEAD
-=======
-      
->>>>>>> RaunitNew
       {
         Image: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719484267/WoB10_wkc8um.webp",
         Title: "SINCE 1925",
@@ -107,27 +95,8 @@ const WorldofBandO = () => {
         Description: "Timeless, for 50 years and counting",
         para: "Bang & Olufsen is expanding its Recreated Classics Program with the launch of Beosystems – a limited edition music system that transcends time by bridging the gap between one of our iconic designs from 1972 and today’s cutting-edge digital technology. ",
       },
-<<<<<<< HEAD
    
     ],[])
-=======
-      {
-        Image: "src/assets/images/WorldOFBnO/WoB12.webp",
-        Title: "BEOSOUND HISTORY",
-        Description: "What is Beosound?",
-        para: "Beosound was introduced in Bang & Olufsen products in 1992. The first was Beosound Ouverture, a name underlining the end of an era of black boxes and technical products, numbers and technical terms. The conceptual idea behind the product itself was to combine all sources and elements in an all-in-one system. It should stand out in your home environment and invite you in.",
-      },
-      
-      {
-        Image: "src/assets/images/WorldOFBnO/WoB17.webp",
-        Title: "THE DESIGNERS OF BEOSOUND A5",
-        Description: "GamFratesi Studio",
-        para: "We visited the Danish-Italian design duo GamFratesi in their studio in Copenhagen to discuss the process, inspiration and work methods that has been used to create our new portable speaker Beosound A5.",
-      },
-    ],
-    []
-  );
->>>>>>> RaunitNew
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
