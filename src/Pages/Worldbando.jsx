@@ -8,26 +8,16 @@ const Worldbando = () => {
     Img: "https://images.ctfassets.net/8cd2csgvqd3m/hiqrVzIG3yrNETv6VusUc/07ac1ccbb2356d450128fe405e7479cc/Lifestyle-Beosound-A5-Spaced-Aluminium-PR-2023-Covers-BO4A5332-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=810&fit=fill",
     Title: "Superior Sound On-the-Go",
     Para: "Experience unparalleled audio quality with Bang & Olufsen headphones, designed for comfort and precision to elevate your listening pleasure wherever you are.",
-<<<<<<< HEAD
-    shopQue: "The Art of Sound",
-    shopCompare: "Explore Bang & Olufsen, where technology meets timeless design. This Danish brand offers iconic speakers, headphones, and TVs, blending performance and elegance. Experience luxury and excellence in every product.",
-=======
     shopQue: "Iconic quality since 1925",
     shopCompare:
       "Since 1925 Bang & Olufsen has created iconic audio and home entertainment products to the highest standards of sound, craft and design.",
->>>>>>> 062b682f62fcafd2314016d9ce63fbd0062c4c66
   };
 
 
 
   return (
-<<<<<<< HEAD
-    <Inner>
-      <ShopLanding ShopLandingdata={ShopLandingdata}  />
-=======
     <div className="">
       <ShopLanding ShopLandingdata={ShopLandingdata} />
->>>>>>> 062b682f62fcafd2314016d9ce63fbd0062c4c66
       <WorldofBandO />
       <Footer />
     </div>
