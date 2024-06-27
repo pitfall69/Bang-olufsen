@@ -7,52 +7,53 @@ const Speakers = () => {
     {
       title: "BEOSOUND 2",
       des: "Elegant home speaker",
-      productImage: "/src/assets/images/Speakers/Beosound 2.webp",
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491407/Beosound_2_rtlfsw.webp",
       price: "$3,199",
     },
     {
       title: "BEOSOUND EMERGE",
       des: "Compact WiFi home speaker",
-      productImage: "/src/assets/images/Speakers/Beosound Emerge.webp",
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491447/Beosound_Emerge_cmc7i2.webp",
       price: "$899",
     },
     {
       title: "BEOLAB 90",
       des: "Advanced floor standing speakers",
-      productImage: "/src/assets/images/Speakers/Beolab_90.webp",
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491368/Beolab_90_pkm8ew.webp",
       price: "$150,000",
     },
     {
       title: "BEOSOUND A5",
       des: "Powerful portable speaker",
-      productImage: "/src/assets/images/Speakers/Beosound_A5.webp",
-      price: "$1,499",
-    },
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719492388/1687680433-BeosoundA50001_mcrcus.jpg",
+      price: "$1,499"
+    }
+    ,
     {
       title: "BEOSOUND A1 2ND GEN",
       des: "Portable Bluetooth speaker",
       productImage:
-        "/src/assets/images/Speakers/Beosound_A1.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491452/BEOSOUND_A1_cga0rt.webp",
       price: "$299",
     },
     {
       title: "BEOSOUND A9",
       des: "Powerful, minimalist speaker",
-      productImage: "/src/assets/images/Speakers/Beosound_A9.webp",
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491453/BEOSOUND_A9_ks5x4f.webp",
       price: "$3,399",
     },
     {
       title: "BEOSOUND EXPLORE",
       des: "Waterproof outdoor speaker",
       productImage:
-        "/src/assets/images/Speakers/Beosound EXPLORE.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491448/BEOSOUND_EXPLORE_mrobw6.webp",
       price: "$249",
     },
     {
       title: "BEOLAB 8",
       des: "Powerful compact speaker",
       productImage:
-        "/src/assets/images/Speakers/BEOLAB 8.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491370/BEOLAB_8_kimqgn.webp",
       price: "$6,598",
      
     },
@@ -60,14 +61,14 @@ const Speakers = () => {
      title: "BEOSOUND BALANCE",
       des: "Outstanding living room speaker",
       productImage:
-        "/src/assets/images/Speakers/Beosound BALANCE.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491447/BEOSOUND_BALANCE_pxebgf.webp",
       price: "$3,399",
     },
     {
       title: "BEOLIT 20",
       des: "Powerful Bluetooth speaker",
       productImage:
-        "/src/assets/images/Speakers/BEOLIT 20.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491369/BEOLIT_20_hxrj0n.webp",
       price: "$599",
      
     },
@@ -75,13 +76,13 @@ const Speakers = () => {
      title: "BEOSOUND LEVEL",
       des: "Portable WiFi Speaker",
       productImage:
-        "/src/assets/images/Speakers/BEOSOUND LEVE.webp",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491449/BEOSOUND_LEVE_nraisl.webp",
       price: "$1,999",
     },
   ];
 
   const ShopLandingdata = {
-    Img: "/src/assets/images/Speakers/Beosound_A5.webp",
+    Img: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491453/BEOSOUND_A5_p4tars.webp",
     Title: "Premium Audio Experience",
     Para: "Experience rich, authentic sound with Bang & Olufsen's premium speakers, crafted to perfection for stunning clarity and superior acoustics.",
     shopQue: "WHICH SPEAKER IS RIGHT FOR YOU?",

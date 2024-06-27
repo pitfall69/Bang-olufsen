@@ -54,14 +54,13 @@ const HomePageVideo = () => {
       >
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
           <motion.div style={{ y }} className="relative overflow-hidden w-full h-full">
-            {/* Lazy-loaded video */}
             <video
               ref={videoRef}
               loop
               muted 
               autoPlay
               className="object-cover w-full h-full"
-              src="/src/assets/videos/hpvideo.mp4"
+              src="https://res.cloudinary.com/dtkyjnbvf/video/upload/v1719483891/hpvideo_tqs8k1.mp4"
             />
           </motion.div>
         </div>

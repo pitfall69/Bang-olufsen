@@ -6,52 +6,52 @@ const Collaborators = () => {
   const data = [
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/46fxbLXbZMYSMbtkrs0WX4/30606b77f33d1320dfecbffd9ec984ad/audi-logo.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485838/audi-logo_zzugth.webp",
       style: "top-[3vh] left-[2vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/3XD07s6EWXkzhkgXcdJWfN/b653732d2171647a8c67aa88ea4648bf/bentley-logo.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485853/bentley-logo_yiiqto.webp",
       style: "top-[3vh] left-[15vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/ToOivqV77f4doYGvG2aQV/c16bb92bb41cb0bcb4a7c4b05cc87c96/fordy.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485862/fordy_nqxqm5.webp",
       style: "top-[50vh] left-[2vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/6ZSDqxf74jrz600SNYzw0P/3793df61b065656eed37b1331bcb6e6f/lamborghini-logo.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485877/lamborghini-logo_z0itoh.webp",
       style: "top-[70vh] left-[15vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/1Amb7WnezX2sAgB6l2hETD/1f45b5f34cfe10f72f46ac11f92d6439/gennnnny.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485886/gennnnny_frmln3.webp",
       style: "top-[40vh] left-[27.5vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/NCvfsNwWUXzizCpydEhbX/0c664247c5b5b3db389448fee1dfa7da/Acura-logo.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485917/hp-logo-transparrent_b0o7yu.webp",
       style: "top-[30vh] left-[50vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/s0Lmog6Sp7ou3FxT33Y2K/5b2a73af0c8fcb0bffd17b160f0c92c5/hp-logo-transparrent.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485930/xbox-logo_sboclz.webp",
       style: "top-[15vh] left-[80vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/2trdAvlPeWxd5Rm5QjUVkh/d8f25dabdb32f47076684c80786451e8/xbox-logo.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485939/Cisco_Logo_no_TM_Black_transparrent_qrmlyn.webp",
       style: "top-[55vh] left-[80vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/3fodKrxviRd0kFVUruiqhi/a299dcac2a94641b9691c860b5599c42/Cisco_Logo_no_TM_Black_transparrent.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485954/Sagecome-Company-Logo.png6_o1deci.webp",
       style: "top-[55vh] left-[67vw]",
     },
     {
       images:
-        "https://images.ctfassets.net/8cd2csgvqd3m/3SYrufaBisX57vBgJAvZjp/17cd273851bdc396eed22ccca716c8ec/Sagecome-Company-Logo.png6.png?fm=webp&q=85&w=340&h=340&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719486160/Acura-logo_uhzi5q.webp",
       style: "top-[70vh] left-[54vw]",
     },
   ];

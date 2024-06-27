@@ -16,7 +16,21 @@ const HistoryPage = () => {
         "or cassette tape was changed.",
       ],
       imgsrc:
-        "https://images.ctfassets.net/8cd2csgvqd3m/1TMf742YT7YoMpiRANsYWp/98de9310bf88d168e7d5cf91ffc50de7/Legacy_product_8.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485220/Legacy_product_8_fhw3nt.webp",
+    },
+    {
+      when: ["1996"],
+      title: ["Beosound 9000"],
+      paragraph: [
+        "Designed by David Lewis, this standing version of the  ",
+        "Beosound 9000 is a flawless example of innovation,  ",
+        "technology and movement in the Bang & Olufsen legacy. The  ",
+        "6-CD changer is the fastest in the world. If allowed to continue ",
+        "its momentum it would travel 100km/h in just 5,5 seconds, ",
+        "matching sport cars of today. ",
+      ],
+      imgsrc:
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485595/Legacy_product_9_zfpbxq.webp",
     },
     {
       when: ["2012"],
@@ -29,34 +43,20 @@ const HistoryPage = () => {
         "customisable making it fit into every room. ",
       ],
       imgsrc:
-        "https://images.ctfassets.net/8cd2csgvqd3m/4dNbI9cAjS7SlQFulaBruC/5ec5af643ed39642afbb3a0e0ffb501a/Legacy_product_12.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
-    },
-    {
-      when: ["2019"],
-      title: ["Beovision Harmony"],
-      paragraph: [
-        "Designed by Torsten Valeur, this television is a brand new ",
-        "experience in sound and vision: a choreographed performance ",
-        "of magical movement and acoustic clarity, vivid imagery and ",
-        "human-centric design. Sound, craftsmanship and design merge ",
-        "in this new, visionary TV. The crafted oak wood and aluminium ",
-        "fronts sublime technical instruments, delicately tuned by hand ",
-        "and ear to reveal all details of music and sound.",
-      ],
-      imgsrc:
-        "https://images.ctfassets.net/8cd2csgvqd3m/7iqDBFRs34MBZ5TDzXpAjD/b3f6bb075434c9cb2ac09adbbb16f3fc/Legacy_product_15.jpg?q=85&fm=webp&w=828&h=828&fit=fill",
+        "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719485237/Legacy_product_12_tseqzx.webp",
     },
   ];
   return (
     <div className="w-full h-fit bg-white flex flex-col  items-center overflow-hidden  justify-between gap-20 py-10 ">
       <TextAnimation
         text={"THE HISTORY OF BANG & OLUFSEN"}
-        textSize={"text-[3rem] max-sm:text-[2rem]"}
+        textSize={"text-[3rem] max-sm:text-[1.2rem]"}
         className={"pt-10 font-Decorative"}
       />
       <div className="w-full h-fit gap-[10vh] max-sm:gap-10 mt-[10vh] flex flex-col px-20 max-xl:px-5">
         {History.map((item, index) => (
           <div
+            key={index}
             className={`w-[100%] h-[50vh] max-xl:h-[80vh]  flex max-xl:flex-col gap-10 justify-between`}
           >
             <div className="h-full w-[40%] max-xl:w-full">
@@ -81,7 +81,9 @@ const HistoryPage = () => {
             </div>
             <div className="h-full w-[35%] max-xl:w-full overflow-hidden">
               <img
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${
+                  index === 1 ? "object-center" : ""
+                }`}
                 src={item.imgsrc}
                 alt=""
               />
@@ -92,7 +94,8 @@ const HistoryPage = () => {
       <Button
         text={"View More"}
         customclass={` w-fit mx-auto mt-[10vh] max-sm:mt-[5vh] bg-white border-[1px]`}
-        circ={`bg-black`} p={`group-hover:text-white`}
+        circ={`bg-black`}
+        p={`group-hover:text-white`}
       />
     </div>
   );

@@ -5,31 +5,32 @@ const HomePagePoduct = () => {
   const HomePageProductData = useMemo(
     () => [
       {
-        img1: "/src/assets/images/HomepageImage/hp11.webp",
-        img2: "/src/assets/images/HomepageImage/hp12.webp",
+        img1: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483132/hp11_tbo0ia.jpg",
+        img2: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483133/hp12_osyk6o.jpg",
         imgTitle: "BEOPLAY H95",
         imgDes: "Premium over-ear headphones",
         route: "/headphones",
       },
       {
-        img1: "/src/assets/images/HomepageImage/hp21.webp",
-        img2: "/src/assets/images/HomepageImage/hp22.webp",
-        imgTitle: "BEOSOUND A1  EX",
+        img1: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483133/hp21_sqfwby.jpg",
+        img2: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483133/hp22_gf775e.webp",
+        imgTitle: "BEOSOUND A1 EX",
         imgDes: "Portable Bluetooth speaker",
-        route:"/speakers"
+        route: "/speakers"
       },
       {
-        img1: "/src/assets/images/HomepageImage/hp31.webp",
-        img2: "/src/assets/images/HomepageImage/hp32.webp",
+        img1: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483133/hp31_nmhoti.webp",
+        img2: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719483133/hp32_xyuswg.webp",
         imgTitle: "BALENCIAGA I BANG",
         imgDes: "Haute Couture HI-FI",
-        route:"/speakers"
+        route: "/speakers"
       },
     ],
-    [] // Dependency array is empty since data doesn't change
+    []
   );
-
   return (
+   <>
+   <div className="w-full h-[50vh] bg-red-100 "></div>
     <div className="w-full flex flex-col gap-2 bg-[#fff]">
       {HomePageProductData.map((item, index) => (
         <Link to={item.route}
@@ -69,169 +70,8 @@ const HomePagePoduct = () => {
         </Link>
       ))}
     </div>
+   </>
   );
 };
 
 export default HomePagePoduct;
-
-// import { useRef } from 'react';
-
-// const projects = [
-//   {
-//       name: "Google Pixel Creator Labs",
-//       client: "Grow",
-//       description: "A partnership between Google & SN37.",
-//       src: "/src/assets/images/HomepageImage/hp11.webp",
-//       year: 2023,
-//   },
-//   {
-//       name: "Decimal",
-//       client: "Decimal",
-//       description: "Portfolio site for Decimal.",
-//       src: "/src/assets/images/HomepageImage/hp12.webp",
-//       year: 2023,
-//   },
-//   {
-//       name: "MAVEN 11",
-//       client: "analogueagency",
-//       description: "New web design for the blockchain investment fund Maven 11.",
-//       src: "maven.jpg",
-//       year: 2022,
-//   },
-//   {
-//       name: "Wix Playground Homepage",
-//       client: "Wix Playground",
-//       description: "Wix Playground is powered by the Wix.com design team.",
-//       src: "wix.jpg",
-//       year: 2022,
-//   },
-//   {
-//       name: "POWELL—STUDIO",
-//       client: "POWELL—STUDIO",
-//       description: "The online presence for Powell—Studio.",
-//       src: "powell.jpg",
-//       year: 2023,
-//   },
-//   {
-//       name: "ROCKETPANDA",
-//       client: "ET Studio",
-//       description: "An Italian animation studio.",
-//       src: "panda.jpg",
-//       year: 2022,
-//   },
-//   {
-//       name: "C2 Montreal",
-//       client: "Ingamana",
-//       description: "C2 Montréal is Canada's premier creative-business event.",
-//       src: "c2.jpg",
-//       year: 2021,
-//   },
-//   {
-//       name: "Design Is Funny",
-//       client: "Shader Studio",
-//       description: "Funny is the design work of Daniele Buffa.",
-//       src: "funny.jpg",
-//       year: 2020,
-//   }
-// ]
-
-// export default function HomePagePoduct() {
-//   return (
-//     <main className={`m-[5vh] text-white pb-[5vh]`}>
-//       <h1 className="p-[20px] text-[5vw] max-w-[80%]">We use design and technology to create brands and products that perform, delight, and scale.</h1>
-//       <div className={``}>
-//         <Double projects={[projects[0], projects[1]]}/>
-//         <Double projects={[projects[2], projects[3]]} reversed={true}/>
-//         <Double projects={[projects[4], projects[5]]}/>
-//         <Double projects={[projects[6], projects[7]]} reversed={true}/>
-//       </div>
-//     </main>
-//   )
-// }
-
-// function Double({ projects, reversed }) {
-//     const firstImage = useRef(null);
-//     const secondImage = useRef(null);
-//     let requestAnimationFrameId = null;
-//     let xPercent = reversed ? 100 : 0;
-//     let currentXPercent = reversed ? 100 : 0;
-//     const speed = 0.15;
-
-//     const manageMouseMove = (e) => {
-//         const { clientX } = e;
-//         xPercent = (clientX / window.innerWidth) * 100;
-
-//         if (!requestAnimationFrameId) {
-//             requestAnimationFrameId = window.requestAnimationFrame(animate);
-//         }
-//     };
-
-//     const animate = () => {
-//         const xPercentDelta = xPercent - currentXPercent;
-//         currentXPercent = currentXPercent + xPercentDelta * speed;
-
-//         const firstImagePercent = 66.66 - currentXPercent * 0.33;
-//         const secondImagePercent = 33.33 + currentXPercent * 0.33;
-
-//         firstImage.current.style.width = `${firstImagePercent}%`;
-//         secondImage.current.style.width = `${secondImagePercent}%`;
-
-//         if (Math.round(xPercent) === Math.round(currentXPercent)) {
-//             window.cancelAnimationFrame(requestAnimationFrameId);
-//             requestAnimationFrameId = null;
-//         } else {
-//             window.requestAnimationFrame(animate);
-//         }
-//     };
-
-//     return (
-//         <div
-//             onMouseMove={manageMouseMove}
-//             className="flex mt-[10vh] h-[45vw]"
-//         >
-//             <div
-//                 ref={firstImage}
-//                 className={`relative ${
-//                     reversed ? 'w-[33.33%]' : 'w-[66.66%]'
-//                 } transition-all duration-300`}
-//             >
-//                 <div className="pb-[66%] relative">
-//                     <img
-//                         src={`${projects[0].src}`}
-//                         alt="image"
-//                         className="object-cover"
-//                     />
-//                 </div>
-//                 <div className="p-2 text-base">
-//                     <h3 className="text-lg mb-1 mt-0 font-normal">
-//                         {projects[0].name}
-//                     </h3>
-//                     <p className="text-gray-700">{projects[0].description}</p>
-//                     <p className="text-gray-400">{projects[0].year}</p>
-//                 </div>
-//             </div>
-
-//             <div
-//                 ref={secondImage}
-//                 className={`relative ${
-//                     reversed ? 'w-[66.66%]' : 'w-[33.33%]'
-//                 } transition-all duration-300`}
-//             >
-//                 <div className="pb-[66%] relative">
-//                     <img
-//                         src={`${projects[1].src}`}
-//                         alt="image"
-//                         className="object-cover"
-//                     />
-//                 </div>
-//                 <div className="p-2 text-base">
-//                     <h3 className="text-lg mb-1 mt-0 font-normal">
-//                         {projects[1].name}
-//                     </h3>
-//                     <p className="text-gray-700">{projects[1].description}</p>
-//                     <p className="text-gray-400">{projects[1].year}</p>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }

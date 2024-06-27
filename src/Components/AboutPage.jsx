@@ -21,7 +21,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="w-full h-screen bg-white  flex-col flex  items-center justify-center font-primary max-sm:px-2  px-5">
+    <div className="w-full h-screen max-sm:h-[90vh] bg-white  flex-col flex  items-center justify-center font-primary max-sm:px-2  px-10">
       <div className="w-full h-[30%] max-sm:h-[40%] px-4 flex items-start max-sm:flex-col gap-y-10 sm:justify-between">
         <Paragraph phrases={["THE COMPANY"]} className={`max-sm:text-2xl`} />
         <Paragraph
@@ -48,7 +48,7 @@ const AboutPage = () => {
             p={`group-hover:text-white`}
           />
         </div>
-        <div className="w-[30%] max-sm:w-full h-full ">
+        <div className="w-[30%] max-sm:w-full h-full max-sm:h-[80%] ">
           <img
             className="w-full h-full object-cover"
             src="https://images.ctfassets.net/8cd2csgvqd3m/2C4PDfprsTL0Z2UEZtvpvg/793a067fe33a8086e00f8cc6396586ca/Underc_111223-19.jpg?q=90&fm=webp&w=1440&h=810&fit=fill"
