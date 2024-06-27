@@ -11,7 +11,6 @@ const BorderAnim = ({ customindex }) => {
         trigger: `.border-line${customindex}`,
         start: "top 55%",
         end: "top 40%",
-        // markerd:true
       },
     });
   });

@@ -6,12 +6,8 @@ import LandingPage from "../Components/LandingPage";
 import HomePagePoduct from "../Components/HomePagePoduct";
 import AboutPage from "../Components/AboutPage";
 import OurStories from "../Components/OurStories";
-import TextAnimation from "../Components/TextAnimation";
 import Wbo from "../Components/Wbo";
 import Collaborators from "../Components/Collaborators";
-import HomeWorldBandO from "../Components/HomeWorldBandO";
-import WorldBand from "../Components/WorldBand";
-import Paragraph from "../Components/Paragraph";
 import HistoryPage from "../Components/HistoryPage";
 const Home = () => {
   const scrollRef = useRef(null);

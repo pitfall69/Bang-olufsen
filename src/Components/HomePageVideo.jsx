@@ -19,7 +19,6 @@ const HomePageVideo = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Toggle play/pause functionality
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -54,7 +53,6 @@ const HomePageVideo = () => {
       >
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
           <motion.div style={{ y }} className="relative overflow-hidden w-full h-full">
-            {/* Lazy-loaded video */}
             <video
               ref={videoRef}
               loop

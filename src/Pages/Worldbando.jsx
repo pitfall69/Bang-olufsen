@@ -9,19 +9,15 @@ const Worldbando = () => {
     Img: "https://images.ctfassets.net/8cd2csgvqd3m/hiqrVzIG3yrNETv6VusUc/07ac1ccbb2356d450128fe405e7479cc/Lifestyle-Beosound-A5-Spaced-Aluminium-PR-2023-Covers-BO4A5332-W3840x2160px.jpg?q=90&fm=webp&w=1440&h=810&fit=fill",
     Title: "Superior Sound On-the-Go",
     Para: "Experience unparalleled audio quality with Bang & Olufsen headphones, designed for comfort and precision to elevate your listening pleasure wherever you are.",
+    shopQue: "The Art of Sound",
+    shopCompare: "Explore Bang & Olufsen, where technology meets timeless design. This Danish brand offers iconic speakers, headphones, and TVs, blending performance and elegance. Experience luxury and excellence in every product.",
   };
+
+
 
   return (
     <Inner>
-      {/* <div className="w-full h-screen">
-        <img
-          className="w-full h-full object-cover"
-          src=""
-          alt=""
-          onLoad={() => console.log("Image loaded")}
-        />
-      </div> */}
-      <ShopLanding ShopLandingdata={ShopLandingdata} />
+      <ShopLanding ShopLandingdata={ShopLandingdata}  />
       <WorldofBandO />
       <Footer />
     </Inner>
@@ -60,13 +56,7 @@ const WorldofBandO = () => {
         Description: "A Vision of Sound",
         para: "Listen to our head Tonmeister, Geoff Martin, and product designer, André Poulheim, talk about reimagining the way that speakers work. We’ve pushed the boundaries further than ever before, allowing us to create the ultimate speaker. Introducing the Beolab 90, a vision of sound.",
       },
-      // {
-      //   Image:
-      //     "https://images.ctfassets.net/8cd2csgvqd3m/3sJewp4W4vhZ7QHYBu1hmb/9770f0bde3b64d52b34076d979359319/Cercle_Hero.jpg?q=90&fm=webp&w=1440&h=808&fit=fill",
-      //   Title: "INTRODUCING A HARMONIOUS FUSION",
-      //   Description: "The Bang & Olufsen X Cercle Partnership",
-      //   para: "In a world where art, innovation, and music converge, a groundbreaking symphony of sight and sound has been created. Welcome to the partnership between Bang & Olufsen and Cercle..",
-      // },
+      
       {
         Image:
           "src/assets/images/WorldOFBnO/WoB5.webp",
@@ -88,13 +78,7 @@ const WorldofBandO = () => {
         Description: "Celebrating the launch of the ferrari Collection",
         para: "Bang & Olufsen hosted a celebration event on Thursday, the 14th of December on the opening day for the new Flagship store on London’s prestigious New Bond Street. Offering an exclusive first look at the space which has been designed to cater to the needs of individual customers by offering an immersive and tailored shopping experience.  ",
       },
-      // {
-      //   Image:
-      //     "https://images.ctfassets.net/8cd2csgvqd3m/2qBKEeS0R8pA9pylXTYMld/df67d6fefd1baafef5eae7f2cf706640/Rimowa_Square.jpg?q=90&fm=webp&w=480&h=480&fit=fill",
-      //   Title: "CLOSER TO THE JOURNEY",
-      //   Description: "Bang & Olufsen X RIMOWA",
-      //   para: "Bang & Olufsen and global leader in premium luggage, RIMOWA have joined forces for a partnership that celebrates the unique link between sound and travel. ",
-      // },
+     
       {
         Image:
           "src/assets/images/WorldOFBnO/WoB8.webp",
@@ -109,13 +93,7 @@ const WorldofBandO = () => {
         Description: "From her new home in Miami",
         para: "We caught up with our brand ambassador Caroline about upcoming projects, her brand new home in the exclusive Fisher Island neighbourhood in Miami, and how she balances family and professional life following her successful tennis career.",
       },
-      // {
-      //   Image:
-      //     "https://images.ctfassets.net/8cd2csgvqd3m/2Ui81JBX32QcFOOeHXl9rL/4ed574440dce963463d49ab5438c8ecb/Beolink_History_-_Mobile.png?q=90&fm=webp&w=480&h=718&fit=fill",
-      //   Title: "THE CONNECTION BETWEEN YOUR SPEAKERS",
-      //   Description: "What is Beolink?",
-      //   para: "'You only first fully understand what the true benefits of Beolink are - when you have had it for a while, and someone takes it away from you' (Quote by Bang & Olufsen custom installer)",
-      // },
+      
       {
         Image:
           "src/assets/images/WorldOFBnO/WoB10.webp",
@@ -137,20 +115,7 @@ const WorldofBandO = () => {
         Description: "What is Beosound?",
         para: "Beosound was introduced in Bang & Olufsen products in 1992. The first was Beosound Ouverture, a name underlining the end of an era of black boxes and technical products, numbers and technical terms. The conceptual idea behind the product itself was to combine all sources and elements in an all-in-one system. It should stand out in your home environment and invite you in.",
       },
-      // {
-      //   Image:
-      //     "src/assets/images/WorldOFBnO/WoB13.webp",
-      //   Title: "PERSONALISATION AT YOUR FINGERS",
-      //   Description: "Bang & Olufsen Apps",
-      //   para: "Step into a realm of sonic excellence with Bang & Olufsen's suite of groundbreaking apps, engineered to deliver unparalleled audio performance tailored to your preferences.",
-      // },
-      // {
-      //   Image:
-      //     "src/assets/images/WorldOFBnO/WoB14.webp",
-      //   Title: "SPEAKERS TO SUIT YOUR SPACE",
-      //   Description: "How to choose the right speakers for your home",
-      //   para: "Sound moves you. The right music can instantly elevate your mood, and the right home speaker means you can enjoy those moments of magic with more depth and detail. Our unrivalled audio technology means your music sounds better in your space.",
-      // },
+      
       {
         Image:
           "src/assets/images/WorldOFBnO/WoB17.webp",
