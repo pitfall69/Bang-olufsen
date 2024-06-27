@@ -26,7 +26,7 @@ const HomePagePoduct = () => {
         route: "/speakers"
       },
     ],
-    []
+    [] // Dependency array is empty since data doesn't change
   );
   return (
    <>

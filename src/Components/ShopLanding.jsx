@@ -19,9 +19,9 @@ const ShopLanding = ({ ShopLandingdata }) => {
             alt=""
           />
 
-          <div className="h-full w-full max-sm:mt-[15vh] backdrop-blur-sm top-0 flex px-20 max-lg:px-10 max-sm:px-5">
-            <div className="text-white flex flex-col justify-center gap-8">
-              <h1 className="text-7xl font-primary font-[650] max-md:text-5xl">
+          <div className="h-full w-full max-[450px]:mt-[4vh]  backdrop-blur-sm top-0 flex px-20 max-lg:px-10 max-sm:px-5">
+            <div className="text-white flex flex-col justify-center gap-5 xl:mt-[9vh] ">
+              <h1 className="xl:text-7xl font-primary font-[650] max-sm:text-3xl max-md:text-5xl md:text-4xl ">
                 {titleParts[0]}
                 <br />
                 {titleParts.slice(1).join(" ")}
@@ -29,7 +29,7 @@ const ShopLanding = ({ ShopLandingdata }) => {
               <h2 className="text-white font-Secondary w-[60%] tracking-tight leading-5  max-md:text-sm max-sm:w-full">
                 {ShopLandingdata.Para}
               </h2>
-              <Button text={"Explore More"} p={"text-black"} circ={"bg-white"} customclass={`w-fit bg-[#ffffff3a]`} />
+              <Button text={"Explore More"} p={"group-hover:text-black"} circ={"bg-white"} customclass={`w-fit bg-[#ffffff3a] md:text-xs md:px-5 max-md:text-xs max-md:px-4 `} />
             </div>
           </div>
         </motion.div>
@@ -41,7 +41,7 @@ const ShopLanding = ({ ShopLandingdata }) => {
         <h2 className="font-Secondary text-xl w-[50%] max-lg:text-sm max-xl:text-lg max-sm:w-[80%] text-center max-md:px-10">
           {ShopLandingdata.shopCompare}
         </h2>
-        <Button text={"Explore More"} p={"text-black"} circ={"bg-white"} customclass={`w-fit bg-[#000] text-white`} />
+        <Button text={"Explore More "} p={"group-hover:text-black"} circ={"bg-white"} customclass={`w-fit bg-[#000] text-white md:text-xs md:px-5 max-md:text-xs max-md:px-4 `} />
       </div>
     </div>
   );

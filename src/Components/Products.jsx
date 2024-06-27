@@ -81,7 +81,7 @@ export const Content = React.memo(({ items, height, setshowproductdata }) => {
         <div
           key={index}
           onClick={() => setshowproductdata(item)}
-          className={`pb-2 md:mb-0 cursor-pointer max-md:h-[40vh] overflow-hidden w-full relative md:h-full`}
+          className={`pb-2 md:mb-0 cursor-pointer max-lg:h-[60vh] overflow-hidden w-full relative md:h-full`}
         >
           <img
             className="h-full w-full object-cover"
@@ -94,10 +94,10 @@ export const Content = React.memo(({ items, height, setshowproductdata }) => {
             } max-sm:left-[3%] font-Secondary flex justify-between items-end`}
           >
             <div>
-              <h1 className="md:text-3xl text-xl max-sm:text-sm">
+              <h1 className=" text-xl max-sm:text-sm md:text-lg">
                 {item?.title}
               </h1>
-              <h2 className="md:text-xl text-sm max-sm:text-xs">{item?.des}</h2>
+              <h2 className="md:text-sm text-sm max-sm:text-xs">{item?.des}</h2>
             </div>
             <ShopNowBtn />
           </div>
@@ -117,7 +117,7 @@ export const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
 
   return (
     <div className="h-screen w-full flex max-md:flex-col gap-2 overflow-hidden">
-      <div className="left h-full cursor-pointer pb-2 w-full md:w-[70%] relative">
+      <div className="left h-full cursor-pointer pb-2 max-sm:pb-0 w-full md:w-[70%] relative">
         <img
           onClick={() => handleClick(i1)}
           className="w-full h-full object-cover"
@@ -126,8 +126,8 @@ export const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
         />
         <div className="about absolute bottom-4 w-[95%] text-white left-4 font-Secondary flex justify-between items-end">
           <div>
-            <h1 className="text-3xl max-sm:text-sm">{i1.title}</h1>
-            <h2 className="text-xl max-sm:text-xs">{i1.des}</h2>
+            <h1 className="text-3xl max-sm:text-sm md:text-lg sm:text-lg">{i1.title}</h1>
+            <h2 className="text-xl sm:text-sm max-sm:text-xs md:text-sm">{i1.des}</h2>
           </div>
           <ShopNowBtn />
         </div>
@@ -146,8 +146,8 @@ export const Content1 = React.memo(({ i1, i2, i3, setshowproductdata }) => {
             />
             <div className="about absolute bottom-4 w-[95%] text-white left-4 font-Secondary flex justify-between items-end">
               <div>
-                <h1 className="text-3xl max-sm:text-sm">{item.title}</h1>
-                <h2 className="text-xl max-sm:text-xs">{item.des}</h2>
+                <h1 className="text-3xl max-sm:text-sm md:text-lg sm:text-lg">{item.title}</h1>
+                <h2 className="text-xl max-sm:text-xs md:text-sm sm:text-sm">{item.des}</h2>
               </div>
             </div>
           </div>

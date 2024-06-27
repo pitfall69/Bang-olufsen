@@ -75,7 +75,10 @@ const Headphones = () => {
     <Inner>
       <ShopLanding ShopLandingdata={ShopLandingdata}/>
         <Products Productsdata={Productsdata} />
+<<<<<<< HEAD
        
+=======
+>>>>>>> RaunitNew
          <Footer/> 
     </Inner>
   );

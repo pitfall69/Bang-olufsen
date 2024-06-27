@@ -19,7 +19,6 @@ const HomePageVideo = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
-  // Toggle play/pause functionality
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
