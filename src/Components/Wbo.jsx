@@ -48,11 +48,11 @@
 //   return (
 //     <>
 //     <TextAnimation text={'Explore the World of B & O'} className={`bg-white text-[5rem] font-Decorative pt-[10vh]`}/>
-//      <div ref={container} className={`relative bg-[#fff]`}>
+//      <div ref={container} className={`relative bg-white`}>
 //       {
 //         projects.map( (project, i) => {
 //           const targetScale = 1 - ( (projects.length - i) * 0.05);
-//           return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}/>
+//           return <Card key={`${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}/>
 //         })
 //       }
 //     </div>
@@ -76,7 +76,7 @@
 //   return (
 //     <div ref={container} className={`h-screen  flex flex-col items-center justify-center sticky top-[0px]`}>
 //       <motion.div
-//         style={{backgroundColor: "#ECDFD6", scale, top:`calc(-5vh + ${i * 30}px)`}}
+//         style={{backgroundColor: "#E4E4E7", scale, top:`calc(-5vh + ${i * 30}px)`}}
 //         className={`flex flex-col relative top-[-25%] h-[70vh] max-lg:w-[90%] w-[70%] p-[50px] origin-top max-sm:p-[20px]`}
 //       >
 //         <h2 className='text-center m-0 text-3xl font-primary uppercase'>{title}</h2>
@@ -364,133 +364,222 @@
 
 // export default Wbo;
 
+// import { useRef } from "react";
+// import gsap from "gsap";
+// import TextAnimation from "./TextAnimation";
+
+// export default function Wbo() {
+//   const plane1 = useRef(null);
+//   const plane2 = useRef(null);
+//   const plane3 = useRef(null);
+//   let requestAnimationFrameId = null;
+//   let xForce = 0;
+//   let yForce = 0;
+//   const easing = 0.08;
+//   const speed = 0.01;
+
+//   const manageMouseMove = (e) => {
+//     const { movementX, movementY } = e;
+//     xForce += movementX * speed;
+//     yForce += movementY * speed;
+
+//     if (requestAnimationFrameId === null) {
+//       requestAnimationFrameId = requestAnimationFrame(animate);
+//     }
+//   };
+
+//   const lerp = (start, target, amount) =>
+//     start * (1 - amount) + target * amount;
+
+//   const animate = () => {
+//     xForce = lerp(xForce, 0, easing);
+//     yForce = lerp(yForce, 0, easing);
+//     gsap.set(plane1.current, { x: `+=${xForce}`, y: `+=${yForce}` });
+//     gsap.set(plane2.current, {
+//       x: `+=${xForce * 0.5}`,
+//       y: `+=${yForce * 0.5}`,
+//     });
+//     gsap.set(plane3.current, {
+//       x: `+=${xForce * 0.4}`,
+//       y: `+=${yForce * 0.4}`,
+//     });
+
+//     if (Math.abs(xForce) < 0.01) xForce = 0;
+//     if (Math.abs(yForce) < 0.01) yForce = 0;
+
+//     if (xForce !== 0 || yForce !== 0) {
+//       requestAnimationFrame(animate);
+//     } else {
+//       cancelAnimationFrame(requestAnimationFrameId);
+//       requestAnimationFrameId = null;
+//     }
+//   };
+//   const WboData = [
+//     [
+//       {
+//         img: "8",
+//         title: "Craft Stories",
+//         style: "left-[10%] top-[58%] h-[40vh] w-[28vw]",
+//       },
+//       {
+//         img: "7",
+//         title: "Craft Stories",
+//         style: "right-[8%] bottom-[42%] h-[55vh] w-[20vw]",
+//       },
+//     ],
+//     [
+//       {
+//         img: "4",
+//         title: "Craft Stories",
+//         style: "left-[42%] bottom-[58%] h-[45vh] w-[18vw]",
+//       },
+//       {
+//         img: "2",
+//         title: "Craft Stories",
+//         style: "left-[45%] bottom-[3%] h-[40vh] w-[32vw]",
+//       },
+//     ],
+//     [
+//       {
+//         img: "3",
+//         title: "Craft Stories",
+//         style: "top-[12%] left-[8%] h-[38vh] w-[25vw]",
+//       },
+
+//     ],
+//   ];
+//   return (
+//     <div
+//       onMouseMove={(e) => manageMouseMove(e)}
+//       className="main h-[120vh]  w-screen bg-white text-black overflow-hidden relative"
+//     >
+//       {WboData.map((item, index) => (
+//         <div
+//           key={index}
+//           ref={index === 1 ? plane1 : index === 2 ? plane2 : plane3}
+//           className={`plane w-full h-full absolute filter`}
+//         >
+//           {item.map((item, idx) => (
+//             <div className={` absolute  ${item.style}`}>
+//               <img
+//               key={idx}
+//               src={`src/assets/images/WorldOFBnO/WoB${item.img}.webp`}
+//               className={`h-full w-full object-cover `}
+//               alt="img"
+//             />
+//             <h3 className=" uppercase text-sm font-primary pt-1">{item.title}</h3>
+//             </div>
+//           ))}
+//         </div>
+//       ))}
+//       <div className="title absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+//         {/* <h1 className="text-4xl font-medium mb-4">Floating Images Gallery</h1>
+//         <p className="text-gray-400">Next.js and GSAP</p> */}
+//         <TextAnimation
+//           text={"with bang & olufsen"}
+//           className={"text-[1rem] text-black uppercase font-primary"}
+//         />
+//         <TextAnimation
+//           text={"Explore the World"}
+//           className={"text-[3rem] pt-2 text-black uppercase font-primary"}
+//         />
+//       </div>
+//     </div>
+//   );
+// }
+
 import { useRef } from "react";
-import gsap from "gsap";
+import { useScroll, useTransform, motion } from "framer-motion";
 import TextAnimation from "./TextAnimation";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
-import { VscWand } from "react-icons/vsc";
+import Button from "./Button";
+const slider1 = [
+  { img: "16", title: "SPEAKERS TO SUIT YOUR SPACE" },
+  { img: "13", title: "Charles Leclerc x Bang & Olufsen" },
+  { img: "10", title: "THE BEOSYSTEMS" },
+  { img: "9", title: "INTERVIEW WITH CAROLINE WOZNIACKI" },
+];
+
+const slider2 = [
+  { img: "15", title: "PERSONALISATION AT YOUR FINGERTIPS" },
+  { img: "1", title: "RECREATED CLASSICS" },
+  { img: "17", title: "THE DESIGNERS OF BEOSOUND A5" },
+  { img: "5", title: "LIVE FROM THE 10TH ARRONDISSEMENT" },
+];
 
 export default function Wbo() {
-  const plane1 = useRef(null);
-  const plane2 = useRef(null);
-  const plane3 = useRef(null);
-  let requestAnimationFrameId = null;
-  let xForce = 0;
-  let yForce = 0;
-  const easing = 0.08;
-  const speed = 0.01;
-
-  const manageMouseMove = (e) => {
-    const { movementX, movementY } = e;
-    xForce += movementX * speed;
-    yForce += movementY * speed;
-
-    if (requestAnimationFrameId === null) {
-      requestAnimationFrameId = requestAnimationFrame(animate);
-    }
-  };
-
-  const lerp = (start, target, amount) =>
-    start * (1 - amount) + target * amount;
-
-  const animate = () => {
-    xForce = lerp(xForce, 0, easing);
-    yForce = lerp(yForce, 0, easing);
-    gsap.set(plane1.current, { x: `+=${xForce}`, y: `+=${yForce}` });
-    gsap.set(plane2.current, {
-      x: `+=${xForce * 0.5}`,
-      y: `+=${yForce * 0.5}`,
-    });
-    gsap.set(plane3.current, {
-      x: `+=${xForce * 0.25}`,
-      y: `+=${yForce * 0.25}`,
-    });
-
-    if (Math.abs(xForce) < 0.01) xForce = 0;
-    if (Math.abs(yForce) < 0.01) yForce = 0;
-
-    if (xForce !== 0 || yForce !== 0) {
-      requestAnimationFrame(animate);
-    } else {
-      cancelAnimationFrame(requestAnimationFrameId);
-      requestAnimationFrameId = null;
-    }
-  };
-  const WboData = [
-    [
-      {
-        img: "1",
-        title: "Craft Stories",
-        style: "left-[2%] top-[55%]",
-      },
-      {
-        img: "5",
-        title: "Craft Stories",
-        style: "right-[5%] bottom-[10%]",
-      },
-    ],
-    [
-      {
-        img: "4",
-        style: "left-[45%] bottom-[72%]",
-      },
-      {
-        img: "2",
-        title: "Craft Stories",
-        style: "left-[25%] bottom-[10%]",
-      },
-    ],
-    [
-      {
-        img: "9",
-        title: "Craft Stories",
-        style: "top-[5%] left-[5%]",
-      },
-     
-    ],
-  ];
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
   return (
-    <div
-      onMouseMove={(e) => manageMouseMove(e)}
-      className="main h-[150vh] w-screen bg-white text-black overflow-hidden relative"
-    >
-      {WboData.map((item, index) => (
-        <div
-          key={index}
-          ref={index === 1 ? plane1 : index === 2 ? plane2 : plane3}
-          className={`plane w-full h-full absolute filter ${
-            index === 1
-              ? " brightness-[0.7]"
-              : index === 2
-              ? "brightness-[0.6]"
-              : "brightness-[0.5]"
-          }`}
+    <div className="bg-white h-[150vh] max-md:h-[110vh] w-full overflow-hidden">
+      <TextAnimation
+        text={"Explore the World of B & O"}
+        className={`text-[4rem] max-md:text-[1.8rem] pt-[10vh] font-Decorative`}
+      />
+      <div
+        ref={container}
+        className={`flex flex-col gap-[15vh] max-md:gap-[8vh] relative mt-[10vh] bg-white z-[1]`}
+      >
+        <motion.div
+          style={{ x: x1 }}
+          className={`flex relative gap-[3vw] w-[120vw] left-[-10vw] max-md:left-[-30vw]`}
         >
-          {item.map((item, idx) => (
-            <div className={`w-[15vw] absolute h-[35vh] ${item.style}`}>
-              <img
-              key={idx}
-              src={`src/assets/images/WorldOFBnO/WoB${item.img}.webp`}
-              className={`h-full w-full object-cover `}
-              alt="img"
-            />
-            <h3 className=" uppercase text-sm font-primary pt-1">{item.title}</h3>
-            </div>
-          ))}
-        </div>
-      ))}
-      <div className="title absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-        {/* <h1 className="text-4xl font-medium mb-4">Floating Images Gallery</h1>
-        <p className="text-gray-400">Next.js and GSAP</p> */}
-        <TextAnimation
-          text={"with bang & olufsen"}
-          className={"text-[1rem] text-black uppercase font-primary"}
-        />
-        <TextAnimation
-          text={"Explore the World"}
-          className={"text-[3rem] pt-2 text-black uppercase font-primary"}
-        />
+          {slider1.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`w-[25%] h-[40vh] max-md:h-[30vh] max-md:w-[35%] flex-shrink-0 flex flex-col items-start  justify-center`}
+              >
+                <div className={`w-full h-full overflow-hidden`}>
+                  <img
+                    alt={"image"}
+                    className="object-cover hover:scale-[1.2] duration-300 h-full w-full"
+                    src={`/src/assets/images/WorldOFBnO/WoB${item.img}.webp`}
+                  />
+                </div>
+                <h1 className="text-md uppercase py-1 max-md:text-xs font-primary">
+                  {item.title}
+                </h1>
+              </div>
+            );
+          })}
+        </motion.div>
+        <motion.div
+          style={{ x: x2 }}
+          className={`flex  gap-[3vw] w-[120vw] left-[-10vw]`}
+        >
+          {slider2.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`w-[25%] h-[40vh]  max-md:h-[30vh] max-md:w-[35%] flex-shrink-0 flex flex-col items-start justify-center`}
+              >
+                <div className={`w-full h-full overflow-hidden`}>
+                  <img
+                    alt={"image"}
+                    className="object-cover hover:scale-[1.2] duration-300 h-full w-full"
+                    src={`/src/assets/images/WorldOFBnO/WoB${item.img}.webp`}
+                  />
+                </div>
+                <h1 className="text-md uppercase py-1 max-md:text-xs font-primary">
+                  {item.title}
+                </h1>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
+      <Button
+        text={"View More"}
+        customclass={` w-fit mx-auto mt-[10vh] max-sm:mt-[5vh] bg-white border-[1px]`}
+        circ={`bg-black`}
+        p={`group-hover:text-white`}
+      />
     </div>
   );
 }

@@ -291,11 +291,11 @@ const Footer = () => {
         <h2 className="font-Secondary text-5xl max-md:text-sm py-3 max-md:py-0 text-center text-black">
           Join our global community for exclusive <br /> benefits and news about
         </h2>
-        <Button text={"Join us"} />
+        <Button text={"Join us"} customclass={`bg-[#fff] text-black`} />
       </div>
       <div className="relative h-[80vh] max-md:h-[90vh] bg-black " style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
-        <div className="fixed bottom-0 w-full text-black px-6 max-md:px-4">
-            <div className=" ml-[-.3vw] max-md:ml-[-3vw]">
+        <div className="fixed bottom-0  w-full text-black px-6 max-md:px-4">
+            <div className="">
             <Logo/>
             </div>
           <div className="container mx-auto  md:py-12 pt-3 flex flex-wrap  justify-between">
@@ -307,8 +307,6 @@ const Footer = () => {
 
               <p className="text-gray-500 md:mb-3 mb-2 ">Don't like the forms? Drop us a line via email.</p>
               <a className=" font-bold text-white " href="#">bangandolufsen.com</a>
-
-
             </div>
             <div className="right w-full md:w-[60%] h-full flex md:flex-wrap max-md:gap-5 justify-between md:pl-16">
             <div className="contact w-full md:w-1/4 mb-6 md:mb-0">

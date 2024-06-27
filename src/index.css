@@ -22,9 +22,17 @@
 }
 @font-face {
   font-family: "Melodrama";
-  src: url("/src/assets/Fonts/Melodrama-Variable.ttf") format("truetype");
+  src: url("/src/assets/Fonts/Melodrama-Regular.woff") format("woff");
 }
 
+
+src\assets\Fonts\acid-grotesk-regular.otf
+/* @font-face {
+  font-family: "Brolimo";
+  src: url("/src/assets/Fonts/BrolimoRegular.ttf") format("truetype");
+} */
+
+src\assets\Fonts\BrolimoRegular.ttf
 .service-info {
   flex: 2;
   width: 100%;

@@ -1,7 +1,7 @@
 import React from "react";
-import Inner from "../Components/latouts/Inner";
 import Products from "../Components/Products";
 import ShopLanding from "../Components/ShopLanding";
+import Footer from "../Components/Footer";
 
 const Soundbars = () => {
   const Productsdata = [
@@ -28,11 +28,11 @@ const Soundbars = () => {
   };
 
   return (
-    <Inner>
+    <div className="">
       <ShopLanding ShopLandingdata={ShopLandingdata} />
-      <Products Productsdata={Productsdata}/>
-      <div className="h-screen w-full bg-zinc-800"></div>
-    </Inner>
+      <Products Productsdata={Productsdata} />
+      <Footer/>
+    </div>
   );
 };
 

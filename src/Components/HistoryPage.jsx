@@ -48,24 +48,20 @@ const HistoryPage = () => {
     },
   ];
   return (
-    <div className="w-full h-fit bg-white flex flex-col items-center overflow-hidden  justify-between gap-20 pt-10 ">
+    <div className="w-full h-fit bg-white flex flex-col  items-center overflow-hidden  justify-between gap-20 py-10 ">
       <TextAnimation
         text={"THE HISTORY OF BANG & OLUFSEN"}
-        textSize={"text-[3rem]"}
+        textSize={"text-[3rem] max-sm:text-[2rem]"}
         className={"pt-10 font-Decorative"}
       />
-      <div className="w-full h-[200vh] gap-[10%] flex flex-col px-10 ">
+      <div className="w-full h-fit gap-[10vh] max-sm:gap-10 mt-[10vh] flex flex-col px-20 max-xl:px-5">
         {History.map((item, index) => (
           <div
-            className={`w-[100%] h-[45vh] ${
-              index % 2 === 1 && "flex-row-reverse"
-            } flex justify-between`}
+            className={`w-[100%] h-[50vh] max-xl:h-[80vh]  flex max-xl:flex-col gap-10 justify-between`}
           >
-            <div className="h-full w-[40%] ">
+            <div className="h-full w-[40%] max-xl:w-full">
               <div
-                className={`flex flex-col justify-between ${
-                  index % 2 === 1 ? "text-end" : "text-start"
-                } w-full h-full`}
+                className={`flex flex-col justify-between max-sm:py-5 w-full h-full`}
               >
                 <div>
                   <Paragraph
@@ -79,13 +75,13 @@ const HistoryPage = () => {
                 </div>
                 <Paragraph
                   phrases={item.paragraph}
-                  className={`text-xl font-primary`}
+                  className={`text-xl font-primary max-sm:text-[15px] tracking-tighter max-sm:leading-[1.5rem]`}
                 />
               </div>
             </div>
-            <div className="h-full w-[35%] bg-green-300 overflow-hidden">
+            <div className="h-full w-[35%] max-xl:w-full overflow-hidden">
               <img
-                className="w-full h-screen object-cover"
+                className="w-full h-full object-cover"
                 src={item.imgsrc}
                 alt=""
               />
@@ -93,7 +89,11 @@ const HistoryPage = () => {
           </div>
         ))}
       </div>
-      <Button text={"View More"} className={`text-white bg-black`} />
+      <Button
+        text={"View More"}
+        customclass={` w-fit mx-auto mt-[10vh] max-sm:mt-[5vh] bg-white border-[1px]`}
+        circ={`bg-black`} p={`group-hover:text-white`}
+      />
     </div>
   );
 };

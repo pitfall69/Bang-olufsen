@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import ShopNowBtn from "../Components/ShopNowBtn";
+import { Link } from "react-router-dom";
 const HomePagePoduct = () => {
   const HomePageProductData = useMemo(
     () => [
@@ -8,33 +9,36 @@ const HomePagePoduct = () => {
         img2: "/src/assets/images/HomepageImage/hp12.webp",
         imgTitle: "BEOPLAY H95",
         imgDes: "Premium over-ear headphones",
+        route: "/headphones",
       },
       {
         img1: "/src/assets/images/HomepageImage/hp21.webp",
         img2: "/src/assets/images/HomepageImage/hp22.webp",
         imgTitle: "BEOSOUND A1  EX",
         imgDes: "Portable Bluetooth speaker",
+        route:"/speakers"
       },
       {
         img1: "/src/assets/images/HomepageImage/hp31.webp",
         img2: "/src/assets/images/HomepageImage/hp32.webp",
         imgTitle: "BALENCIAGA I BANG",
         imgDes: "Haute Couture HI-FI",
+        route:"/speakers"
       },
     ],
     [] // Dependency array is empty since data doesn't change
   );
 
   return (
-    <div className="w-full flex flex-col bg-[#fff]">
+    <div className="w-full flex flex-col gap-2 bg-[#fff]">
       {HomePageProductData.map((item, index) => (
-        <div
+        <Link to={item.route}
           key={index}
-          className="relative bg-[] h-[80vh] max-md:h-[100vh] px-2 flex max-md:flex-col-reverse w-full"
+          className="relative  h-[80vh] max-md:h-[100vh] px-2  flex max-md:flex-col-reverse w-full gap-2"
         >
-          <div className="w-1/2 h-full relative max-md:w-full max-md:h-[50%]">
+          <div className="w-1/2 h-full relative max-md:w-full max-md:h-[50%] overflow-hidden">
             <img
-              className="h-full w-full object-cover p-1"
+              className="h-full hover:scale-[1.1] transition-all duration-300   w-full object-cover"
               src={item.img1}
               alt=""
             />
@@ -42,9 +46,9 @@ const HomePagePoduct = () => {
               <ShopNowBtn />
             </div>
           </div>
-          <div className="w-1/2 h-full relative max-md:w-full p-1 max-md:h-[50%]">
+          <div className="w-1/2   h-full relative max-md:w-full  max-md:h-[50%] overflow-hidden">
             <img
-              className={`h-full w-full object-cover ${
+              className={`h-full w-full object-cover hover:scale-[1.1] transition-all duration-300  ${
                 index === 2 ? "object-top" : ""
               }`}
               src={item.img2}
@@ -62,7 +66,7 @@ const HomePagePoduct = () => {
               {item.imgTitle}
             </h1>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
@@ -70,9 +74,7 @@ const HomePagePoduct = () => {
 
 export default HomePagePoduct;
 
-
-
-// import { useRef } from 'react'; 
+// import { useRef } from 'react';
 
 // const projects = [
 //   {
@@ -146,7 +148,6 @@ export default HomePagePoduct;
 //     </main>
 //   )
 // }
-
 
 // function Double({ projects, reversed }) {
 //     const firstImage = useRef(null);

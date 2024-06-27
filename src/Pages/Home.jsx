@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Inner from "../Components/latouts/Inner";
 import Footer from "../Components/Footer";
 import HomePageVideo from "../Components/HomePageVideo";
 import LandingPage from "../Components/LandingPage";
@@ -10,25 +9,20 @@ import TextAnimation from "../Components/TextAnimation";
 import Wbo from "../Components/Wbo";
 import Collaborators from "../Components/Collaborators";
 import HomeWorldBandO from "../Components/HomeWorldBandO";
-import WorldBand from "../Components/WorldBand";
-import Paragraph from "../Components/Paragraph";
 import HistoryPage from "../Components/HistoryPage";
 const Home = () => {
   const scrollRef = useRef(null);
   return (
     <div ref={scrollRef} data-scroll-container>
-      <Inner>
         <LandingPage />
         <AboutPage />
         <HomePagePoduct />
-        
-        <Wbo />
         <HomePageVideo />
+        <Wbo />
         <OurStories />
         <HistoryPage />
         <Collaborators />
         <Footer />
-      </Inner>
     </div>
   );
 };

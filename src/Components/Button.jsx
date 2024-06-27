@@ -1,56 +1,98 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import SplitTextJS from "split-text-js";
-const Button = ({ text, customclassName }) => {
-  const { contextSafe } = useGSAP();
-  const buttonh1Ref1 = useRef();
-  const buttonh1Ref2 = useRef();
-  const splitTextRef1 = useRef();
-  const splitTextRef2 = useRef();
-
+const Button = ({
+  text,
+  customclass,
+  p,
+  circ,
+  backgroundColor = "#fff",
+  ...attributes
+}) => {
+  const circle = useRef(null);
+  let timeline = useRef(null);
+  let timeoutId = null;
   useEffect(() => {
-    if (buttonh1Ref1.current && buttonh1Ref2.current) {
-      splitTextRef1.current = new SplitTextJS(buttonh1Ref1.current);
-      splitTextRef2.current = new SplitTextJS(buttonh1Ref2.current);
-    }
+    timeline.current = gsap.timeline({ paused: true });
+    timeline.current
+      .to(
+        circle.current,
+        { top: "-25%", width: "150%", duration: 0.4, ease: "power3.in" },
+        "enter"
+      )
+      .to(
+        circle.current,
+        { top: "-150%", width: "125%", duration: 0.25 },
+        "exit"
+      );
   }, []);
 
-  const animateChars = (chars, yValue, duration) => {
-    gsap.to(chars, {
-      y: yValue,
-      duration: duration,
-    });
+  const manageMouseEnter = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeline.current.tweenFromTo("enter", "exit");
   };
 
-  const handleMouseEnter = contextSafe(() => {
-    if (splitTextRef1.current && splitTextRef2.current) {
-      animateChars(splitTextRef1.current.chars, "-100%", 0.3);
-      animateChars(splitTextRef2.current.chars, "-100%", 0.3);
-    }
-  });
-
-  const handleMouseLeave = contextSafe(() => {
-    if (splitTextRef1.current && splitTextRef2.current) {
-      animateChars(splitTextRef1.current.chars, "0%", 0.3);
-      animateChars(splitTextRef2.current.chars, "0%", 0.3);
-    }
-  });
+  const manageMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      timeline.current.play();
+    }, 300);
+  };
 
   return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={`h-[2.1rem] text-[1rem] relative bg-white  px-5  mt-5 font-primary leading-[2rem] overflow-hidden w-fit max-lg:text-[.7rem] uppercase `}
-    >
-      <h1 ref={buttonh1Ref1} className={`${customclassName}`}>
-        {text}
-      </h1>
-      <h1 ref={buttonh1Ref2} className={`${customclassName}`}>
-        {text}
-      </h1>
-    </div>
+    <Magnetic>
+      <div
+        className={`rounded-full cursor-pointer group ${
+          customclass ? customclass : "text-white bg-[#ffffff36]"
+        }  relative flex items-center justify-center px-10 max-sm:px-5 py-3`}
+        style={{ overflow: "hidden" }}
+        onMouseEnter={() => {
+          manageMouseEnter();
+        }}
+        onMouseLeave={() => {
+          manageMouseLeave();
+        }}
+        {...attributes}
+      >
+        <p className={`font-primary max-sm:text-sm uppercase ${p} transition-all duration-200 delay-100`}>
+          {text}
+        </p>
+        <div
+          ref={circle}
+          className={`w-full absolute h-[150%] ${circ} z-[-1] rounded-[50%] top-[100%]`}
+        ></div>
+      </div>
+    </Magnetic>
   );
 };
 
 export default Button;
+
+const Magnetic = ({ children }) => {
+  const magnetic = useRef(null);
+  useEffect(() => {
+    const xTo = gsap.quickTo(magnetic.current, "x", {
+      duration: 1,
+      ease: "elastic.out(1, 0.3)",
+    });
+    const yTo = gsap.quickTo(magnetic.current, "y", {
+      duration: 1,
+      ease: "elastic.out(1, 0.3)",
+    });
+
+    magnetic.current.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      const { height, width, left, top } =
+      magnetic.current.getBoundingClientRect();
+      const x = clientX - (left + width / 2);
+      const y = clientY - (top + height / 2);
+      xTo(x * 0.35);
+      yTo(y * 0.35);
+    });
+    magnetic.current.addEventListener("mouseleave", (e) => {
+      xTo(0);
+      yTo(0);
+    });
+  }, []);
+
+  return React.cloneElement(children, { ref: magnetic });
+};
