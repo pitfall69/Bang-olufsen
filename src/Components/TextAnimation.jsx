@@ -16,7 +16,7 @@ const TextAnimation = ({ text, textSize, className }) => {
       stagger: 0.01,
       scrollTrigger: {
         trigger: textRef.current,
-        start: "top 50%",
+        start: "top 60%",
         end: "top 20%",
         // scrub: true, 
       },

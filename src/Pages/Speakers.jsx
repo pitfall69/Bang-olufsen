@@ -1,5 +1,4 @@
 import React from "react";
-import Inner from "../Components/latouts/Inner";
 import ShopLanding from "../Components/ShopLanding";
 import Products from "../Components/Products";
 import Footer from "../Components/Footer";
@@ -91,12 +90,11 @@ const Speakers = () => {
   };
 
   return (
-    <Inner>
+    <div className="">
       <ShopLanding ShopLandingdata={ShopLandingdata} />
       <Products Productsdata={Productsdata} />
-      <div className="h-[40vh] w-full bg-[#fff]"></div>
-      <Footer />
-    </Inner>
+      <Footer/>
+    </div>
   );
 };
 

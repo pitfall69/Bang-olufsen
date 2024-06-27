@@ -31,17 +31,17 @@ const OurStories = () => {
       style: " top-[33vh] left-[12vw] w-[25vw] h-[25vh] max-sm:w-[35vw]",
     },
     {
-      style: "top-[0vh] left-[0vh] w-[25vw] h-[25vh] max-lg:w-[30vw]",
+      style: "top-[0vh] left-[0vh] w-[25vw] h-[25vh] max-lg:w-[30vw] ",
     },
   ];
 
   return (
     <div className="w-full bg-white">
-      <TextAnimation
+      {/* <TextAnimation
         text={"Our Stories"}
-        className={`text-[5rem] uppercase pt-20 font-primary`}
-      />
-      <div ref={containerRef} className="h-[300vh] mt-10 relative">
+        className={`text-[4rem] uppercase pt-[15vh] font-Decorative`}
+      /> */}
+      <div ref={containerRef} className="h-[300vh]  bg-white relative">
         <div className="sticky top-0 overflow-hidden h-[100vh]">
           {images.map((item, idx) => (
             <motion.div
