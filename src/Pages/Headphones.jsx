@@ -76,7 +76,6 @@ const Headphones = () => {
     <Inner>
       <ShopLanding ShopLandingdata={ShopLandingdata}/>
         <Products Productsdata={Productsdata} />
-        <div className="h-screen w-full bg-zinc-800"></div>
          <Footer/> 
     </Inner>
   );

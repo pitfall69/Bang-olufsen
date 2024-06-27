@@ -28,19 +28,19 @@ const Footer = () => {
     <div>
       <div className="footer-main w-full h-[40vh] max-md:h-[30vh] flex flex-col gap-3 items-center justify-center bg-zinc-200">
         <h3 className="text-sm font-primary text-black font-bold">EXPLORE THE HOUSE OF BANG & OLUFSEN</h3>
-        <h2 className="font-Secondary text-5xl max-md:text-sm py-3 max-md:py-0 text-center text-black">
+        <h2 className="font-Secondary text-5xl max-md:text-sm py-3 max-md:py-0 text-center text-black md:text-lg">
           Join our global community for exclusive <br /> benefits and news about
         </h2>
-        <Button text={"Join us"} customclass={`bg-[#fff] text-black`} />
+        <Button text={"Join us"} customclass={`bg-[#fff] text-black md:text-xs`} />
       </div>
-      <div className="relative h-[80vh] max-md:h-[90vh] bg-black " style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
+      <div className="relative h-[80vh] max-md:h-[90vh] md:h-[90vh] bg-black " style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
         <div className="fixed bottom-0  w-full text-black px-6 max-md:px-4">
             <div className="">
             <Logo/>
             </div>
           <div className="container mx-auto  md:py-12 pt-3 flex flex-wrap  justify-between">
             
-            <div className="first-col w-full md:w-[40%] mb-10 md:mb-0 ">
+            <div className="first-col w-full  lg:w-[40%]  mb-10 md:mb-0 ">
               <h1 className="md:text-5xl text-xl font-[500] md:mb-5 mb-2 text-white">We would love to hear from you.</h1>
               <p className="text-gray-500 max-md:text-sm md:mb-6 mb-4 ">Feel free to reach out if you want to collaborate with us, or simply have a chat.</p>
               <button className="bg-white max-md:text-sm text-black px-4 md:px-6 py-2 rounded-full md:mb-6 mb-4 ">Become a Partner &rarr;</button>

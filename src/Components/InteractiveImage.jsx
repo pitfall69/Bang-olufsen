@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // // import React, { useRef, useEffect, useState } from "react";
 // // import * as THREE from "three";
 // // import Button from "./Button";
@@ -575,7 +573,6 @@
 
 // export default InteractiveImage;
 
->>>>>>> 062b682f62fcafd2314016d9ce63fbd0062c4c66
 import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import Button from "./Button";

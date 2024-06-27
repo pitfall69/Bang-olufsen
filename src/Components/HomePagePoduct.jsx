@@ -74,9 +74,6 @@ const HomePagePoduct = () => {
 
 export default HomePagePoduct;
 
-<<<<<<< HEAD
-
-=======
 // import { useRef } from 'react';
 
 // const projects = [
@@ -238,4 +235,3 @@ export default HomePagePoduct;
 //         </div>
 //     );
 // }
->>>>>>> 062b682f62fcafd2314016d9ce63fbd0062c4c66
