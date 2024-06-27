@@ -7,7 +7,7 @@ import AboutPage from "../Components/AboutPage";
 import OurStories from "../Components/OurStories";
 import Wbo from "../Components/Wbo";
 import Collaborators from "../Components/Collaborators";
-import HomeWorldBandO from "../Components/HomeWorldBandO";
+
 import HistoryPage from "../Components/HistoryPage";
 const Home = () => {
   const scrollRef = useRef(null);

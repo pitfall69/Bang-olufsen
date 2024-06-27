@@ -17,31 +17,31 @@ const Navbar = () => {
             categoryTitle: "All Speakers",
             categoryDescription: "BEOSOUND A9",
             categoryImage:
-              "https://static.dezeen.com/uploads/2020/03/layer-bang-olufsen-balance-speaker-design_dezeen_2364_col_12.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719505745/layer-bang-olufsen-balance-speaker-design_dezeen_2364_col_12_oe9fon.jpg",
           },
           {
             categoryTitle: "Portable",
             categoryDescription: "BEOSOUND A1 2ND GEN",
             categoryImage:
-              "https://cdn.mos.cms.futurecdn.net/XtTL8xyXXrSAiuSoTLnKFW.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719505828/XtTL8xyXXrSAiuSoTLnKFW_aqtfy4.jpg",
           },
           {
             categoryTitle: "Home Audio",
             categoryDescription: "BEOSOUND BALANCE",
             categoryImage:
-              "https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Beosound-Balance-2-920x609.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491447/BEOSOUND_BALANCE_pxebgf.webp",
           },
           {
             categoryTitle: "Speaker Sets",
             categoryDescription: "BEOLAB 8",
             categoryImage:
-              "https://bollostore.com/wp-content/uploads/2023/12/Untitled-design34.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719505988/Untitled-design34_bsckwq.jpg",
           },
           {
             categoryTitle: "Speaker Accessories",
             categoryDescription: "BESOUND LEVEL WALL BRACKET",
             categoryImage:
-              "https://www.mrporter.com/variants/images/1647597327922252/cu/w2000_q60.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719505969/w2000_q60_icpz8j.jpg",
           },
         ],
       },
@@ -53,25 +53,25 @@ const Navbar = () => {
             categoryTitle: "All Headphones",
             categoryDescription: "BEOPLAY H9",
             categoryImage:
-              "https://i.pinimg.com/564x/17/ba/5f/17ba5f8986966c9cfd870c2877c56ad5.jpg",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719506219/17ba5f8986966c9cfd870c2877c56ad5_me9okp.jpg",
           },
           {
             categoryTitle: "Over-Ear",
             categoryDescription: "BEOPLAY H95",
             categoryImage:
-              "https://images.ctfassets.net/8cd2csgvqd3m/5NDF4JIjP9Au8CIPvh4tBh/aba17042a2c92e70057645616dc6f5d5/Beoplay-H95-_-Beoplay-A9-4th-Gen.-0004-Sound-And-Vision-For-Your-Home-2000x2800px.jpg?q=90&w=1920&fit=fill&fm=webp",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719506233/Beoplay-H95-_-Beoplay-A9-4th-Gen.-0004-Sound-And-Vision-For-Your-Home-2000x2800px_euz88b.webp",
           },
           {
             categoryTitle: "In-Ear",
             categoryDescription: "BEOPLAY EX FERRARI EDITION",
             categoryImage:
-              "https://images.ctfassets.net/8cd2csgvqd3m/1ONawzyBPqAsQGm5bIPwaF/79100b4328ddb917a45f6dc1713e03a3/EX_Ferrari_HR.jpg?q=90&fm=webp&w=720",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719506242/EX_Ferrari_HR_d8ojp5.webp",
           },
           {
             categoryTitle: "Headphone Accessories",
             categoryDescription: "CASE FOR BEOPLAY H95",
             categoryImage:
-              "https://crewedesign.com/cdn/shop/files/CD.Bang.Rose.Top_1a0f8d99-b25b-4a84-a46a-5df5b649183b.jpg?v=1699586972",
+              "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719506251/CD.Bang.Rose.Top_1a0f8d99-b25b-4a84-a46a-5df5b649183b_hx6wf9.jpg",
           },
         ],
       },
@@ -147,36 +147,6 @@ const Navbar = () => {
           },
         ],
       },
-      // {
-      //   title: "SUPPORT",
-      //   path: "/support",
-      //   data: [
-      //     {
-      //       categoryTitle: "Register your Product",
-      //       categoryDescription: "REGISTER PRODUCT",
-      //       categoryImage:
-      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_register_product.jpg",
-      //     },
-      //     {
-      //       categoryTitle: "Replace & Repair",
-      //       categoryDescription: "WARRANTY SERVICE",
-      //       categoryImage:
-      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_warranty_service.jpg",
-      //     },
-      //     {
-      //       categoryTitle: "Track Warranty Request",
-      //       categoryDescription: "TRACK STATUS",
-      //       categoryImage:
-      //         "https://bangolufsenrmaskillgohel.blob.core.windows.net/zendesk-guide/bo_track_repair.jpg",
-      //     },
-      //     {
-      //       categoryTitle: "Return online order",
-      //       categoryDescription: "RETURN ORDER",
-      //       categoryImage:
-      //         "https://images.unsplash.com/photo-1543499459-d1460946bdc6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      //     },
-      //   ],
-      // },
     ],
     []
   );

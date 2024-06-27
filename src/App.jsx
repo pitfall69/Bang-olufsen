@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./Components/Navbar";
@@ -11,8 +11,10 @@ import Worldbando from "./Pages/Worldbando";
 import LocomotiveScroll from "locomotive-scroll";
 import Preloader from "./Components/Preloader";
 import Inner from "./Components/latouts/Inner";
+
 const App = () => {
   const location = useLocation();
+
   useEffect(() => {
     const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
@@ -23,10 +25,16 @@ const App = () => {
       scroll.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  }, [location.pathname]);
+
   return (
     <div className="relative bg-white" data-scroll-container>
-      {/* <Preloader/> */}
-      <div className="mouse-followerw-5 h-5 absolute rounded-[50%] bg-white top-0 left-0 z-[999]"></div>
+      <Preloader/>
       <Navbar location={location} key={location.pathname} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
