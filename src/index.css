@@ -24,6 +24,13 @@
   font-family: "Melodrama";
   src: url("/src/assets/Fonts/Melodrama-Regular.woff") format("woff");
 }
+@font-face {
+  font-family: "satoshi";
+  src: url("/src/assets/Fonts/Satoshi-Regular.ttf") format("truetype");
+}
+
+
+
 
 #imageContainer {
   width: 100%;
@@ -51,3 +58,21 @@ canvas {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* [data-scroll-container] {
+  will-change: transform;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-out forwards;
+} */

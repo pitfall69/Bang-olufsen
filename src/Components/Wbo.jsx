@@ -29,11 +29,11 @@ export default function Wbo() {
     <div className="bg-white h-[150vh] max-md:h-[110vh] w-full overflow-hidden">
       <TextAnimation
         text={"Explore the World of B & O"}
-        className={`text-[4rem] max-md:text-[1.8rem] pt-[10vh] font-Decorative`}
+        className={`text-[3.5rem] max-md:text-[1.8rem] pt-[10vh] font-['satoshi'] uppercase`}
       />
       <div
         ref={container}
-        className={`flex flex-col gap-[15vh] max-md:gap-[8vh] relative mt-[10vh] bg-white z-[1]`}
+        className={`flex flex-col gap-[15vh] max-md:gap-[8vh] relative mt-[15vh] bg-white z-[1]`}
       >
         <motion.div
           style={{ x: x1 }}

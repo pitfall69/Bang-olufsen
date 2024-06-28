@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import Button from "./Button";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitTextJS from "split-text-js";
 const InteractiveImage = () => {
   const imageContainerRef = useRef(null);
   const easeFactor = useRef(0.02);
@@ -240,8 +242,14 @@ const InteractiveImage = () => {
 
     if (imageContainerRef.current) {
       imageContainerRef.current.addEventListener("mousemove", handleMouseMove);
-      imageContainerRef.current.addEventListener("mouseenter", handleMouseEnter);
-      imageContainerRef.current.addEventListener("mouseleave", handleMouseLeave);
+      imageContainerRef.current.addEventListener(
+        "mouseenter",
+        handleMouseEnter
+      );
+      imageContainerRef.current.addEventListener(
+        "mouseleave",
+        handleMouseLeave
+      );
     }
 
     return () => {
@@ -270,39 +278,55 @@ const InteractiveImage = () => {
       }
     };
   }, [imageSrc]);
+  const landingh1Ref = useRef();
+  const landingh1Ref2 = useRef()
+  useEffect(() => {
+    const splitText = new SplitTextJS(landingh1Ref.current);
+    const splitText2 = new SplitTextJS(landingh1Ref2.current);
+    gsap.from(splitText.chars, {
+      yPercent: 100,
+      stagger:0.012,
 
+    });
+    gsap.from(splitText2.chars, {
+      yPercent: 100,
+      stagger:0.012,
+      
+    });
+  },[]);
   return (
     <div
-    id="imageContainer"
-    ref={imageContainerRef}
-    style={{
-      width: "100vw",
-      height: "100vh",
-      overflow: "hidden",
-      position: "relative",
-    }}
-  >
-    <div className="absolute w-full flex max-sm:mt-[-10vh] flex-col items-center justify-center top-0 left-0 z-[99] overflow-hidden">
-      <h1
-        className=" text-[6rem] h-fit w-fit overflow-hidden max-sm:text-[8vw] text-center  text-white font-Decorative  uppercase leading-none"
-      >
-        Experience the Ultimate
-      </h1>
-      <h1 className="landing-text text-[6rem] h-fit  w-fit overflow-hidden max-sm:text-[8vw] text-center  text-white font-Decorative  uppercase leading-none">
-        Audio Innovation and Design
-      </h1>
-      <p className="text-md font-primary pb-5 text-white w-[30%] max-sm:text-sm max-sm:w-[80%] text-center mt-5">
-        Immerse yourself in unparalleled sound quality and sleek,
-        sophisticated design with Bang & Olufsen – where every note is a
-        masterpiece.
-      </p>
-      <Button
-        text={"Explore More"}
-        p={"group-hover:text-[#000]"}
-        circ={"bg-white"}
-      />
+      id="imageContainer"
+      ref={imageContainerRef}
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
+      <div className="absolute w-full flex max-sm:mt-[-10vh] flex-col items-center justify-center top-0 left-0 z-[99] overflow-hidden">
+        <h1
+          ref={landingh1Ref}
+          className=" text-[6rem] h-fit w-fit overflow-hidden max-sm:text-[6vw] text-center  text-white font-Decorative uppercase leading-none"
+        >
+          Experience the Ultimate
+        </h1>
+        <h1  ref={landingh1Ref2} className="landing-text text-[6rem] h-fit  w-fit overflow-hidden max-sm:text-[6vw] text-center  text-white font-Decorative  uppercase leading-none">
+          Audio Innovation and Design
+        </h1>
+        <p className="text-md font-primary pb-5 text-[#fff] w-[30%] max-sm:text-sm max-sm:w-[80%] text-center mt-5">
+          Immerse yourself in unparalleled sound quality and sleek,
+          sophisticated design with Bang & Olufsen – where every note is a
+          masterpiece.
+        </p>
+        <Button
+          text={"Explore More"}
+          p={"group-hover:text-[#000]"}
+          circ={"bg-white"}
+        />
+      </div>
     </div>
-  </div>
   );
 };
 

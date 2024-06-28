@@ -39,7 +39,7 @@ const HomePagePoduct = () => {
         >
           <div className="w-1/2 h-full relative max-md:w-full max-md:h-[50%] overflow-hidden">
             <img
-              className="h-full hover:scale-[1.1] transition-all duration-300   w-full object-cover"
+              className="h-full hover:scale-[1.1] hover:blur-[2px] transition-all duration-300   w-full object-cover"
               src={item.img1}
               alt=""
             />
@@ -49,7 +49,7 @@ const HomePagePoduct = () => {
           </div>
           <div className="w-1/2   h-full relative max-md:w-full  max-md:h-[50%] overflow-hidden">
             <img
-              className={`h-full w-full object-cover hover:scale-[1.1] transition-all duration-300  ${
+              className={`h-full w-full object-cover hover:scale-[1.1] hover:blur-[2px] transition-all duration-300  ${
                 index === 2 ? "object-top" : ""
               }`}
               src={item.img2}

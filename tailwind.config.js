@@ -22,7 +22,10 @@ export default {
       },
       height: {
         'inherit': 'inherit',
-      }
+      },
+      screens: {
+        'xs': '400px', 
+      },
     },
   },
   plugins: [],

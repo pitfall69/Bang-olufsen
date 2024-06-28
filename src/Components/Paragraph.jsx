@@ -7,7 +7,7 @@ const Paragraph = ({ phrases , className }) => {
     enter: (i) => ({
       y: "0",
       transition: {
-        duration: 0.95,
+        duration: 0.65,
         ease: [0.33, 1, 0.68, 1],
         delay: 0.075 * i,
       },

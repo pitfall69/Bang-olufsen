@@ -16,7 +16,7 @@ const ShowProduct = React.memo(({ setopenProduct, openProduct, showproductdata }
         <GrClose onClick={handleClose} className="text-2xl max-md:text-lg" />
       </div>
       <div className={`w-full h-[85%] max-md:h-[60%] px-[5%] ${
-        openProduct ? ' opacity-1 duration-1000  ' : ' opacity-0 duration-700 ' 
+        openProduct ? ' opacity-1 duration-300 delay-[.55s]  ' : ' opacity-0 duration-300 ' 
       } `}>
         <div className="w-full h-[75%] ">
           {showproductdata?.productImage && (
@@ -35,7 +35,7 @@ const ShowProduct = React.memo(({ setopenProduct, openProduct, showproductdata }
         <Button text={"Experience in Store"} customclass={`w-fit bg-[#000] text-white md:text-xs md:px-5 max-md:text-xs max-md:px-4 `} circ={"bg-white "}  p={"group-hover:text-black"} />
       </div>
     </div>
-  );
+  );  
 });
 
 export default ShowProduct;

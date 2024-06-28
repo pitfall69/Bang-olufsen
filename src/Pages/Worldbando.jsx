@@ -174,6 +174,7 @@ const WorldofBandO = () => {
               className="w-[80%] max-sm:h-[45vh] max-h-[65vh] max-sm:w-full object-cover"
               src={item.Image}
               alt={item.Title}
+              // loading="lazy"
             />
             <h1 className="font-primary pt-2 opacity-75 max-sm:text-sm">
               {item.Title}
@@ -196,3 +197,5 @@ const WorldofBandO = () => {
     </div>
   );
 };
+
+

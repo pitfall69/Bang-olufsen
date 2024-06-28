@@ -10,7 +10,6 @@ const TextAnimation = ({ text, textSize, className }) => {
 
   useEffect(() => {
     const splitText = new SplitTextJS(textRef.current);
-    
     gsap.from(splitText.chars, {
       y: 100,
       stagger: 0.01,
