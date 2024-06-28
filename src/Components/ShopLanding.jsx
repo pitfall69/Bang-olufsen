@@ -17,6 +17,7 @@ const ShopLanding = ({ ShopLandingdata }) => {
             className="h-full w-full object-cover absolute"
             src={ShopLandingdata.Img}
             alt=""
+            loading="lazy"
           />
 
           <div className="h-full w-full max-[450px]:mt-[4vh]  backdrop-blur-sm top-0 flex px-20 max-lg:px-10 max-sm:px-5">

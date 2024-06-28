@@ -30,7 +30,22 @@ const HomePagePoduct = () => {
   );
   return (
    <>
-   <div className="w-full h-[50vh] bg-red-100 "></div>
+   <div className="flex flex-col items-center justify-center h-[50vh] bg-gray-50 px-4 sm:px-6 lg:px-8 text-center">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-['satoshi']">
+        Where Innovation Meets Luxury
+      </h1>
+      <p className="max-w-2xl leading-6 text-lg sm:text-xl lg:text-2xl text-gray-700 mb-8 font-Secondary">
+        Experience the pinnacle of sound and design with Bang & Olufsen. Our ethos is rooted in delivering unmatched craftsmanship, exceptional sound quality, and timeless design.
+      </p>
+      <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <button className="px-6 py-3 text-lg font-medium text-white bg-black rounded-md hover:bg-gray-800 font-">
+          Explore Products
+        </button>
+        <button className="px-6 py-3 text-lg font-medium text-black bg-gray-200 rounded-md hover:bg-gray-300">
+          Learn More
+        </button>
+      </div>
+   </div>
     <div className="w-full flex flex-col gap-2 bg-[#fff]">
       {HomePageProductData.map((item, index) => (
         <Link to={item.route}
@@ -39,7 +54,7 @@ const HomePagePoduct = () => {
         >
           <div className="w-1/2 h-full relative max-md:w-full max-md:h-[50%] overflow-hidden">
             <img
-              className="h-full hover:scale-[1.1] hover:blur-[2px] transition-all duration-300   w-full object-cover"
+              className="h-full hover:scale-[1.1]  transition-all duration-300   w-full object-cover"
               src={item.img1}
               alt=""
             />
@@ -49,7 +64,7 @@ const HomePagePoduct = () => {
           </div>
           <div className="w-1/2   h-full relative max-md:w-full  max-md:h-[50%] overflow-hidden">
             <img
-              className={`h-full w-full object-cover hover:scale-[1.1] hover:blur-[2px] transition-all duration-300  ${
+              className={`h-full w-full object-cover hover:scale-[1.1]  transition-all duration-300  ${
                 index === 2 ? "object-top" : ""
               }`}
               src={item.img2}

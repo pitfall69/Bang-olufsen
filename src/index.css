@@ -8,13 +8,13 @@
 }
 
 @font-face {
-  font-family: "Meseosans";
-  src: url("/src\assets\Fonts\museosanscyrl-500.ttf") format("truetype");
+  font-family: "Kano";
+  src: url("src/assets/Fonts/Kano.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "GTWALSHEIM";
-  src: url("/src\assets\Fonts\GTWALSHEIM.ttf") format("truetype");
+  font-family: "Intro";
+  src: url("src/assets/Fonts/Dense-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Sans";
@@ -27,6 +27,10 @@
 @font-face {
   font-family: "satoshi";
   src: url("/src/assets/Fonts/Satoshi-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Landing";
+  src: url("/src/assets/Fonts/Shinkosans.ttf") format("truetype");
 }
 
 

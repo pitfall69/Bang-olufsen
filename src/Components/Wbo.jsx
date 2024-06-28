@@ -22,8 +22,8 @@ export default function Wbo() {
     target: container,
     offset: ["start end", "end start"],
   });
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -300]);
   const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
   return (
     <div className="bg-white h-[150vh] max-md:h-[110vh] w-full overflow-hidden">
@@ -33,11 +33,11 @@ export default function Wbo() {
       />
       <div
         ref={container}
-        className={`flex flex-col gap-[15vh] max-md:gap-[8vh] relative mt-[15vh] bg-white z-[1]`}
+        className={`flex flex-col gap-[10vh] max-md:gap-[8vh] relative mt-[15vh] bg-white z-[1]`}
       >
         <motion.div
           style={{ x: x1 }}
-          className={`flex relative gap-[3vw] w-[120vw] left-[-10vw] max-md:left-[-30vw]`}
+          className={`flex relative gap-[3vw] w-[120vw] left-[-10vw] max-md:left-[-40vw] max-sm:left-[-60vw]`}
         >
           {slider1.map((item, index) => {
             return (
@@ -61,7 +61,7 @@ export default function Wbo() {
         </motion.div>
         <motion.div
           style={{ x: x2 }}
-          className={`flex  gap-[3vw] w-[120vw] left-[-10vw]`}
+          className={`flex  gap-[3vw] w-[120vw] left-[-40vw]`}
         >
           {slider2.map((item, index) => {
             return (

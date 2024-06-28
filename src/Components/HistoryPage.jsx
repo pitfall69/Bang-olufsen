@@ -53,8 +53,8 @@ const HistoryPage = () => {
     <div className="w-full h-fit bg-white flex flex-col  items-center overflow-hidden  justify-between gap-20 py-10 ">
       <TextAnimation
         text={"THE HISTORY OF BANG & OLUFSEN"}
-        textSize={"text-[3rem] max-sm:text-[5vw]"}
-        className={"pt-10 font-['satoshi']"}
+        textSize={"text-[3rem] max-sm:text-[10vw]"}
+        className={"pt-10 font-['Intro']"}
       />
       <div className="w-full h-fit gap-[10vh] max-sm:gap-10 sm:mt-[10vh] flex flex-col px-10 max-xl:px-5">
         {History.map((item, index) => (
@@ -80,7 +80,7 @@ const HistoryPage = () => {
                 </div>
                 <Paragraph
                   phrases={item.paragraph}
-                  className={`text-[1.8rem] opacity-75 leading-[2rem] font-Secondary max-sm:text-[1.3rem] tracking-tighter max-sm:leading-[1.5rem] max-md:text-[1.5rem] max-md:leading-[1.8rem] max-xs:text-[1rem] max-xs:leading-[1.3rem]`}
+                  className={`text-[1.8rem] opacity-75 leading-[2rem] font-Secondary font-[200]  max-sm:text-[1rem]  max-sm:leading-[1.5rem] max-md:text-[1.5rem] max-md:leading-[1.8rem] max-xs:text-[1rem] max-xs:leading-[1.3rem]`}
                 />
               </div>
             </div>
