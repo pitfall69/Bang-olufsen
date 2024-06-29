@@ -42,7 +42,7 @@ const ShopLanding = ({ ShopLandingdata }) => {
         <h2 className="font-Secondary text-xl w-[50%] max-lg:text-sm max-xl:text-lg max-sm:w-[80%] text-center max-md:px-10">
           {ShopLandingdata.shopCompare}
         </h2>
-        <Button text={"Explore More "} p={"group-hover:text-black"} circ={"bg-white"} customclass={`w-fit bg-[#000] text-white md:text-xs md:px-5 max-md:text-xs max-md:px-4 `} />
+        <Button text={"Explore More "} p={"group-hover:text-black"} circ={"bg-white"} customclass={`w-fit bg-[#FFC356]  md:text-xs md:px-5 max-md:text-xs max-md:px-4 `} />
       </div>
     </div>
   );

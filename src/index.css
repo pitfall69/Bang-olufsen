@@ -80,3 +80,32 @@ canvas {
 .fade-in {
   animation: fadeIn 1.5s ease-out forwards;
 } */
+@keyframes expand-left {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 48%;
+    left: 2%;
+  }
+}
+
+@keyframes expand-right {
+  from {
+    width: 0;
+    right: 50%;
+  }
+  to {
+    width: 48%;
+    right: 2%;
+  }
+}
+
+.animate-expand-left {
+  animation: expand-left .8s ease-out forwards 0.3s;
+}
+
+.animate-expand-right {
+  animation: expand-right .8s ease-out forwards 0.3s;
+}
