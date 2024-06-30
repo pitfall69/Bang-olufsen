@@ -9,17 +9,9 @@
 
 @font-face {
   font-family: "Kano";
-  src: url("src/assets/Fonts/Kano.ttf") format("truetype");
+  src: url("/src/assets/Fonts/Kano.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Intro";
-  src: url("src/assets/Fonts/Dense-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Sans";
-  src: url("/src/assets/Fonts/BespokeSans-Variable.ttf") format("truetype");
-}
 @font-face {
   font-family: "Melodrama";
   src: url("/src/assets/Fonts/Melodrama-Regular.woff") format("woff");
@@ -30,7 +22,7 @@
 }
 @font-face {
   font-family: "Landing";
-  src: url("/src/assets/Fonts/Shinkosans.ttf") format("truetype");
+  src: url("/src/assets/Fonts/BespokeSans-Medium.woff") format("woff");
 }
 
 
@@ -50,6 +42,8 @@ canvas {
   height: 100%;
   mix-blend-mode: color;
 }
+
+
 
 #imageContainer > * {
   position: absolute;
@@ -92,6 +86,3 @@ canvas {
   animation: expand-right .8s ease-out forwards 0.3s;
 }
 
-.stickyMask{
-  mask-image: url('https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719675579/andlogo_sxhom4.svg');
-}

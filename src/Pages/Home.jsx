@@ -8,14 +8,11 @@ import Wbo from "../Components/Wbo";
 import Collaborators from "../Components/Collaborators";
 
 import HistoryPage from "../Components/HistoryPage";
-import Loader from "../Components/Loader";
 const Home = () => {
   const scrollRef = useRef(null);
   return (
-    <div ref={scrollRef} data-scroll-container>
-      
+    <div ref={scrollRef} id="top" data-scroll-container>
         <LandingPage />
-        <Loader/>
         <HomePagePoduct />
         <HomePageVideo />
         <Wbo />

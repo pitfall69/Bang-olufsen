@@ -1,79 +1,71 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, memo } from "react";
 import gsap from "gsap";
 
-const Preloader = ({ onComplete }) => {
-  const digit1Ref = useRef();
-  const digit2Ref = useRef();
-  const digit3Ref = useRef();
-  const [numbers, setNumbers] = useState({
-    digit1: ["0", "1"],
-    digit2: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
-    digit3: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-  });
+const LetterColumn = memo(({ className, letters }) => (
+  <div className={`h-full w-[10%] relative overflow-hidden ${className}`}>
+    <div
+      className={`h-fit w-full tracking-tighter leading-none flex flex-col items-center justify-center absolute ${
+        className.includes("c1") ? "bottom-0" : ""
+      }`}
+    >
+      {letters.map((letter, index) => (
+        <h1 className={`text-[4vw] max-md:text-[8vw]`} key={index}>
+          {letter}
+        </h1>
+      ))}
+    </div>
+  </div>
+));
+
+const Preloader = () => {
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const animateCounter = (digit, duration, delay = 1) => {
-      const numHeight = digit.querySelector(".num").clientHeight;
-      const totalDistance = (digit.querySelectorAll(".num").length - 1) * numHeight;
+    const container = containerRef.current;
+    const b1Elements = container.querySelectorAll(".b1 h1");
+    const c1Elements = container.querySelectorAll(".c1 h1");
 
-      return gsap.to(digit, {
-        y: -totalDistance,
-        duration: duration,
-        delay: delay,
-        ease: "power2.inOut"
-      });
-    };
+    const timeline = gsap.timeline();
 
-    const digit3Tween = animateCounter(digit3Ref.current, 5);
-    const digit2Tween = animateCounter(digit2Ref.current, 6);
-    const digit1Tween = animateCounter(digit1Ref.current, 2, 5);
+    timeline
+      .to(b1Elements, { y: "-500%", duration: 3 , delay:1})
+      .to(c1Elements, { y: "500%", duration: 3 }, "<")
+      .to([b1Elements, c1Elements], { opacity: 0, duration: 0.6 })
+      .to(".loader", { height: "0vh", duration: 1 , delay:.5 })
+      .set(".loader", { display: "none" });
 
-    const timeline = gsap.timeline({
-      onComplete: () => {
-        gsap.to('.counter', {
-          opacity: 0
-        });
-        gsap.to('.pre-loader', {
-          height: 0,
-          delay: 1,
-          duration: 0.8,
-          ease: "circ.in",
-          onComplete: onComplete
-        });
-      }
-    });
+  }, []);
 
-    timeline.add(digit3Tween).add(digit2Tween, "-=5").add(digit1Tween, "-=6");
-
-    return () => {
-      timeline.kill();
-    };
-  }, [onComplete]);
-
-  const renderDigits = (digitArray) => {
-    return digitArray.map((num, index) => (
-      <div key={index} className={`num ${index === 1 ? "relative right-[-12px]" : ""} `}>{num}</div>
-    ));
-  };
+  const lettersData = [
+    { className: "b1", letters: ["B", "B", "B", "B", "B", "B"] },
+    { className: "c1", letters: ["A", "A", "A", "A", "A", "A"] },
+    { className: "b1", letters: ["N", "N", "N", "N", "N", "N"] },
+    { className: "c1", letters: ["G", "G", "G", "G", "G", "G"] },
+    { className: "b1", letters: ["", "", "", "", "", ""] },
+    { className: "c1", letters: ["&", "&", "&", "&", "&", "&"] },
+    { className: "b1", letters: ["", "", "", "", "", ""] },
+    { className: "c1", letters: ["O", "O", "O", "O", "O", "O"] },
+    { className: "b1", letters: ["L", "L", "L", "L", "L", "L"] },
+    { className: "c1", letters: ["U", "U", "U", "U", "U", "U"] },
+    { className: "b1", letters: ["F", "F", "F", "F", "F", "F"] },
+    { className: "c1", letters: ["S", "S", "S", "S", "S", "S"] },
+    { className: "b1", letters: ["E", "E", "E", "E", "E", "E"] },
+    { className: "c1", letters: ["N", "N", "N", "N", "N", "N"] },
+  ];
 
   return (
-    <div className="pre-loader w-full h-screen font-primary overflow-hidden flex items-center justify-center bg-black text-white fixed top-0 left-0 z-[999]">
+    <div className="h-screen loader overflow-hidden fixed top-0 z-[990] bg-black w-full flex justify-center items-center font-['Landing']">
       <div
-        style={{ clipPath: "polygon(0 0 , 100% 0, 100% 100px, 0 100px)" }}
-        className="counter h-[10vh] flex text-[100px] max-sm:text-[50px] leading-[150px]"
+        className="h-[4vw] max-md:h-[8vw] w-[40%] max-md:w-[75%] flex text-white justify-center items-center"
+        ref={containerRef}
       >
-        <div ref={digit1Ref} className="digit-1 relative top-[-15px]">
-          {renderDigits(numbers.digit1)}
-        </div>
-        <div ref={digit2Ref} className="digit-2 relative top-[-15px]">
-          {renderDigits(numbers.digit2)}
-        </div>
-        <div ref={digit3Ref} className="digit-3 relative top-[-15px]">
-          {renderDigits(numbers.digit3)}
-        </div>
-        <div className="digit-4 relative top-[-15px]">
-          %
-        </div>
+        {lettersData.map((item, index) => (
+          <LetterColumn
+            key={index}
+            className={item.className}
+            letters={item.letters}
+          />
+        ))}
       </div>
     </div>
   );

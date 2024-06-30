@@ -25,7 +25,7 @@ const Speakers = () => {
     {
       title: "BEOSOUND A5",
       des: "Powerful portable speaker",
-      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/f_webp/v1719492388/1687680433-BeosoundA50001_mcrcus.jpg",
+      productImage: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491453/BEOSOUND_A5_p4tars.webp",
       price: "$1,499"
     }
     ,
@@ -82,7 +82,7 @@ const Speakers = () => {
   ];
 
   const ShopLandingdata = {
-    Img: "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719491453/BEOSOUND_A5_p4tars.webp",
+    Img: "https://res.cloudinary.com/dsxhjoxsc/image/upload/v1719664278/Britta-4_ccmt3z.webp",
     Title: "Premium Audio Experience",
     Para: "Experience rich, authentic sound with Bang & Olufsen's premium speakers, crafted to perfection for stunning clarity and superior acoustics.",
     shopQue: "WHICH SPEAKER IS RIGHT FOR YOU?",

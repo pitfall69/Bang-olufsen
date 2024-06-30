@@ -16,14 +16,13 @@ const InteractiveImage = () => {
     small:
       "https://res.cloudinary.com/dtkyjnbvf/image/upload/q_auto,f_auto/landingpage-phone_wgttc2.jpg",
     medium:
-      "https://res.cloudinary.com/dtkyjnbvf/image/upload/q_auto,f_auto/landingpage-tablet.jpg",
+      "https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719662595/Clot-A1-Digital-0002-SoMe-Crop_zmavkc.png",
     large:
       "https://res.cloudinary.com/dtkyjnbvf/image/upload/q_auto,f_auto/Mosaic_land_clot_1_idqfq6.png",
   };
-
   const getBreakpoint = () => {
     const width = window.innerWidth;
-    if (width < 768) {
+    if (width < 500) {
       return "small";
     } else if (width < 1024) {
       return "medium";
@@ -58,62 +57,33 @@ const InteractiveImage = () => {
       }
     `;
 
-    // const fragmentShader = `
-    //   varying vec2 vUv;
-    //   uniform sampler2D u_texture;    
-    //   uniform vec2 u_mouse;
-    //   uniform vec2 u_prevMouse;
-    //   uniform float u_aberrationIntensity;
-
-    //   void main() {
-    //       vec2 gridUV = floor(vUv * vec2(30.0, 30.0)) / vec2(30.0, 30.0);
-    //       vec2 centerOfPixel = gridUV + vec2(1.0/30.0, 1.0/30.0);
-          
-    //       vec2 mouseDirection = u_mouse - u_prevMouse;
-          
-    //       vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
-    //       float pixelDistanceToMouse = length(pixelToMouseDirection);
-    //       float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
-   
-    //       vec2 uvOffset = strength * - mouseDirection * 0.2;
-    //       vec2 uv = vUv - uvOffset;
-
-    //       vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
-    //       vec4 colorG = texture2D(u_texture, uv);
-    //       vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
-
-    //       gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
-    //   }
-    // `;
-
-
     const fragmentShader = `
-  varying vec2 vUv;
-  uniform sampler2D u_texture;    
-  uniform vec2 u_mouse;
-  uniform vec2 u_prevMouse;
-  uniform float u_aberrationIntensity;
+      varying vec2 vUv;
+      uniform sampler2D u_texture;    
+      uniform vec2 u_mouse;
+      uniform vec2 u_prevMouse;
+      uniform float u_aberrationIntensity;
 
-  void main() {
-      vec2 gridUV = floor(vUv * vec2(30.0, 30.0)) / vec2(30.0, 30.0);
-      vec2 centerOfPixel = gridUV + vec2(1.0/30.0, 1.0/30.0);
-      
-      vec2 mouseDirection = u_mouse - u_prevMouse;
-      
-      vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
-      float pixelDistanceToMouse = length(pixelToMouseDirection);
-      float strength = smoothstep(0.4, 0.0, pixelDistanceToMouse);
-      
-      vec2 uvOffset = strength * - mouseDirection * 0.2; 
-      vec2 uv = vUv - uvOffset;
+      void main() {
+          vec2 gridUV = floor(vUv * vec2(30.0, 30.0)) / vec2(30.0, 30.0);
+          vec2 centerOfPixel = gridUV + vec2(1.0/30.0, 1.0/30.0);
+          
+          vec2 mouseDirection = u_mouse - u_prevMouse;
+          
+          vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
+          float pixelDistanceToMouse = length(pixelToMouseDirection);
+          float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
+   
+          vec2 uvOffset = strength * - mouseDirection * 0.2;
+          vec2 uv = vUv - uvOffset;
 
-      vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
-      vec4 colorG = texture2D(u_texture, uv);
-      vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+          vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+          vec4 colorG = texture2D(u_texture, uv);
+          vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
 
-      gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
-  }
-`;
+          gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
+      }
+    `;
 
     const initializeScene = (texture) => {
       scene = new THREE.Scene();
@@ -162,17 +132,19 @@ const InteractiveImage = () => {
 
       window.addEventListener("resize", onWindowResize, false);
     };
-
     const getFOV = (width) => {
-      if (width < 768) {
-        return 115;
-      } else if (width < 1024) {
-        return 60;
+      if (width < 480) {
+        return 100;
+      } else if (width < 650) {
+        return 105;
+      } else if (width < 850) {
+        return 80;
+      } else if (width < 1200) {
+        return 80;
       } else {
         return 55;
       }
     };
-
     const onWindowResize = () => {
       handleResize();
       if (camera && renderer) {
@@ -265,7 +237,7 @@ const InteractiveImage = () => {
     };
 
     const handleMouseLeave = () => {
-      easeFactor.current = 0.05;
+      easeFactor.current = 0.02;
       targetMousePosition.current = { ...prevPosition.current };
     };
 
@@ -307,22 +279,6 @@ const InteractiveImage = () => {
       }
     };
   }, [imageSrc]);
-  const landingh1Ref = useRef();
-  const landingh1Ref2 = useRef()
-  useEffect(() => {
-    const splitText = new SplitTextJS(landingh1Ref.current);
-    const splitText2 = new SplitTextJS(landingh1Ref2.current);
-    gsap.from(splitText.chars, {
-      yPercent: 100,
-      stagger:0.012,
-
-    });
-    gsap.from(splitText2.chars, {
-      yPercent: 100,
-      stagger:0.012,
-      
-    });
-  },[]);
   return (
     <div
       id="imageContainer"
@@ -334,17 +290,14 @@ const InteractiveImage = () => {
         position: "relative",
       }}
     >
-      <div className="absolute w-full flex max-sm:mt-[-10vh] flex-col items-center justify-center top-0 left-0 z-[99] overflow-hidden">
-        <h1
-          ref={landingh1Ref}
-          className=" text-[6rem] h-fit w-fit overflow-hidden max-sm:text-[6vw] text-center  text-white font-Decorative uppercase leading-none"
-        >
+      <div className="absolute  w-full flex flex-col max-sm:mt-[-10vh] items-center justify-center top-0 left-0 z-[99] overflow-hidden max-md:bg-[url()] bg-cover ">
+        <h1 className=" text-[6rem] h-fit w-fit overflow-hidden max-sm:text-[1.8rem] text-center  text-white font-Decorative uppercase leading-none max-xl:text-[4rem] max-lg:text-[3.5rem] max-2xl:text-[5rem]">
           Experience the Ultimate
         </h1>
-        <h1  ref={landingh1Ref2} className="landing-text text-[6rem] h-fit  w-fit overflow-hidden max-sm:text-[6vw] text-center  text-white font-Decorative  uppercase leading-none">
+        <h1 className="  text-[6rem] h-fit  w-fit overflow-hidden max-sm:text-[1.8rem] text-center max-xl:text-[4rem]  text-white font-Decorative  uppercase leading-none max-lg:text-[3.5rem] max-2xl:text-[5rem] ">
           Audio Innovation and Design
         </h1>
-        <p className="text-md font-primary pb-5 text-[#fff] w-[30%] max-sm:text-sm max-sm:w-[80%] text-center mt-5">
+        <p className="text-md font-primary  pb-5 landing-content text-[#fff] w-[30%] max-sm:text-sm max-sm:w-[80%] max-lg:w-[50%]  max-xl:w-[60%] text-center mt-5">
           Immerse yourself in unparalleled sound quality and sleek,
           sophisticated design with Bang & Olufsen – where every note is a
           masterpiece.

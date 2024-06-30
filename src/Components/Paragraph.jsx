@@ -1,7 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-const Paragraph = ({ phrases, className }) => {
+import {motion}  from "framer-motion";
+const Paragraph = ({ phrases , className }) => {
   const animation = {
     initial: { y: "100%" },
     enter: (i) => ({
@@ -13,6 +13,7 @@ const Paragraph = ({ phrases, className }) => {
       },
     }),
   };
+
   const { ref, inView, entry } = useInView({
     threshold: 0.75,
     triggerOnce: true,
