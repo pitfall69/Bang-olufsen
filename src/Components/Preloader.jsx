@@ -19,7 +19,7 @@ const LetterColumn = memo(({ className, letters }) => (
 
 const Preloader = () => {
   const containerRef = useRef(null);
-
+  ``
   useEffect(() => {
     const container = containerRef.current;
     const b1Elements = container.querySelectorAll(".b1 h1");
