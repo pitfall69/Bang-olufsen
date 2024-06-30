@@ -9,8 +9,9 @@ import Soundbars from "./Pages/Soundbars";
 import Headphones from "./Pages/Headphones";
 import Worldbando from "./Pages/Worldbando";
 import LocomotiveScroll from "locomotive-scroll";
-import Preloader from "./Components/Preloader";
+// import Preloader from "./Components/Preloader";
 import Inner from "./Components/latouts/Inner";
+import Loader from "./Components/Loader";
 
 const App = () => {
   const location = useLocation();
@@ -46,6 +47,7 @@ const App = () => {
   return (
     <div className="relative bg-white" data-scroll-container>
       {/* <Preloader /> */}
+       <Loader />
       <Navbar location={location} key={location.pathname} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

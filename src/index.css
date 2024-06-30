@@ -91,3 +91,7 @@ canvas {
 .animate-expand-right {
   animation: expand-right .8s ease-out forwards 0.3s;
 }
+
+.stickyMask{
+  mask-image: url('https://res.cloudinary.com/dtkyjnbvf/image/upload/v1719675579/andlogo_sxhom4.svg');
+}
